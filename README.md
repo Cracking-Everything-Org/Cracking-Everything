@@ -3,14 +3,14 @@ Description:
 
 ##### Courses
   - [Divide and Conquer, Sorting and Searching, and Randomized Algorithms](https://www.coursera.org/learn/algorithms-divide-conquer)
-  - [](https://www.coursera.org/learn/data-structures)
-  - [](https://www.coursera.org/learn/algorithms-graphs-data-structures)
-  - [](https://www.coursera.org/learn/algorithms-greedy)
-  - [](https://www.coursera.org/learn/algorithms-npcomplete)
-  - [](https://www.coursera.org/learn/advanced-algorithms-and-complexity)
-  - [](https://www.coursera.org/learn/competitive-programming-core-skills)
-  - [](https://www.coursera.org/learn/algorithmic-toolbox)
-  - [](https://www.edx.org/course/how-to-win-coding-competitions-secrets-of-champions-4)
+  - [2](https://www.coursera.org/learn/data-structures)
+  - [3](https://www.coursera.org/learn/algorithms-graphs-data-structures)
+  - [4](https://www.coursera.org/learn/algorithms-greedy)
+  - [5](https://www.coursera.org/learn/algorithms-npcomplete)
+  - [6](https://www.coursera.org/learn/advanced-algorithms-and-complexity)
+  - [7](https://www.coursera.org/learn/competitive-programming-core-skills)
+  - [8](https://www.coursera.org/learn/algorithmic-toolbox)
+  - [9](https://www.edx.org/course/how-to-win-coding-competitions-secrets-of-champions-4)
 
 ##### Books
   - Cracking the Coding Interview
