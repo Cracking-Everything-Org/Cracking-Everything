@@ -1,4 +1,4 @@
-# Cracking-Algorithms
+# Cracking-Everything
 Description: 
 
 ### Competitive Programming
