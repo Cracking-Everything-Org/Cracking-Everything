@@ -36,7 +36,7 @@ Description:
   ##### Arrays and Strings
    -
   ##### Bit Manipulation
-   - [1](https://code.tutsplus.com/articles/understanding-bitwise-operators--active-11301)  
+   - [Understanding Bitwise Operators](https://code.tutsplus.com/articles/understanding-bitwise-operators--active-11301)  
   ##### Linked Lists
    -
   ##### Stacks and Queues
