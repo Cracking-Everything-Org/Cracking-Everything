@@ -55,3 +55,23 @@ Description:
    -
   ##### Advanced Topics
    -
+   
+
+### Proccesses
+
+##### Resume
+   - [This Is What A GOOD Resume Should Look Like](https://www.careercup.com/resume)
+
+##### General
+   - https://www.facebook.com/careers/life/preparing-for-your-software-engineering-interview-at-facebook
+
+##### On Site
+   - 
+##### Specific
+###### The coding interview
+   - [Cracking the coding skills](https://v2.luminpdf.com/viewer/5d24b8507547a300193a867e)
+###### The behavioral interview
+   - [Cracking the soft skills](https://v2.luminpdf.com/viewer/5d24b7ef7547a300193a863c)
+###### The design interview
+   
+
