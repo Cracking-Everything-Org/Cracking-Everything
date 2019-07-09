@@ -1,4 +1,4 @@
-# Cracking-the-Algorithms
+# Cracking-Algorithms
 Description: 
 
 ##### Courses
@@ -20,14 +20,40 @@ Description:
   
 
 ##### Competitive Programming
-  - [Codeforces](http://codeforces.com/contests)
-  - [AtCoder](https://atcoder.jp/contests/)
-  - [CodeChef](https://www.codechef.com/contests)
+   ## Platforms
+   - [Codeforces](http://codeforces.com/contests)
+   - [AtCoder](https://atcoder.jp/contests/)
+   - [CodeChef](https://www.codechef.com/contests)
 
-##### Contests Calendar
-  - [Contests Calendar](https://www.hackerrank.com/calendar)
+   ## Contests Calendar
+   - [Contests Calendar](https://www.hackerrank.com/calendar)
 
 ##### Practice Exercises
   - LeetCode
   - 
   - 
+  
+  
+##### Resources
+  ## Arrays and Strings
+   -
+  ## Bit Manipulation
+   - [1](https://code.tutsplus.com/articles/understanding-bitwise-operators--active-11301)  
+  ## Linked Lists
+   -
+  ## Stacks and Queues
+   -
+  ## Trees and Graphs
+   -
+  ## Object-Oriented Design
+   -
+  ## Recursion and Dynamic Programming
+   -
+  ## System Design and Scalability
+   -
+  ## Sorting and Searching
+   -
+  ## C/C++
+   -
+  ## Advanced Topics
+   -
