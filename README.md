@@ -39,7 +39,7 @@
 
 ## Competitive Programming
    ##### Platforms
-   - [Codeforces](http://codeforces.com/contests)
+   - [Codeforces](http://codeforces.com/profile/antimeta)
 
    ##### Contests Calendar
    - [Contests Calendar](https://www.hackerrank.com/calendar)
