@@ -9,7 +9,7 @@
   ##### Stacks and Queues
    -
   ##### Trees and Graphs
-   -
+   - [Visualise Algorithms](https://visualgo.net/en)
   ##### Bit Manipulation
    - [Understanding Bitwise Operators](https://code.tutsplus.com/articles/understanding-bitwise-operators--active-11301)  
   
