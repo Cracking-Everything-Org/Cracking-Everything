@@ -4,22 +4,30 @@ Description:
 ### Competitive Programming
    ##### Platforms
    - [Codeforces](http://codeforces.com/contests)
-   - [AtCoder](https://atcoder.jp/contests/)
-   - [CodeChef](https://www.codechef.com/contests)
 
    ##### Contests Calendar
    - [Contests Calendar](https://www.hackerrank.com/calendar)
 
-### Practice Exercises
-  - LeetCode
-  - 
-  - 
+### Practice Exercises (Leetcode)
+  - [July]()
+   -  [E]()
+   -  [M]()
+   -  [H]()
+  - [August]()
+   -  [E]()
+   -  [M]()
+   -  [H]()
+  - [September]()
+   -  [E]()
+   -  [M]()
+   -  [H]()
+  - [October]()
+   -  [E]()
+   -  [M]()
+   -  [H]()
 
 ### Books
   - [Cracking the Coding Interview](http://ahmed-badawy.com/blog/wp-content/uploads/2018/10/Cracking-the-Coding-Interview-6th-Edition-189-Programming-Questions-and-Solutions.pdf)
-  - [Competitive Programming 3](https://www.academia.edu/36637031/Competitive_Programming_3.pdf)
-  - [Elements of Programming Interviews: The Insiders' Guide C++](http://elementsofprogramminginterviews.com/sample/epilight_cpp_new.pdf)
-  - [Programming Interviews Exposed: Coding Your Way Through the Interview](https://www.pdfdrive.com/programming-interviews-exposed-e21820954.html)
   
 ### Courses
   - [Divide and Conquer, Sorting and Searching, and Randomized Algorithms](https://www.coursera.org/learn/algorithms-divide-conquer)
@@ -32,46 +40,26 @@ Description:
   - [Algorithmic Toolbox](https://www.coursera.org/learn/algorithmic-toolbox)
   - [How to Win Coding Competitions: Secrets of Champions](https://www.edx.org/course/how-to-win-coding-competitions-secrets-of-champions-4)
   
-### Resources
+  
+## Resources
+
   ##### Arrays and Strings
    -
-  ##### Bit Manipulation
-   - [Understanding Bitwise Operators](https://code.tutsplus.com/articles/understanding-bitwise-operators--active-11301)  
   ##### Linked Lists
+   -
+  ##### Sorting and Searching
    -
   ##### Stacks and Queues
    -
   ##### Trees and Graphs
    -
-  ##### Object-Oriented Design
-   -
+  ##### Bit Manipulation
+   - [Understanding Bitwise Operators](https://code.tutsplus.com/articles/understanding-bitwise-operators--active-11301)  
+  
   ##### Recursion and Dynamic Programming
-   -
-  ##### System Design and Scalability
-   -
-  ##### Sorting and Searching
-   -
-  ##### C/C++
    -
   ##### Advanced Topics
    -
    
 
-### Proccesses
-
-##### Resume
-   - [This Is What A GOOD Resume Should Look Like](https://www.careercup.com/resume)
-
-##### General
-   - https://www.facebook.com/careers/life/preparing-for-your-software-engineering-interview-at-facebook
-
-##### On Site
-   - 
-##### Specific
-###### The coding interview
-   - [Cracking the coding skills](https://v2.luminpdf.com/viewer/5d24b8507547a300193a867e)
-###### The behavioral interview
-   - [Cracking the soft skills](https://v2.luminpdf.com/viewer/5d24b7ef7547a300193a863c)
-###### The design interview
-   
 
