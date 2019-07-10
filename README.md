@@ -1,6 +1,3 @@
-# Cracking-Everything
-Description: 
-
 ## Resources
 
   ##### Arrays and Strings
@@ -24,21 +21,21 @@ Description:
 ## Practice Exercises 
 ### Leetcode
   - [July]()
-   -  [E]()
-   -  [M]()
-   -  [H]()
+   ⋅⋅⋅[E]()
+   ⋅⋅⋅[M]()
+   ⋅⋅⋅[H]()
   - [August]()
-   -  [E]()
-   -  [M]()
-   -  [H]()
+   ⋅⋅⋅[E]()
+   ⋅⋅⋅[M]()
+   ⋅⋅⋅[H]()
   - [September]()
-   -  [E]()
-   -  [M]()
-   -  [H]()
+   ⋅⋅⋅[E]()
+   ⋅⋅⋅[M]()
+   ⋅⋅⋅[H]()
   - [October]()
-   -  [E]()
-   -  [M]()
-   -  [H]()
+   ⋅⋅⋅[E]()
+   ⋅⋅⋅[M]()
+   ⋅⋅⋅[H]()
 
 ## Competitive Programming
    ##### Platforms
