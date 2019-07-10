@@ -1,14 +1,15 @@
 # Cracking-Everything
 Description: 
 
-### Competitive Programming
+## Competitive Programming
    ##### Platforms
    - [Codeforces](http://codeforces.com/contests)
 
    ##### Contests Calendar
    - [Contests Calendar](https://www.hackerrank.com/calendar)
 
-### Practice Exercises (Leetcode)
+## Practice Exercises 
+### Leetcode
   - [July]()
    -  [E]()
    -  [M]()
@@ -26,10 +27,10 @@ Description:
    -  [M]()
    -  [H]()
 
-### Books
+## Books
   - [Cracking the Coding Interview](http://ahmed-badawy.com/blog/wp-content/uploads/2018/10/Cracking-the-Coding-Interview-6th-Edition-189-Programming-Questions-and-Solutions.pdf)
   
-### Courses
+## Courses
   - [Divide and Conquer, Sorting and Searching, and Randomized Algorithms](https://www.coursera.org/learn/algorithms-divide-conquer)
   - [Data Structures](https://www.coursera.org/learn/data-structures)
   - [Graph Search, Shortest Paths, and Data Structures](https://www.coursera.org/learn/algorithms-graphs-data-structures)
