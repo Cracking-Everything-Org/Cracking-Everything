@@ -1,12 +1,25 @@
 # Cracking-Everything
 Description: 
 
-## Competitive Programming
-   ##### Platforms
-   - [Codeforces](http://codeforces.com/contests)
+## Resources
 
-   ##### Contests Calendar
-   - [Contests Calendar](https://www.hackerrank.com/calendar)
+  ##### Arrays and Strings
+   -
+  ##### Linked Lists
+   -
+  ##### Sorting and Searching
+   -
+  ##### Stacks and Queues
+   -
+  ##### Trees and Graphs
+   -
+  ##### Bit Manipulation
+   - [Understanding Bitwise Operators](https://code.tutsplus.com/articles/understanding-bitwise-operators--active-11301)  
+  
+  ##### Recursion and Dynamic Programming
+   -
+  ##### Advanced Topics
+   -
 
 ## Practice Exercises 
 ### Leetcode
@@ -27,11 +40,18 @@ Description:
    -  [M]()
    -  [H]()
 
+## Competitive Programming
+   ##### Platforms
+   - [Codeforces](http://codeforces.com/contests)
+
+   ##### Contests Calendar
+   - [Contests Calendar](https://www.hackerrank.com/calendar)
+
 ## Books
   - [Cracking the Coding Interview](http://ahmed-badawy.com/blog/wp-content/uploads/2018/10/Cracking-the-Coding-Interview-6th-Edition-189-Programming-Questions-and-Solutions.pdf)
   
 ## Courses
-  #####- [Divide and Conquer, Sorting and Searching, and Randomized Algorithms](https://www.coursera.org/learn/algorithms-divide-conquer)
+  - [Divide and Conquer, Sorting and Searching, and Randomized Algorithms](https://www.coursera.org/learn/algorithms-divide-conquer)
   - [Data Structures](https://www.coursera.org/learn/data-structures)
   - [Graph Search, Shortest Paths, and Data Structures](https://www.coursera.org/learn/algorithms-graphs-data-structures)
   - [Greedy Algorithms, Minimum Spanning Trees, and Dynamic Programming](https://www.coursera.org/learn/algorithms-greedy)
@@ -41,26 +61,4 @@ Description:
   - [Algorithmic Toolbox](https://www.coursera.org/learn/algorithmic-toolbox)
   - [How to Win Coding Competitions: Secrets of Champions](https://www.edx.org/course/how-to-win-coding-competitions-secrets-of-champions-4)
   
-  
-## Resources
-
-  ##### Arrays and Strings
-   -
-  ##### Linked Lists
-   -
-  ##### Sorting and Searching
-   -
-  ##### Stacks and Queues
-   -
-  ##### Trees and Graphs
-   -
-  ##### Bit Manipulation
-   - [Understanding Bitwise Operators](https://code.tutsplus.com/articles/understanding-bitwise-operators--active-11301)  
-  
-  ##### Recursion and Dynamic Programming
-   -
-  ##### Advanced Topics
-   -
-   
-
 
