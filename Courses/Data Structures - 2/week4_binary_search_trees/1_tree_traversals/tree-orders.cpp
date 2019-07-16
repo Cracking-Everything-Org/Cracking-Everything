@@ -27,28 +27,63 @@ public:
     }
   }
 
+  void in_order_traversal(int root, vector<int> &result) {
+    if (left[root] == -1 && right[root] == -1) {
+      result.push_back(key[root]);
+      return;
+    }
+    if (left[root] != -1) {
+      in_order_traversal(left[root], result);
+    }
+    result.push_back(key[root]);
+    if (right[root] != -1) {
+      in_order_traversal(right[root], result); 
+    }
+  }
 
   vector <int> in_order() {
     vector<int> result;
-    // Finish the implementation
-    // You may need to add a new recursive method to do that
-
+    in_order_traversal(0, result);
     return result;
+  }
+
+  void pre_order_traversal(int root, vector<int> &result) {
+    if (left[root] == -1 && right[root] == -1) {
+      result.push_back(key[root]);
+      return;
+    }
+    result.push_back(key[root]);
+    if (left[root] != -1) {
+      pre_order_traversal(left[root], result);
+    }
+    if (right[root] != -1) {
+      pre_order_traversal(right[root], result);
+    }
   }
 
   vector <int> pre_order() {
     vector<int> result;    
-    // Finish the implementation
-    // You may need to add a new recursive method to do that
-    
+    pre_order_traversal(0, result);
     return result;
+  }
+
+  void post_order_traversal(int root, vector<int> &result) {
+    if (left[root] == -1 && right[root] == -1) {
+      result.push_back(key[root]);
+      return;
+    }
+    if (left[root] != -1) {
+      post_order_traversal(left[root], result);
+    }
+    if (right[root] != -1) {
+      post_order_traversal(right[root], result);
+    }
+    result.push_back(key[root]);
   }
 
   vector <int> post_order() {
     vector<int> result;
-    // Finish the implementation
-    // You may need to add a new recursive method to do that
-    
+    post_order_traversal(0, result);
     return result;
   }
 };
@@ -76,8 +111,7 @@ int main_with_large_stack_space() {
 int main (int argc, char **argv)
 {
 #if defined(__unix__) || defined(__APPLE__)
-  // Allow larger stack space
-  const rlim_t kStackSize = 16 * 1024 * 1024;   // min stack size = 16 MB
+  const rlim_t kStackSize = 16 * 1024 * 1024;
   struct rlimit rl;
   int result;
 
@@ -98,4 +132,3 @@ int main (int argc, char **argv)
 
   return main_with_large_stack_space();
 }
-

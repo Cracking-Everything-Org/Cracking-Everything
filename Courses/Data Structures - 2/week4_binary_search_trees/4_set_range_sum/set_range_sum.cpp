@@ -1,24 +1,21 @@
 #include <cstdio>
 
-// Splay tree implementation
-
-// Vertex of a splay tree
 struct Vertex {
   int key;
-  // Sum of all the keys in the subtree - remember to update
-  // it after each operation that changes the tree.
   long long sum;
-  Vertex* left;
-  Vertex* right;
-  Vertex* parent;
+  Vertex *left;
+  Vertex *right;
+  Vertex *parent;
 
-  Vertex(int key, long long sum, Vertex* left, Vertex* right, Vertex* parent) 
-  : key(key), sum(sum), left(left), right(right), parent(parent) {}
+  Vertex(int key, long long sum, Vertex *left, Vertex *right, Vertex *parent)
+      : key(key), sum(sum), left(left), right(right), parent(parent) {}
 };
 
-void update(Vertex* v) {
-  if (v == NULL) return;
-  v->sum = v->key + (v->left != NULL ? v->left->sum : 0ll) + (v->right != NULL ? v->right->sum : 0ll);
+void update(Vertex *v) {
+  if (v == NULL)
+    return;
+  v->sum = v->key + (v->left != NULL ? v->left->sum : 0ll) +
+           (v->right != NULL ? v->right->sum : 0ll);
   if (v->left != NULL) {
     v->left->parent = v;
   }
@@ -27,18 +24,18 @@ void update(Vertex* v) {
   }
 }
 
-void small_rotation(Vertex* v) {
-  Vertex* parent = v->parent;
+void small_rotation(Vertex *v) {
+  Vertex *parent = v->parent;
   if (parent == NULL) {
     return;
   }
-  Vertex* grandparent = v->parent->parent;
+  Vertex *grandparent = v->parent->parent;
   if (parent->left == v) {
-    Vertex* m = v->right;
+    Vertex *m = v->right;
     v->right = parent;
     parent->left = m;
   } else {
-    Vertex* m = v->left;
+    Vertex *m = v->left;
     v->left = parent;
     parent->right = m;
   }
@@ -54,26 +51,21 @@ void small_rotation(Vertex* v) {
   }
 }
 
-void big_rotation(Vertex* v) {
+void big_rotation(Vertex *v) {
   if (v->parent->left == v && v->parent->parent->left == v->parent) {
-    // Zig-zig
     small_rotation(v->parent);
     small_rotation(v);
   } else if (v->parent->right == v && v->parent->parent->right == v->parent) {
-    // Zig-zig
     small_rotation(v->parent);
     small_rotation(v);
   } else {
-    // Zig-zag
     small_rotation(v);
     small_rotation(v);
-  }  
+  }
 }
-
-// Makes splay of the given vertex and makes
-// it the new root.
-void splay(Vertex*& root, Vertex* v) {
-  if (v == NULL) return;
+void splay(Vertex *&root, Vertex *v) {
+  if (v == NULL)
+    return;
   while (v->parent != NULL) {
     if (v->parent->parent == NULL) {
       small_rotation(v);
@@ -84,24 +76,19 @@ void splay(Vertex*& root, Vertex* v) {
   root = v;
 }
 
-// Searches for the given key in the tree with the given root
-// and calls splay for the deepest visited node after that.
-// If found, returns a pointer to the node with the given key.
-// Otherwise, returns a pointer to the node with the smallest
-// bigger key (next value in the order).
-// If the key is bigger than all keys in the tree, 
-// returns NULL.
-Vertex* find(Vertex*& root, int key) {
-  Vertex* v = root;
-  Vertex* last = root;
-  Vertex* next = NULL;
+Vertex *find(Vertex *&root, int key) {
+  Vertex *v = root;
+  Vertex *last = root;
+  Vertex *next = NULL;
   while (v != NULL) {
-    if (v->key >= key && (next == NULL || v->key < next->key)) {
+    if (v->key >= key &&
+        (next == NULL ||
+         v->key < next->key)) {
       next = v;
     }
     last = v;
     if (v->key == key) {
-      break;      
+      break;
     }
     if (v->key < key) {
       v = v->right;
@@ -113,7 +100,7 @@ Vertex* find(Vertex*& root, int key) {
   return next;
 }
 
-void split(Vertex* root, int key, Vertex*& left, Vertex*& right) {
+void split(Vertex *root, int key, Vertex *&left, Vertex *&right) {
   right = find(root, key);
   splay(root, right);
   if (right == NULL) {
@@ -129,10 +116,12 @@ void split(Vertex* root, int key, Vertex*& left, Vertex*& right) {
   update(right);
 }
 
-Vertex* merge(Vertex* left, Vertex* right) {
-  if (left == NULL) return right;
-  if (right == NULL) return left;
-  Vertex* min_right = right;
+Vertex *merge(Vertex *left, Vertex *right) {
+  if (left == NULL)
+    return right;
+  if (right == NULL)
+    return left;
+  Vertex *min_right = right;
   while (min_right->left != NULL) {
     min_right = min_right->left;
   }
@@ -142,14 +131,12 @@ Vertex* merge(Vertex* left, Vertex* right) {
   return right;
 }
 
-// Code that uses splay tree to solve the problem
-
-Vertex* root = NULL;
+Vertex *root = NULL;
 
 void insert(int x) {
-  Vertex* left = NULL;
-  Vertex* right = NULL;
-  Vertex* new_vertex = NULL;  
+  Vertex *left = NULL;
+  Vertex *right = NULL;
+  Vertex *new_vertex = NULL;
   split(root, x, left, right);
   if (right == NULL || right->key != x) {
     new_vertex = new Vertex(x, x, NULL, NULL, NULL);
@@ -157,32 +144,57 @@ void insert(int x) {
   root = merge(merge(left, new_vertex), right);
 }
 
-void erase(int x) {                   
-  // Implement erase yourself
-
+bool find(int x) {
+  Vertex *ans = find(root, x);
+  if (ans != NULL && ans->key == x)
+    return true;
+  else
+    return false;
 }
+void erase(int x) {
+  if (!root || find(x) == false)
+    return;
+  Vertex *w = root;
+  if (root->left == NULL) {
+    root = root->right;
+    if (root)
+      root->parent = NULL;
 
-bool find(int x) {  
-  // Implement find yourself
-
-  return false;
+  } else if (root->right == NULL) {
+    root = root->left;
+    if (root)
+      root->parent = NULL;
+  } else {
+    Vertex *lt = root->left;
+    lt->parent = NULL;
+    root->left = NULL;
+    root = root->right;
+    root->parent = NULL;
+    bool temp = find(w->key);
+    root->left = lt;
+    lt->parent = root;
+  }
+  delete w;
+  if (root)
+    update(root);
 }
-
 long long sum(int from, int to) {
-  Vertex* left = NULL;
-  Vertex* middle = NULL;
-  Vertex* right = NULL;
+  Vertex *left = NULL;
+  Vertex *middle = NULL;
+  Vertex *right = NULL;
   split(root, from, left, middle);
   split(middle, to + 1, middle, right);
   long long ans = 0;
-  // Complete the implementation of sum
-  
-  return ans;  
+  if (middle)
+    ans = middle->sum;
+  middle = merge(middle, right);
+  root = merge(left, middle);
+  return ans;
 }
 
 const int MODULO = 1000000001;
 
-int main(){
+int main() {
   int n;
   scanf("%d", &n);
   int last_sum_result = 0;
@@ -191,28 +203,29 @@ int main(){
     scanf("%s", buffer);
     char type = buffer[0];
     switch (type) {
-      case '+' : {
-        int x;
-        scanf("%d", &x);
-        insert((x + last_sum_result) % MODULO);
-      } break;
-      case '-' : {
-        int x;
-        scanf("%d", &x);
-        erase((x + last_sum_result) % MODULO);
-      } break;            
-      case '?' : {
-        int x;
-        scanf("%d", &x);
-        printf(find((x + last_sum_result) % MODULO) ? "Found\n" : "Not found\n");
-      } break;
-      case 's' : {
-        int l, r;
-        scanf("%d %d", &l, &r);
-        long long res = sum((l + last_sum_result) % MODULO, (r + last_sum_result) % MODULO);
-        printf("%lld\n", res);
-        last_sum_result = int(res % MODULO);
-      }
+    case '+': {
+      int x;
+      scanf("%d", &x);
+      insert((x + last_sum_result) % MODULO);
+    } break;
+    case '-': {
+      int x;
+      scanf("%d", &x);
+      erase((x + last_sum_result) % MODULO);
+    } break;
+    case '?': {
+      int x;
+      scanf("%d", &x);
+      printf(find((x + last_sum_result) % MODULO) ? "Found\n" : "Not found\n");
+    } break;
+    case 's': {
+      int l, r;
+      scanf("%d %d", &l, &r);
+      long long res =
+          sum((l + last_sum_result) % MODULO, (r + last_sum_result) % MODULO);
+      printf("%lld\n", res);
+      last_sum_result = int(res % MODULO);
+    }
     }
   }
   return 0;
