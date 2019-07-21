@@ -46,6 +46,7 @@
 
 ## Books
   - [Cracking the Coding Interview](http://ahmed-badawy.com/blog/wp-content/uploads/2018/10/Cracking-the-Coding-Interview-6th-Edition-189-Programming-Questions-and-Solutions.pdf)
+  - [Competitive Programming 3](https://www.pdfdrive.com/competitive-programming-3-e32649251.html)
   
 ## Courses
   - [Divide and Conquer, Sorting and Searching, and Randomized Algorithms](https://www.coursera.org/learn/algorithms-divide-conquer)
