@@ -55,8 +55,8 @@
   - [Greedy Algorithms, Minimum Spanning Trees, and Dynamic Programming](https://www.coursera.org/learn/algorithms-greedy)
   - [Shortest Paths Revisited, NP-Complete Problems and What To Do About Them](https://www.coursera.org/learn/algorithms-npcomplete)
   - [Advanced Algorithms and Complexity](https://www.coursera.org/learn/advanced-algorithms-and-complexity)
-  - [Competitive Programmer's Core Skills](https://www.coursera.org/learn/competitive-programming-core-skills)
   - [Algorithmic Toolbox](https://www.coursera.org/learn/algorithmic-toolbox)
+  - [Competitive Programmer's Core Skills](https://www.coursera.org/learn/competitive-programming-core-skills)
   - [How to Win Coding Competitions: Secrets of Champions](https://www.edx.org/course/how-to-win-coding-competitions-secrets-of-champions-4)
   
 
