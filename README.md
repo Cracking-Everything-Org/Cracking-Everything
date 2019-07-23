@@ -2,21 +2,38 @@
 
   ##### Arrays and Strings
    -
+   
   ##### Linked Lists
    -
+   
   ##### Sorting and Searching
-   -
+   - [Visualise Algorithms](https://visualgo.net/en)
+   
   ##### Stacks and Queues
    -
+   
   ##### Trees and Graphs
-   - [Visualise Algorithms](https://visualgo.net/en)
+   - [Dijsktra's Algorithm](https://a)
+   - [Bellman-Ford Algorithm](https://a)
+   - [Floyd-Warshall Algorithm](https://a)
+   - [Prim's Algorithms](https://a)
+   - [Kruskal's Algorithm](https://a)
+   
   ##### Bit Manipulation
    - [Understanding Bitwise Operators](https://code.tutsplus.com/articles/understanding-bitwise-operators--active-11301)  
   
   ##### Recursion and Dynamic Programming
    -
+   
+  ##### Data Structures
+   - [Union-Find](https://a)
+   
   ##### Advanced Topics
-   -
+   - [Red-Black Trees](https://a)
+  
+  ##### Others
+   - [BFS](https://a)
+   - [DFS](https://a)
 
 ## Practice Exercises 
 ### Leetcode
