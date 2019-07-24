@@ -23,7 +23,7 @@
    - [Understanding Bitwise Operators](https://code.tutsplus.com/articles/understanding-bitwise-operators--active-11301)  
   
   ##### Recursion and Dynamic Programming
-   -
+   - 
    
   ##### Data Structures
    - [Union-Find](https://a)
@@ -36,12 +36,8 @@
    - [BFS](https://a)
    - [DFS](https://a)
 
-## Practice Exercises 
+## Practice Exercises
 ### Leetcode
-  - [July]()
-   ⋅⋅⋅[E]()
-   ⋅⋅⋅[M]()
-   ⋅⋅⋅[H]()
   - [August]()
    ⋅⋅⋅[E]()
    ⋅⋅⋅[M]()
@@ -54,6 +50,15 @@
    ⋅⋅⋅[E]()
    ⋅⋅⋅[M]()
    ⋅⋅⋅[H]()
+### CTCI
+  - [Arrays & Strings](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Arrays%20-%20Strings)
+  - [Linked Lists](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Linked%20Lists)
+  - [Sorting & Searching](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Sorting%20-%20Searching)
+  - [Stacks & Queues](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Stacks%20-%20Queues)
+  - [Trees & Graphs](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Trees%20-%20Graphs)
+  - [Bit Manipulation](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Bit%20Manipulation)
+  - [Recursion & DP](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Recursion%20-%20DP)
+  - [Advanced](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Advanced)
 
 ## Competitive Programming
    ##### Platforms
@@ -72,9 +77,4 @@
   - [Graph Search, Shortest Paths, and Data Structures](https://www.coursera.org/learn/algorithms-graphs-data-structures)
   - [Greedy Algorithms, Minimum Spanning Trees, and Dynamic Programming](https://www.coursera.org/learn/algorithms-greedy)
   - [Shortest Paths Revisited, NP-Complete Problems and What To Do About Them](https://www.coursera.org/learn/algorithms-npcomplete)
-  - [Advanced Algorithms and Complexity](https://www.coursera.org/learn/advanced-algorithms-and-complexity)
-  - [Algorithmic Toolbox](https://www.coursera.org/learn/algorithmic-toolbox)
-  - [Competitive Programmer's Core Skills](https://www.coursera.org/learn/competitive-programming-core-skills)
-  - [How to Win Coding Competitions: Secrets of Champions](https://www.edx.org/course/how-to-win-coding-competitions-secrets-of-champions-4)
-  
-
+ 
