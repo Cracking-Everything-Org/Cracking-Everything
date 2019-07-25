@@ -40,28 +40,20 @@
    - [All Systems Design](https://www.educative.io/collection/page/5668639101419520/5649050225344512/5673385510043648)
 
 ## Practice Exercises
-### Leetcode
-  - [August]()
-   ⋅⋅⋅[E]()
-   ⋅⋅⋅[M]()
-   ⋅⋅⋅[H]()
-  - [September]()
-   ⋅⋅⋅[E]()
-   ⋅⋅⋅[M]()
-   ⋅⋅⋅[H]()
-  - [October]()
-   ⋅⋅⋅[E]()
-   ⋅⋅⋅[M]()
-   ⋅⋅⋅[H]()
-### CTCI
-  - [Arrays & Strings](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Arrays%20-%20Strings)
-  - [Linked Lists](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Linked%20Lists)
-  - [Sorting & Searching](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Sorting%20-%20Searching)
-  - [Stacks & Queues](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Stacks%20-%20Queues)
-  - [Trees & Graphs](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Trees%20-%20Graphs)
-  - [Bit Manipulation](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Bit%20Manipulation)
-  - [Recursion & DP](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Recursion%20-%20DP)
-  - [Advanced](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Advanced)
+   ##### LeetCode
+   - [Easy](https://github.com/invict1/Cracking-Everything/tree/master/LeetCode/Easy) 
+   - [Medium](https://github.com/invict1/Cracking-Everything/tree/master/LeetCode/Medium) 
+   - [Hard](https://github.com/invict1/Cracking-Everything/tree/master/LeetCode/Hard) 
+   
+  ##### CTCI
+   - [Arrays & Strings](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Arrays%20-%20Strings)
+   - [Linked Lists](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Linked%20Lists)
+   - [Sorting & Searching](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Sorting%20-%20Searching)
+   - [Stacks & Queues](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Stacks%20-%20Queues)
+   - [Trees & Graphs](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Trees%20-%20Graphs)
+   - [Bit Manipulation](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Bit%20Manipulation)
+   - [Recursion & DP](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Recursion%20-%20DP)
+   - [Advanced](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Advanced)
 
 ## Competitive Programming
    ##### Platforms
@@ -72,6 +64,9 @@
    - [Contests Calendar 2](https://clist.by/)
 
 ## Innovation Contests
+   ##### Documents
+   - [Files](https://github.com/invict1/Cracking-Everything/tree/master/Innovation) 
+
    ##### Contests
    - [Campus Party](https://a)
    - [Rally de Innovacion](https://a)
