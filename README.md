@@ -13,11 +13,7 @@
    -
    
   ##### Trees and Graphs
-   - [Dijsktra's Algorithm](https://a)
-   - [Bellman-Ford Algorithm](https://a)
-   - [Floyd-Warshall Algorithm](https://a)
-   - [Prim's Algorithms](https://a)
-   - [Kruskal's Algorithm](https://a)
+   -
    
   ##### Bit Manipulation
    - [Understanding Bitwise Operators](https://code.tutsplus.com/articles/understanding-bitwise-operators--active-11301)  
@@ -29,7 +25,6 @@
    - [Union-Find](https://a)
    
   ##### Advanced Topics
-   - [Red-Black Trees](https://a)
    - [P, NP, NP-Complete, NP-Hard](https://stackoverflow.com/questions/1857244/what-are-the-differences-between-np-np-complete-and-np-hard)
   
   ##### Others
