@@ -35,6 +35,9 @@
   ##### Others
    - [BFS](https://a)
    - [DFS](https://a)
+   
+  ##### Systems Design]
+   - [All Systems Design](https://www.educative.io/collection/page/5668639101419520/5649050225344512/5673385510043648)
 
 ## Practice Exercises
 ### Leetcode
