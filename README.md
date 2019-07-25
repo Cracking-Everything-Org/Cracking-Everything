@@ -22,14 +22,13 @@
    - 
    
   ##### Data Structures
-   - [Union-Find](https://a)
+   -
    
   ##### Advanced Topics
    - [P, NP, NP-Complete, NP-Hard](https://stackoverflow.com/questions/1857244/what-are-the-differences-between-np-np-complete-and-np-hard)
   
   ##### Others
-   - [BFS](https://a)
-   - [DFS](https://a)
+   -
    
   ##### Systems Design
    - [All Systems Design](https://www.educative.io/collection/page/5668639101419520/5649050225344512/5673385510043648)
@@ -58,7 +57,7 @@
    - [Contests Calendar](https://www.hackerrank.com/calendar)
    - [Contests Calendar 2](https://clist.by/)
 
-## Innovation Contests
+## Innovation
    ##### Documents
    - [Files](https://github.com/invict1/Cracking-Everything/tree/master/Innovation) 
 
