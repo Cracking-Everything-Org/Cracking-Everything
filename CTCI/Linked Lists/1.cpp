@@ -1,4 +1,5 @@
 using namespace std;
+#include <iostream> 
 
 typedef int DataType;
 
@@ -14,10 +15,10 @@ struct Node
 
 
 Node* removeDups(Node *list){
-    if(list != NULL) return NULL;
+    if(list != nullptr) return nullptr;
     else{
         Node *top = list;
-        while(list->next!=NULL){
+        while(list->next!=nullptr){
             if(list->next.data == list.data){
                 deleteNext(list);
             }else{
@@ -28,7 +29,7 @@ Node* removeDups(Node *list){
     }
 }
 
-void deleteNext(Node &list){
+void deleteNext(Node *list){
     Node *toDelete = list->next;
     list->next = list->next->next;
     delete toDelete;
