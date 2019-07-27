@@ -17,7 +17,7 @@ struct Node
 };
 
 bool palindrome(Node* word){
-    stack<int> stk = {};
+    stack<int> stk;
     Node* faster = word;
     Node* slower = word;
     while(faster && faster->next){
