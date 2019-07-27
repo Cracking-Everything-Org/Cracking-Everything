@@ -64,11 +64,16 @@ to_string(123);           // "123"
 getline(cin, s);          // Read line ending in '\n'
 ```
 
-## `vector` (Variable sized array/stack with built in memory allocation)
+## `stack` `vector` (Variable sized array/stack with built in memory allocation)
 
 ```cpp
-#include <vector>         // Include vector (std namespace)
+#include <stack>
+stack<int> stk;           // empty stack
+stk.push(3);              // {3}
+stk.top();                // 3
+stk.pop();                // { }
 
+#include <vector>         // Include vector (std namespace)
 vector<int> a(10);        // a[0]..a[9] are int (default size is 0)
 vector<int> b{1,2,3};        // Create vector with values 1,2,3
 a.size();                 // Number of elements (10)
