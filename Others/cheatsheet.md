@@ -60,6 +60,7 @@ s1[0];                    // 'h'
 s1.substr(m, n);          // Substring of size n starting at s1[m]
 s1.c_str();               // Convert to const char*
 s1 = to_string(12.05);    // Converts number to string
+to_string(123);           // "123"
 getline(cin, s);          // Read line ending in '\n'
 ```
 
