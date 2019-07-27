@@ -15,11 +15,11 @@ struct Node
 
 
 Node* removeDups(Node *list){
-    if(list != nullptr) return nullptr;
+    if(list == NULL) return NULL;
     else{
         Node *top = list;
         while(list->next!=nullptr){
-            if(list->next.data == list.data){
+            if(list->next->data == list->data){
                 deleteNext(list);
             }else{
                 list =list->next;
