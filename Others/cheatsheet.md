@@ -86,7 +86,7 @@ vector<T> c(n, x);        // c[0]..c[n-1] init to x
 T d[10]; vector<T> e(d, d+10);      // e is initialized from d
 ```
 
-## `algorithm` (A collection of 60 algorithms on sequences with iterators)
+## `algorithm` (A collection of algorithms on sequences with iterators)
 
 ```cpp
 #include <algorithm>      // Include algorithm (std namespace)
@@ -97,7 +97,7 @@ sort(a.begin(), a.end()); // Sort vector or deque
 reverse(a.begin(), a.end()); // Reverse vector or deque
 ```
 
-## `iostream.h`, `iostream` (Replaces `stdio.h`)
+## `iostream.h`, `iostream` (Replaces `stdio.h`; `cin`, `cout`)
 
 ```cpp
 #include <iostream>         // Include iostream (std namespace)
@@ -113,156 +113,52 @@ istream& operator>>(istream& i, T& x) {i >> ...; x=...; return i;}
 ostream& operator<<(ostream& o, const T& x) {return o << ...;}
 ```
 
-## Preprocessor
+## `fstream.h`, `fstream` (File I/O works like `cin`, `cout` as above)
 
 ```cpp
-                            // Comment to end of line
-                            /* Multi-line comment */
-#include  <stdio.h>         // Insert standard header file
-#include "myfile.h"         // Insert file in current directory
-#define X some text         // Replace X with some text
-#define F(a,b) a+b          // Replace F(1,2) with 1+2
-#define X \
- some text                  // Multiline definition
-#undef X                    // Remove definition
-#if defined(X)              // Conditional compilation (#ifdef X)
-#else                       // Optional (#ifndef X or #if !defined(X))
-#endif                      // Required after #if, #ifdef
+#include <fstream>          // Include filestream (std namespace)
+ifstream f1("filename");    // Open text file for reading
+if (f1)                     // Test if open and input available
+    f1 >> x;                // Read object from file
+f1.get(s);                  // Read char or line
+f1.getline(s, n);           // Read line into string s[n]
+ofstream f2("filename");    // Open file for writing
+if (f2) f2 << x;            // Write to file
 ```
 
-## Literals
+## `math.h`, `cmath`, `cstdlib` (floating point math)
 
 ```cpp
-255, 0377, 0xff             // Integers (decimal, octal, hex)
-2147483647L, 0x7fffffffl    // Long (32-bit) integers
-123.0, 1.23e2               // double (real) numbers
-'a', '\141', '\x61'         // Character (literal, octal, hex)
-'\n', '\\', '\'', '\"'      // Newline, backslash, single quote, double quote
-"string\n"                  // Array of characters ending with newline and \0
-"hello" "world"             // Concatenated strings
-true, false                 // bool constants 1 and 0
-nullptr                     // Pointer type with the address of 0
+#include <cmath>            // Include cmath (std namespace)
+sin(x); cos(x); tan(x);     // Trig functions, x (double) is in radians
+asin(x); acos(x); atan(x);  // Inverses
+atan2(y, x);                // atan(y/x)
+sinh(x); cosh(x); tanh(x);  // Hyperbolic sin, cos, tan functions
+exp(x); log(x); log10(x);   // e to the x, log base e, log base 10
+pow(x, y); sqrt(x);         // x to the y, square root
+ceil(x); floor(x);          // Round up or down (as a double)
+fabs(x); fmod(x, y);        // Absolute value, x mod y
+
+#include <cstdlib>
+abs(x);
 ```
 
-## Declarations
+## `assert.h`, `cassert` (Debugging Aid)
 
 ```cpp
-int x;                      // Declare x to be an integer (value undefined)
-int x=255;                  // Declare and initialize x to 255
-short s; long l;            // Usually 16 or 32 bit integer (int may be either)
-char c='a';                 // Usually 8 bit character
-unsigned char u=255;
-signed char s=-1;           // char might be either
-unsigned long x =
-  0xffffffffL;              // short, int, long are signed
-float f; double d;          // Single or double precision real (never unsigned)
-bool b=true;                // true or false, may also use int (1 or 0)
-int a, b, c;                // Multiple declarations
-int a[10];                  // Array of 10 ints (a[0] through a[9])
-int a[]={0,1,2};            // Initialized array (or a[3]={0,1,2}; )
-int a[2][2]={{1,2},{4,5}};  // Array of array of ints
-char s[]="hello";           // String (6 elements including '\0')
-std::string s = "Hello"     // Creates string object with value "Hello"
-std::string s = R"(Hello
-World)";                    // Creates string object with value "Hello\nWorld"
-int* p;                     // p is a pointer to (address of) int
-char* s="hello";            // s points to unnamed array containing "hello"
-void* p=nullptr;            // Address of untyped memory (nullptr is 0)
-int& r=x;                   // r is a reference to (alias of) int x
-enum weekend {SAT,SUN};     // weekend is a type with values SAT and SUN
-enum weekend day;           // day is a variable of type weekend
-enum weekend{SAT=0,SUN=1};  // Explicit representation as int
-enum {SAT,SUN} day;         // Anonymous enum
-enum class Color {Red,Blue};// Color is a strict type with values Red and Blue
-Color x = Color::Red;       // Assign Color x to red
-typedef String char*;       // String s; means char* s;
-const int c=3;              // Constants must be initialized, cannot assign to
-const int* p=a;             // Contents of p (elements of a) are constant
-int* const p=a;             // p (but not contents) are constant
-const int* const p=a;       // Both p and its contents are constant
-const int& cr=x;            // cr cannot be assigned to change x
-int8_t,uint8_t,int16_t,
-uint16_t,int32_t,uint32_t,
-int64_t,uint64_t            // Fixed length standard types
-auto it = m.begin();        // Declares it to the result of m.begin()
-auto const param = config["param"];
-                            // Declares it to the const result
-auto& s = singleton::instance();
-                            // Declares it to a reference of the result
+#include <cassert>        // Include iostream (std namespace)
+assert(e);                // If e is false, print message and abort
+#define NDEBUG            // (before #include <assert.h>), turn off assert
 ```
 
-## STORAGE Classes
+## `utility` (Pair)
 
 ```cpp
-int x;                      // Auto (memory exists only while in scope)
-static int x;               // Global lifetime even if local scope
-extern int x;               // Information only, declared elsewhere
+#include <utility>        // Include utility (std namespace)
+pair<string, int> a("hello", 3);  // A 2-element struct
+a.first;                  // "hello"
+a.second;                 // 3
 ```
-
-## Statements
-
-```cpp
-x=y;                        // Every expression is a statement
-int x;                      // Declarations are statements
-;                           // Empty statement
-{                           // A block is a single statement
-    int x;                  // Scope of x is from declaration to end of block
-}
-if (x) a;                   // If x is true (not 0), evaluate a
-else if (y) b;              // If not x and y (optional, may be repeated)
-else c;                     // If not x and not y (optional)
-
-while (x) a;                // Repeat 0 or more times while x is true
-
-for (x; y; z) a;            // Equivalent to: x; while(y) {a; z;}
-
-for (x : y) a;              // Range-based for loop e.g.
-                            // for (auto& x in someList) x.y();
-
-do a; while (x);            // Equivalent to: a; while(x) a;
-
-switch (x) {                // x must be int
-    case X1: a;             // If x == X1 (must be a const), jump here
-    case X2: b;             // Else if x == X2, jump here
-    default: c;             // Else jump here (optional)
-}
-break;                      // Jump out of while, do, or for loop, or switch
-continue;                   // Jump to bottom of while, do, or for loop
-return x;                   // Return x from function to caller
-try { a; }
-catch (T t) { b; }          // If a throws a T, then jump here
-catch (...) { c; }          // If a throws something else, jump here
-```
-
-## Functions
-
-```cpp
-int f(int x, int y);        // f is a function taking 2 ints and returning int
-void f();                   // f is a procedure taking no arguments
-void f(int a=0);            // f() is equivalent to f(0)
-f();                        // Default return type is int
-inline f();                 // Optimize for speed
-f() { statements; }         // Function definition (must be global)
-T operator+(T x, T y);      // a+b (if type T) calls operator+(a, b)
-T operator-(T x);           // -a calls function operator-(a)
-T operator++(int);          // postfix ++ or -- (parameter ignored)
-extern "C" {void f();}      // f() was compiled in C
-```
-
-Function parameters and return values may be of any type. A function must either be declared or defined before
-it is used. It may be declared first and defined later. Every program consists of a set of a set of global variable
-declarations and a set of function definitions (possibly in separate files), one of which must be:
-
-```cpp
-int main()  { statements... }     // or
-int main(int argc, char* argv[]) { statements... }
-```
-
-`argv` is an array of `argc` strings from the command line.
-By convention, `main` returns status `0` if successful, `1` or higher for errors.
-
-Functions with different parameters may have the same name (overloading). Operators except `::` `.` `.*` `?:` may be overloaded.
-Precedence order is not affected. New operators may not be created.
 
 ## Expressions
 
@@ -332,81 +228,6 @@ throw x                     // Throw exception, aborts if not caught
 x , y                       // evaluates x and y, returns y (seldom used)
 ```
 
-## Classes
-
-```cpp
-class T {                   // A new type
-private:                    // Section accessible only to T's member functions
-protected:                  // Also accessible to classes derived from T
-public:                     // Accessible to all
-    int x;                  // Member data
-    void f();               // Member function
-    void g() {return;}      // Inline member function
-    void h() const;         // Does not modify any data members
-    int operator+(int y);   // t+y means t.operator+(y)
-    int operator-();        // -t means t.operator-()
-    T(): x(1) {}            // Constructor with initialization list
-    T(const T& t): x(t.x) {}// Copy constructor
-    T& operator=(const T& t)
-    {x=t.x; return *this; } // Assignment operator
-    ~T();                   // Destructor (automatic cleanup routine)
-    explicit T(int a);      // Allow t=T(3) but not t=3
-    T(float x): T((int)x) {}// Delegate constructor to T(int)
-    operator int() const
-    {return x;}             // Allows int(t)
-    friend void i();        // Global function i() has private access
-    friend class U;         // Members of class U have private access
-    static int y;           // Data shared by all T objects
-    static void l();        // Shared code.  May access y but not x
-    class Z {};             // Nested class T::Z
-    typedef int V;          // T::V means int
-};
-void T::f() {               // Code for member function f of class T
-    this->x = x;}           // this is address of self (means x=x;)
-int T::y = 2;               // Initialization of static member (required)
-T::l();                     // Call to static member
-T t;                        // Create object t implicit call constructor
-t.f();                      // Call method f on object t
-
-struct T {                  // Equivalent to: class T { public:
-  virtual void i();         // May be overridden at run time by derived class
-  virtual void g()=0; };    // Must be overridden (pure virtual)
-class U: public T {         // Derived class U inherits all members of base T
-  public:
-  void g(int) override; };  // Override method g
-class V: private T {};      // Inherited members of T become private
-class W: public T, public U {};
-                            // Multiple inheritance
-class X: public virtual T {};
-                            // Classes derived from X have base T directly
-```
-
-All classes have a default copy constructor, assignment operator, and destructor, which perform the
-corresponding operations on each data member and each base class as shown above. There is also a default no-argument
-constructor (required to create arrays) if the class has no constructors. Constructors, assignment, and
-destructors do not inherit.
-
-## Templates
-
-```cpp
-template <class T> T f(T t);// Overload f for all types
-template <class T> class X {// Class with type parameter T
-  X(T t); };                // A constructor
-template <class T> X<T>::X(T t) {}
-                            // Definition of constructor
-X<int> x(3);                // An object of type "X of int"
-template <class T, class U=T, int n=0>
-                            // Template with default parameters
-```
-
-## Namespaces
-
-```cpp
-namespace N {class T {};}   // Hide name T
-N::T t;                     // Use name T in namespace N
-using namespace N;          // Make T visible without N::
-```
-
 ## `memory` (dynamic memory management)
 
 ```cpp
@@ -446,127 +267,63 @@ r = dynamic_pointer_cast<B>(t); // Converts t to a shared_ptr<B>
 
 ```
 
-## `math.h`, `cmath` (floating point math)
+## Literals
 
 ```cpp
-#include <cmath>            // Include cmath (std namespace)
-sin(x); cos(x); tan(x);     // Trig functions, x (double) is in radians
-asin(x); acos(x); atan(x);  // Inverses
-atan2(y, x);                // atan(y/x)
-sinh(x); cosh(x); tanh(x);  // Hyperbolic sin, cos, tan functions
-exp(x); log(x); log10(x);   // e to the x, log base e, log base 10
-pow(x, y); sqrt(x);         // x to the y, square root
-ceil(x); floor(x);          // Round up or down (as a double)
-fabs(x); fmod(x, y);        // Absolute value, x mod y
+255, 0377, 0xff             // Integers (decimal, octal, hex)
+2147483647L, 0x7fffffffl    // Long (32-bit) integers
+123.0, 1.23e2               // double (real) numbers
+'a', '\141', '\x61'         // Character (literal, octal, hex)
+'\n', '\\', '\'', '\"'      // Newline, backslash, single quote, double quote
+"string\n"                  // Array of characters ending with newline and \0
+"hello" "world"             // Concatenated strings
+true, false                 // bool constants 1 and 0
+nullptr                     // Pointer type with the address of 0
 ```
 
-## `assert.h`, `cassert` (Debugging Aid)
+## Declarations
 
 ```cpp
-#include <cassert>        // Include iostream (std namespace)
-assert(e);                // If e is false, print message and abort
-#define NDEBUG            // (before #include <assert.h>), turn off assert
-```
-
-## `fstream.h`, `fstream` (File I/O works like `cin`, `cout` as above)
-
-
-```cpp
-#include <fstream>          // Include filestream (std namespace)
-ifstream f1("filename");    // Open text file for reading
-if (f1)                     // Test if open and input available
-    f1 >> x;                // Read object from file
-f1.get(s);                  // Read char or line
-f1.getline(s, n);           // Read line into string s[n]
-ofstream f2("filename");    // Open file for writing
-if (f2) f2 << x;            // Write to file
-```
-
-## `deque` (Array stack queue)
-
-`deque<T>` is like `vector<T>`, but also supports:
-
-```cpp
-#include <deque>          // Include deque (std namespace)
-a.push_front(x);          // Puts x at a[0], shifts elements toward back
-a.pop_front();            // Removes a[0], shifts toward front
-```
-
-## `utility` (pair)
-
-```cpp
-#include <utility>        // Include utility (std namespace)
-pair<string, int> a("hello", 3);  // A 2-element struct
-a.first;                  // "hello"
-a.second;                 // 3
-```
-
-## `chrono` (Time related library)
-```cpp
-#include <chrono>         // Include chrono
-using namespace std::chrono; // Use namespace
-auto from =               // Get current time_point
-  high_resolution_clock::now();
-// ... do some work       
-auto to =                 // Get current time_point
-  high_resolution_clock::now();
-using ms =                // Define ms as floating point duration
-  duration<float, milliseconds::period>;
-                          // Compute duration in milliseconds
-cout << duration_cast<ms>(to - from)
-  .count() << "ms";
-```
-
-## `thread` (Multi-threading library)
-```cpp
-#include <thread>         // Include thread
-unsigned c = 
-  hardware_concurrency(); // Hardware threads (or 0 for unknown)
-auto lambdaFn = [](){     // Lambda function used for thread body
-    cout << "Hello multithreading";
-};
-thread t(lambdaFn);       // Create and run thread with lambda
-t.join();                 // Wait for t finishes
-
-// --- shared resource example ---
-mutex mut;                         // Mutex for synchronization
-condition_variable cond;           // Shared condition variable
-const char* sharedMes              // Shared resource
-  = nullptr;
-auto pingPongFn =                  // thread body (lambda). Print someone else's message
-  [&](const char* mes){
-    while (true){
-      unique_lock<mutex> lock(mut);// locks the mutex 
-      do {                
-        cond.wait(lock, [&](){     // wait for condition to be true (unlocks while waiting which allows other threads to modify)        
-          return sharedMes != mes; // statement for when to continue
-        });
-      } while (sharedMes == mes);  // prevents spurious wakeup
-      cout << sharedMes << endl;
-      sharedMes = mes;       
-      lock.unlock();               // no need to have lock on notify 
-      cond.notify_all();           // notify all condition has changed
-    }
-  };
-sharedMes = "ping";
-thread t1(pingPongFn, sharedMes);  // start example with 3 concurrent threads
-thread t2(pingPongFn, "pong");
-thread t3(pingPongFn, "boing");
-```
-
-## `future` (thread support library)
-```cpp
-#include <future>         // Include future
-function<int(int)> fib =  // Create lambda function
-  [&](int i){
-    if (i <= 1){
-      return 1;
-    }
-    return fib(i-1) 
-         + fib(i-2);
-  };
-future<int> fut =         // result of async function
-  async(launch::async, fib, 4); // start async function in other thread
-// do some other work 
-cout << fut.get();        // get result of async function. Wait if needed.
+int x;                      // Declare x to be an integer (value undefined)
+int x=255;                  // Declare and initialize x to 255
+short s; long l;            // Usually 16 or 32 bit integer (int may be either)
+char c='a';                 // Usually 8 bit character
+unsigned char u=255;
+signed char s=-1;           // char might be either
+unsigned long x =
+  0xffffffffL;              // short, int, long are signed
+float f; double d;          // Single or double precision real (never unsigned)
+bool b=true;                // true or false, may also use int (1 or 0)
+int a, b, c;                // Multiple declarations
+int a[10];                  // Array of 10 ints (a[0] through a[9])
+int a[]={0,1,2};            // Initialized array (or a[3]={0,1,2}; )
+int a[2][2]={{1,2},{4,5}};  // Array of array of ints
+char s[]="hello";           // String (6 elements including '\0')
+std::string s = "Hello"     // Creates string object with value "Hello"
+std::string s = R"(Hello
+World)";                    // Creates string object with value "Hello\nWorld"
+int* p;                     // p is a pointer to (address of) int
+char* s="hello";            // s points to unnamed array containing "hello"
+void* p=nullptr;            // Address of untyped memory (nullptr is 0)
+int& r=x;                   // r is a reference to (alias of) int x
+enum weekend {SAT,SUN};     // weekend is a type with values SAT and SUN
+enum weekend day;           // day is a variable of type weekend
+enum weekend{SAT=0,SUN=1};  // Explicit representation as int
+enum {SAT,SUN} day;         // Anonymous enum
+enum class Color {Red,Blue};// Color is a strict type with values Red and Blue
+Color x = Color::Red;       // Assign Color x to red
+typedef String char*;       // String s; means char* s;
+const int c=3;              // Constants must be initialized, cannot assign to
+const int* p=a;             // Contents of p (elements of a) are constant
+int* const p=a;             // p (but not contents) are constant
+const int* const p=a;       // Both p and its contents are constant
+const int& cr=x;            // cr cannot be assigned to change x
+int8_t,uint8_t,int16_t,
+uint16_t,int32_t,uint32_t,
+int64_t,uint64_t            // Fixed length standard types
+auto it = m.begin();        // Declares it to the result of m.begin()
+auto const param = config["param"];
+                            // Declares it to the const result
+auto& s = singleton::instance();
+                            // Declares it to a reference of the result
 ```
