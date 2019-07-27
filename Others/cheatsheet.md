@@ -1,3 +1,85 @@
+## `unordered_map` (associative array - usually implemented as HASH TABLE - avg. time complexity: O(1))
+
+```cpp
+#include <unordered_map>  // Include map (std namespace)
+unordered_map<string, int> a; // Map from string to int
+a["hello"] = 3;           // Add or replace element a["hello"]
+for (auto& p:a)
+    cout << p.first << p.second;  // Prints hello, 3
+a.size();                 // 1
+```
+
+## `unordered_set` (store unique elements - usually implemented as a HASH SET - avg. time complexity: O(1))
+
+```cpp
+#include <unordered_set>  // Include set (std namespace)
+unordered_set<int> s;     // Set of integers
+s.insert(123);            // Add element to set
+if (s.find(123) != s.end()) // Search for an element
+    s.erase(123);
+cout << s.size();         // Number of elements in set
+```
+
+## `map` (associative array - usually implemented as binary search trees - avg. time complexity: O(log n))
+
+```cpp
+#include <map>            // Include map (std namespace)
+map<string, int> a;       // Map from string to int
+a["hello"] = 3;           // Add or replace element a["hello"]
+for (auto& p:a)
+    cout << p.first << p.second;  // Prints hello, 3
+a.size();                 // 1
+```
+
+## `set` (store unique elements - usually implemented as binary search trees - avg. time complexity: O(log n))
+
+```cpp
+#include <set>            // Include set (std namespace)
+set<int> s;               // Set of integers
+s.insert(123);            // Add element to set
+if (s.find(123) != s.end()) // Search for an element
+    s.erase(123);
+cout << s.size();         // Number of elements in set
+```
+
+## `string` (Variable sized character array)
+
+```cpp
+#include <string>         // Include string (std namespace)
+string s1, s2="hello";    // Create strings
+s1.size(), s2.size();     // Number of characters: 0, 5
+s1 += s2 + ' ' + "world"; // Concatenation
+s1 == "hello world"       // Comparison, also <, >, !=, etc.
+s1[0];                    // 'h'
+s1.substr(m, n);          // Substring of size n starting at s1[m]
+s1.c_str();               // Convert to const char*
+s1 = to_string(12.05);    // Converts number to string
+getline(cin, s);          // Read line ending in '\n'
+```
+
+## `vector` (Variable sized array/stack with built in memory allocation)
+
+```cpp
+#include <vector>         // Include vector (std namespace)
+vector<int> a(10);        // a[0]..a[9] are int (default size is 0)
+vector<int> b{1,2,3};        // Create vector with values 1,2,3
+a.size();                 // Number of elements (10)
+a.push_back(3);           // Increase size to 11, a[10]=3
+a.back()=4;               // a[10]=4;
+a.pop_back();             // Decrease size by 1
+a.front();                // a[0];
+a[20]=1;                  // Crash: not bounds checked
+a.at(20)=1;               // Like a[20] but throws out_of_range()
+for (int& p : a)
+  p=0;                    // C++11: Set all elements of a to 0
+for (vector<int>::iterator p=a.begin(); p!=a.end(); ++p)
+  *p=0;                   // C++03: Set all elements of a to 0
+vector<int> b(a.begin(), a.end());  // b is copy of a
+vector<T> c(n, x);        // c[0]..c[n-1] init to x
+T d[10]; vector<T> e(d, d+10);      // e is initialized from d
+```
+
+
 ## Preprocessor
 
 ```cpp
@@ -383,43 +465,6 @@ ofstream f2("filename");    // Open file for writing
 if (f2) f2 << x;            // Write to file
 ```
 
-## `string` (Variable sized character array)
-
-```cpp
-#include <string>         // Include string (std namespace)
-string s1, s2="hello";    // Create strings
-s1.size(), s2.size();     // Number of characters: 0, 5
-s1 += s2 + ' ' + "world"; // Concatenation
-s1 == "hello world"       // Comparison, also <, >, !=, etc.
-s1[0];                    // 'h'
-s1.substr(m, n);          // Substring of size n starting at s1[m]
-s1.c_str();               // Convert to const char*
-s1 = to_string(12.05);    // Converts number to string
-getline(cin, s);          // Read line ending in '\n'
-```
-
-## `vector` (Variable sized array/stack with built in memory allocation)
-
-```cpp
-#include <vector>         // Include vector (std namespace)
-vector<int> a(10);        // a[0]..a[9] are int (default size is 0)
-vector<int> b{1,2,3};        // Create vector with values 1,2,3
-a.size();                 // Number of elements (10)
-a.push_back(3);           // Increase size to 11, a[10]=3
-a.back()=4;               // a[10]=4;
-a.pop_back();             // Decrease size by 1
-a.front();                // a[0];
-a[20]=1;                  // Crash: not bounds checked
-a.at(20)=1;               // Like a[20] but throws out_of_range()
-for (int& p : a)
-  p=0;                    // C++11: Set all elements of a to 0
-for (vector<int>::iterator p=a.begin(); p!=a.end(); ++p)
-  *p=0;                   // C++03: Set all elements of a to 0
-vector<int> b(a.begin(), a.end());  // b is copy of a
-vector<T> c(n, x);        // c[0]..c[n-1] init to x
-T d[10]; vector<T> e(d, d+10);      // e is initialized from d
-```
-
 ## `deque` (Array stack queue)
 
 `deque<T>` is like `vector<T>`, but also supports:
@@ -437,50 +482,6 @@ a.pop_front();            // Removes a[0], shifts toward front
 pair<string, int> a("hello", 3);  // A 2-element struct
 a.first;                  // "hello"
 a.second;                 // 3
-```
-
-## `map` (associative array - usually implemented as binary search trees - avg. time complexity: O(log n))
-
-```cpp
-#include <map>            // Include map (std namespace)
-map<string, int> a;       // Map from string to int
-a["hello"] = 3;           // Add or replace element a["hello"]
-for (auto& p:a)
-    cout << p.first << p.second;  // Prints hello, 3
-a.size();                 // 1
-```
-
-## `unordered_map` (associative array - usually implemented as hash table - avg. time complexity: O(1))
-
-```cpp
-#include <unordered_map>  // Include map (std namespace)
-unordered_map<string, int> a; // Map from string to int
-a["hello"] = 3;           // Add or replace element a["hello"]
-for (auto& p:a)
-    cout << p.first << p.second;  // Prints hello, 3
-a.size();                 // 1
-```
-
-## `set` (store unique elements - usually implemented as binary search trees - avg. time complexity: O(log n))
-
-```cpp
-#include <set>            // Include set (std namespace)
-set<int> s;               // Set of integers
-s.insert(123);            // Add element to set
-if (s.find(123) != s.end()) // Search for an element
-    s.erase(123);
-cout << s.size();         // Number of elements in set
-```
-
-## `unordered_set` (store unique elements - usually implemented as a hash set - avg. time complexity: O(1))
-
-```cpp
-#include <unordered_set>  // Include set (std namespace)
-unordered_set<int> s;     // Set of integers
-s.insert(123);            // Add element to set
-if (s.find(123) != s.end()) // Search for an element
-    s.erase(123);
-cout << s.size();         // Number of elements in set
 ```
 
 ## `algorithm` (A collection of 60 algorithms on sequences with iterators)
