@@ -28,7 +28,7 @@
    - [P, NP, NP-Complete, NP-Hard](https://stackoverflow.com/questions/1857244/what-are-the-differences-between-np-np-complete-and-np-hard)
   
   ##### Others
-   -
+   - [C++ Cheat Sheet](https://github.com/invict1/Cracking-Everything/blob/master/Others/cheatsheet.md)
    
   ##### Systems Design
    - [All Systems Design](https://www.educative.io/collection/page/5668639101419520/5649050225344512/5673385510043648)
