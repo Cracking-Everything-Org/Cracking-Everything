@@ -1,29 +1,33 @@
-## `unordered_map` (associative array - usually implemented as HASH TABLE - avg. time complexity: O(1))
+## `unordered_map` (HASH TABLE - avg. time complexity: O(1))
 
 ```cpp
 #include <unordered_map>  // Include map (std namespace)
+
 unordered_map<string, int> a; // Map from string to int
-a["hello"] = 3;           // Add or replace element a["hello"]
+a["another"] = 4; // Add or replace element a["hello"]
+a.find("hello");    // 3
 for (auto& p:a)
-    cout << p.first << p.second;  // Prints hello, 3
-a.size();                 // 1
+    cout << p.first << p.second << endl;  // Prints hello 3 ; another 4
+a.size();       // 2
 ```
 
-## `unordered_set` (store unique elements - usually implemented as a HASH SET - avg. time complexity: O(1))
+## `unordered_set` (HASH SET - avg. time complexity: O(1))
 
 ```cpp
 #include <unordered_set>  // Include set (std namespace)
+
 unordered_set<int> s;     // Set of integers
 s.insert(123);            // Add element to set
-if (s.find(123) != s.end()) // Search for an element
+if (s.find(123) != s.end()) // find returns end iterator if key is not found, else it returns iterator to that key
     s.erase(123);
-cout << s.size();         // Number of elements in set
+s.size();         // Number of elements in set
 ```
 
 ## `map` (associative array - usually implemented as binary search trees - avg. time complexity: O(log n))
 
 ```cpp
 #include <map>            // Include map (std namespace)
+
 map<string, int> a;       // Map from string to int
 a["hello"] = 3;           // Add or replace element a["hello"]
 for (auto& p:a)
@@ -35,6 +39,7 @@ a.size();                 // 1
 
 ```cpp
 #include <set>            // Include set (std namespace)
+
 set<int> s;               // Set of integers
 s.insert(123);            // Add element to set
 if (s.find(123) != s.end()) // Search for an element
@@ -46,6 +51,7 @@ cout << s.size();         // Number of elements in set
 
 ```cpp
 #include <string>         // Include string (std namespace)
+
 string s1, s2="hello";    // Create strings
 s1.size(), s2.size();     // Number of characters: 0, 5
 s1 += s2 + ' ' + "world"; // Concatenation
@@ -61,6 +67,7 @@ getline(cin, s);          // Read line ending in '\n'
 
 ```cpp
 #include <vector>         // Include vector (std namespace)
+
 vector<int> a(10);        // a[0]..a[9] are int (default size is 0)
 vector<int> b{1,2,3};        // Create vector with values 1,2,3
 a.size();                 // Number of elements (10)
@@ -79,6 +86,32 @@ vector<T> c(n, x);        // c[0]..c[n-1] init to x
 T d[10]; vector<T> e(d, d+10);      // e is initialized from d
 ```
 
+## `algorithm` (A collection of 60 algorithms on sequences with iterators)
+
+```cpp
+#include <algorithm>      // Include algorithm (std namespace)
+min(x, y); max(x, y);     // Smaller/larger of x, y (any type defining <)
+swap(x, y);               // Exchange values of variables x and y
+sort(a, a+n);             // Sort array a[0]..a[n-1] by <
+sort(a.begin(), a.end()); // Sort vector or deque
+reverse(a.begin(), a.end()); // Reverse vector or deque
+```
+
+## `iostream.h`, `iostream` (Replaces `stdio.h`)
+
+```cpp
+#include <iostream>         // Include iostream (std namespace)
+cin >> x >> y;              // Read words x and y (any type) from stdin
+cout << "x=" << 3 << endl;  // Write line to stdout
+cerr << x << y << flush;    // Write to stderr and flush
+c = cin.get();              // c = getchar();
+cin.get(c);                 // Read char
+cin.getline(s, n, '\n');    // Read line into char s[n] to '\n' (default)
+if (cin)                    // Good state (not EOF)?
+                            // To read/write any type T:
+istream& operator>>(istream& i, T& x) {i >> ...; x=...; return i;}
+ostream& operator<<(ostream& o, const T& x) {return o << ...;}
+```
 
 ## Preprocessor
 
@@ -435,22 +468,6 @@ assert(e);                // If e is false, print message and abort
 #define NDEBUG            // (before #include <assert.h>), turn off assert
 ```
 
-## `iostream.h`, `iostream` (Replaces `stdio.h`)
-
-```cpp
-#include <iostream>         // Include iostream (std namespace)
-cin >> x >> y;              // Read words x and y (any type) from stdin
-cout << "x=" << 3 << endl;  // Write line to stdout
-cerr << x << y << flush;    // Write to stderr and flush
-c = cin.get();              // c = getchar();
-cin.get(c);                 // Read char
-cin.getline(s, n, '\n');    // Read line into char s[n] to '\n' (default)
-if (cin)                    // Good state (not EOF)?
-                            // To read/write any type T:
-istream& operator>>(istream& i, T& x) {i >> ...; x=...; return i;}
-ostream& operator<<(ostream& o, const T& x) {return o << ...;}
-```
-
 ## `fstream.h`, `fstream` (File I/O works like `cin`, `cout` as above)
 
 
@@ -482,17 +499,6 @@ a.pop_front();            // Removes a[0], shifts toward front
 pair<string, int> a("hello", 3);  // A 2-element struct
 a.first;                  // "hello"
 a.second;                 // 3
-```
-
-## `algorithm` (A collection of 60 algorithms on sequences with iterators)
-
-```cpp
-#include <algorithm>      // Include algorithm (std namespace)
-min(x, y); max(x, y);     // Smaller/larger of x, y (any type defining <)
-swap(x, y);               // Exchange values of variables x and y
-sort(a, a+n);             // Sort array a[0]..a[n-1] by <
-sort(a.begin(), a.end()); // Sort vector or deque
-reverse(a.begin(), a.end()); // Reverse vector or deque
 ```
 
 ## `chrono` (Time related library)
