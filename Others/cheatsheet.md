@@ -77,6 +77,7 @@ stk.pop();                // { }
 vector<int> a(10);        // a[0]..a[9] are int (default size is 0)
 vector<int> b{1,2,3};        // Create vector with values 1,2,3
 a.size();                 // Number of elements (10)
+swap(a[0],a[1]);
 a.push_back(3);           // Increase size to 11, a[10]=3
 a.back()=4;               // a[10]=4;
 a.pop_back();             // Decrease size by 1
