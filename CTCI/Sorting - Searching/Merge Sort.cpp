@@ -10,7 +10,7 @@ void mergeSort(vector<int> list){
 
 void mergeSort(vector<int> list, vector<int> helper, int low, int high){
     if(low<high){
-        int middle = (low+(high-low))>>1;
+        int middle = (low+(high-low)>>1);
         mergeSort(list, helper, low, middle);
         mergeSort(list, helper, middle+1, high);
         merge(list, helper, low, middle, high);
