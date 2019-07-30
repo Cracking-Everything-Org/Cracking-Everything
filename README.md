@@ -84,6 +84,7 @@
   - [How to Win Coding Competitions: Secrets of Champions](https://www.edx.org/course/how-to-win-coding-competitions-secrets-of-champions-4)
   
   ##### Innovation
+  - [Entrepreneurship in Emerging Economies](https://www.edx.org/course/entrepreneurship-in-emerging-economies-2)
   - [The Iterative Innovation Process](https://courses.edx.org/courses/course-v1:MITx+3.086x+3T2018/course/)
   - [Design Thinking for Leading and Learning](https://www.edx.org/course/design-thinking-for-leading-and-learning-0)
   - [Becoming an Entrepreneur](https://www.edx.org/course/becoming-an-entrepreneur)
