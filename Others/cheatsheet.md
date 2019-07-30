@@ -3,11 +3,16 @@
 ```cpp
 #include <unordered_map>  // Include map (std namespace)
 
+unordered_map<string, string> HT;
+HT.insert({"asd","asd"});
+for(auto it :HT){ // itero sobre las keys
+    for(auto str :it.second){ // itero sobre las values
+        list.push_back(str);
+it.first; // devuelve la key
+
 unordered_map<string, int> a; // Map from string to int
 a["another"] = 4; // Add or replace element a["hello"]
 a.find("hello");    // 3
-for (auto& p:a)
-    cout << p.first << p.second << endl;  // Prints hello 3 ; another 4
 a.size();       // 2
 ```
 
@@ -101,6 +106,9 @@ min(x, y); max(x, y);     // Smaller/larger of x, y (any type defining <)
 swap(x, y);               // Exchange values of variables x and y
 sort(a, a+n);             // Sort array a[0]..a[n-1] by <
 sort(a.begin(), a.end()); // Sort vector or deque
+vector<char> strVector (str.begin(),str.end());
+sort(strVector.begin(), strVector.end());
+string vectorToStr (sVector.begin(),sVector.end());
 reverse(a.begin(), a.end()); // Reverse vector or deque
 ```
 
