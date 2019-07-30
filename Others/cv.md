@@ -5,7 +5,7 @@ National winner of the "Rally Latinoamericano de Innovacion" - oct. de 2017
 Centro de Innovacion en Ingenieria, ANFEI, CONFEDI
 
 Winner of the development and innovation contest #DondeGO - oct. de 2016   
-Campus Party Argentina event, in technopolis, Buenos Aires
+Campus Party Argentina
 
 Third place in "Rally Latinoamericano de Innovacion" - ago. de 2016  
 Centro de Innovacion en Ingenieria, ANFEI, CONFEDI
