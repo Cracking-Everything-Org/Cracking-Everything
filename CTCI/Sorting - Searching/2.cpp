@@ -12,9 +12,9 @@ void groupAnagrams(vector<string> list){
     }
 
     int index = 0;
-    for(auto key = HT.begin(); key!= HT.end(); ++key){
-        vector<string> strings = HT.find(key);
-        for(string str: strings){
+    vector<string> strings;
+    for(auto it :HT){
+        for(auto str :it.second){
             list[index]=str;
             index++;
         }
