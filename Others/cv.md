@@ -1,16 +1,24 @@
-Experiencia
-Oktana Corporation
+
+## Logros
+
+National winner of the "Rally Latinoamericano de Innovacion" - oct. de 2017  
+Centro de Innovacion en Ingenieria, ANFEI, CONFEDI
+
+Winner of the development and innovation contest #DondeGO - oct. de 2016   
+Campus Party Argentina event, in technopolis, Buenos Aires
+
+Third place in "Rally Latinoamericano de Innovacion" - ago. de 2016  
+Centro de Innovacion en Ingenieria, ANFEI, CONFEDI
+
+## Experiencia
+
+Oktana Corporation 
 Software Developer
-Nombre de la empresaOktana Corporation
-Fechas de empleoabr. de 2019 – actualidad
-Duración del empleo4 meses
+Fechas de empleo abr. de 2019 – actualidad
 
 Universidad ORT Uruguay
 Ayudante de programación
-Nombre de la empresaUniversidad ORT Uruguay
-Fechas de empleomar. de 2019 – actualidad
-Duración del empleo5 meses
-UbicaciónMontevideo
+Fechas de empleo mar. de 2019 – actualidad
 
 ## Educación
 
