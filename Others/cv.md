@@ -48,7 +48,7 @@ My main tasks were:
 Everything done in 24 hours.
 
 Winner of the development and innovation contest #DondeGO 
-- Entidad emisora del reconocimientoCampus Party Argentina : 09/2016 
+- Campus Party Argentina : 09/2016 
 Obtaining first place in the "DondeGO" innovation and development contest, in the Campus Party
 Argentina event, in technopolis, Buenos Aires.
 The winning idea was the application #DondeGO, which was designed as a solution to offer an interactive solution to raise awareness among the population about the ETS contagion, which was evaluated by a jury of the HUÉSPED Argentina Foundation and the GENOSHA development company.
