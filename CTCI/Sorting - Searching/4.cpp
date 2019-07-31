@@ -13,7 +13,7 @@ int sortedSearchNoSize(Listy list, int value){
 int binarySearch(Listy list, int value, int low, int high){
     int mid;
     while(low<high){
-        mid = low+(high-low)>>1;
+        mid = (high+low)>>1;
         if(list.elementAt(mid)<value){
             low = mid++;
         } else if(list.elementAt(high)>value){
