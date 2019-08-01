@@ -69,7 +69,7 @@ to_string(123);           // "123"
 getline(cin, s);          // Read line ending in '\n'
 ```
 
-## `stack` `vector` (Variable sized array/stack with built in memory allocation)
+## `stack` `vector` `queue` (Variable sized array/stack with built in memory allocation)
 
 ```cpp
 #include <stack>
@@ -96,6 +96,14 @@ for (vector<int>::iterator p=a.begin(); p!=a.end(); ++p)
 vector<int> b(a.begin(), a.end());  // b is copy of a
 vector<T> c(n, x);        // c[0]..c[n-1] init to x
 T d[10]; vector<T> e(d, d+10);      // e is initialized from d
+
+#include <queue>
+queue<int> queue;
+queue.push()              // adds to the end of the queue
+queue.pop()               // delete the first element
+queue.front()             // returns the first element
+queue.back()              // returns the last element
+
 ```
 
 ## `algorithm` (A collection of algorithms on sequences with iterators)
