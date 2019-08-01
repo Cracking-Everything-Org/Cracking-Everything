@@ -59,6 +59,8 @@
    ##### Contests Calendar
    - [Contests Calendar](https://www.hackerrank.com/calendar)
    - [Contests Calendar 2](https://clist.by/)
+  
+   - [GSOC](https://summerofcode.withgoogle.com/about/)
 
 ## Innovation
    ##### Documents
