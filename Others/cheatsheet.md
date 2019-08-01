@@ -98,11 +98,13 @@ vector<T> c(n, x);        // c[0]..c[n-1] init to x
 T d[10]; vector<T> e(d, d+10);      // e is initialized from d
 
 #include <queue>
-queue<int> queue;
-queue.push()              // adds to the end of the queue
-queue.pop()               // delete the first element
-queue.front()             // returns the first element
-queue.back()              // returns the last element
+queue<int> q;
+q.push()              // adds to the end of the queue
+q.pop()               // delete the first element
+q.front()             // return the first element
+q.back()              // return the last element
+q.empty()             // return true if que queue has no elements
+q.size()              // return the queue's size
 
 ```
 
