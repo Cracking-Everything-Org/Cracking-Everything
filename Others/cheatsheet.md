@@ -120,6 +120,11 @@ vector<char> strVector (str.begin(),str.end());
 sort(strVector.begin(), strVector.end());
 string vectorToStr (sVector.begin(),sVector.end());
 reverse(a.begin(), a.end()); // Reverse vector or deque
+INT_MIN
+abs(a);
+
+#include <cmath>
+fmax(a,b);
 ```
 
 ## `iostream.h`, `iostream` (Replaces `stdio.h`; `cin`, `cout`)
@@ -226,84 +231,8 @@ new T[x]                    // Address of allocated n-element array of T
 delete p                    // Destroy and free object at address p
 delete[] p                  // Destroy and free array of objects at p
 (T) x                       // Convert x to T (obsolete, use .._cast<T>(x))
-
-x * y                       // Multiply
-x / y                       // Divide (integers round toward 0)
-x % y                       // Modulo (result has sign of x)
-
-x + y                       // Add, or \&x[y]
-x - y                       // Subtract, or number of elements from *x to *y
-x << y                      // x shifted y bits to left (x * pow(2, y))
-x >> y                      // x shifted y bits to right (x / pow(2, y))
-
-x < y                       // Less than
-x <= y                      // Less than or equal to
-x > y                       // Greater than
-x >= y                      // Greater than or equal to
-
-x & y                       // Bitwise and (3 & 6 is 2)
-x ^ y                       // Bitwise exclusive or (3 ^ 6 is 5)
-x | y                       // Bitwise or (3 | 6 is 7)
-x && y                      // x and then y (evaluates y only if x (not 0))
-x || y                      // x or else y (evaluates y only if x is false (0))
-x = y                       // Assign y to x, returns new value of x
-x += y                      // x = x + y, also -= *= /= <<= >>= &= |= ^=
-x ? y : z                   // y if x is true (nonzero), else z
 throw x                     // Throw exception, aborts if not caught
 x , y                       // evaluates x and y, returns y (seldom used)
-```
-
-## `memory` (dynamic memory management)
-
-```cpp
-#include <memory>           // Include memory (std namespace)
-shared_ptr<int> x;          // Empty shared_ptr to a integer on heap. Uses reference counting for cleaning up objects.
-x = make_shared<int>(12);   // Allocate value 12 on heap
-shared_ptr<int> y = x;      // Copy shared_ptr, implicit changes reference count to 2.
-cout << *y;                 // Dereference y to print '12'
-if (y.get() == x.get()) {   // Raw pointers (here x == y)
-    cout << "Same";  
-}  
-y.reset();                  // Eliminate one owner of object
-if (y.get() != x.get()) { 
-    cout << "Different";  
-}  
-if (y == nullptr) {         // Can compare against nullptr (here returns true)
-    cout << "Empty";  
-}  
-y = make_shared<int>(15);   // Assign new value
-cout << *y;                 // Dereference x to print '15'
-cout << *x;                 // Dereference x to print '12'
-weak_ptr<int> w;            // Create empty weak pointer
-w = y;                      // w has weak reference to y.
-if (shared_ptr<int> s = w.lock()) { // Has to be copied into a shared_ptr before usage
-    cout << *s;
-}
-unique_ptr<int> z;          // Create empty unique pointers
-unique_ptr<int> q;
-z = make_unique<int>(16);   // Allocate int (16) on heap. Only one reference allowed.
-q = move(z);                // Move reference from z to q.
-if (z == nullptr){
-    cout << "Z null";
-}
-cout << *q;
-shared_ptr<B> r;
-r = dynamic_pointer_cast<B>(t); // Converts t to a shared_ptr<B>
-
-```
-
-## Literals
-
-```cpp
-255, 0377, 0xff             // Integers (decimal, octal, hex)
-2147483647L, 0x7fffffffl    // Long (32-bit) integers
-123.0, 1.23e2               // double (real) numbers
-'a', '\141', '\x61'         // Character (literal, octal, hex)
-'\n', '\\', '\'', '\"'      // Newline, backslash, single quote, double quote
-"string\n"                  // Array of characters ending with newline and \0
-"hello" "world"             // Concatenated strings
-true, false                 // bool constants 1 and 0
-nullptr                     // Pointer type with the address of 0
 ```
 
 ## Declarations
