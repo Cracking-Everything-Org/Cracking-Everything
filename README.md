@@ -51,6 +51,10 @@
    - [Recursion & DP](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Recursion%20-%20DP)
    - [Advanced](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Advanced)
 
+  ##### Mock Interviews
+   - [Interviewing.io](https://interviewing.io/)
+   - [Pramp](https://www.pramp.com/#/)
+
 ## Competitive Programming
    ##### Platforms
    - [Codeforces](http://codeforces.com/profile/antimeta)
@@ -92,3 +96,6 @@
   - [The Iterative Innovation Process](https://courses.edx.org/courses/course-v1:MITx+3.086x+3T2018/course/)
   - [Design Thinking for Leading and Learning](https://www.edx.org/course/design-thinking-for-leading-and-learning-0)
   - [Becoming an Entrepreneur](https://www.edx.org/course/becoming-an-entrepreneur)
+
+  ##### Technologies
+  - [PluralSight Courses](https://www.pluralsight.com/search?q=code%20school)
