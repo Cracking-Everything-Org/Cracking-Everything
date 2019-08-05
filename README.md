@@ -99,4 +99,4 @@
   - [Becoming an Entrepreneur](https://www.edx.org/course/becoming-an-entrepreneur)
 
   ##### Technologies
-  - [PluralSight Courses](https://www.pluralsight.com/search?q=code%20school)
+  - [Code School: Accelerating Through Angular](https://app.pluralsight.com/library/courses/code-school-accelerating-through-angular)
