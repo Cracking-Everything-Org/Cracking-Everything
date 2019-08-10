@@ -39,7 +39,7 @@ int getPrev (int n){
     }
     int p = c0+c1;
     n &= ((~0) << (p+1));
-    int mask = (1<<(c1+1))=1;
+    int mask = (1<<(c1+1))-1;
     n|= mask << (c0-1);
 
     return n;
