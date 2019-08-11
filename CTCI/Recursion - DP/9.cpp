@@ -20,3 +20,10 @@ unordered_set<string> generateParens(int remaining){
     }
     return set;
 }
+
+string insertInside(string str, int i){
+    string result = str.substr(0, i+1);
+    result += "()";
+    result += str.substr(i+1, str.length()-1);
+    return result;
+}
