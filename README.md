@@ -59,6 +59,9 @@
    ##### Platforms
    - [Codeforces](http://codeforces.com/profile/antimeta)
    - [AtCoder](https://atcoder.jp/users/antimeta)
+   
+   ##### Others
+   - [Typing test](https://www.typingtest.com/)
 
    ##### Contests Calendar
    - [Contests Calendar](https://www.hackerrank.com/calendar)
