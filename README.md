@@ -1,3 +1,5 @@
+[.](https://github.com/invict1/Cracking-Everything/blob/master/Others/cheatsheet.md)
+
 ## Resources
 
   ##### Arrays and Strings
