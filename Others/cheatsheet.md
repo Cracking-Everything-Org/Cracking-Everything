@@ -128,6 +128,39 @@ abs(a);
 fmax(a,b);
 ```
 
+## Reading a text file using an ifstream (input file stream)
+
+- 1 Include the necessary headers.
+```cpp
+#include <fstream>
+using namespace std;
+```
+- 2 Declare an input file stream (ifstream) variable. For example,
+```cpp
+ifstream inFile;
+```
+- 3 Open the file stream. Path names in MS Windows use backslashes (\). Because the backslash is also the string escape character, it must be doubled. If the full path is not given, most systems will look in the directory that contains the object program. For example,
+```cpp
+inFile.open("C:\\temp\\datafile.txt");
+```
+- 4 Check that the file was opened. For example, the open fails if the file doesn't exist, or if it can't be read because another program is writing it. A failure can be detected with code like that below using the ! (logical not) operator:
+```cpp
+if (!inFile) {
+    cerr << "Unable to open file datafile.txt";
+    exit(1);   // call system to stop
+}
+```
+- 5 Read from the stream in the same way as cin. For example,
+```cpp
+while (inFile >> x) {
+  sum = sum + x;
+}
+```
+- 6 Close the input stream. Closing is essential for output streams to be sure all information has been written to the disk, but is also good practice for input streams to release system resources and make the file available for other programs that might need to write it.
+```cpp
+inFile.close();
+```
+
 ## `iostream.h`, `iostream` (Replaces `stdio.h`; `cin`, `cout`)
 
 ```cpp
