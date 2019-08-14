@@ -105,6 +105,6 @@
 
   ##### Technologies
   - [Code School: Accelerating Through Angular](https://app.pluralsight.com/library/courses/code-school-accelerating-through-angular)
-  - [Code School: Assembling Sass](https://app.pluralsight.com/library/courses/code-school-assembling-sass)
+  - [Code School: Assembling SaSS](https://app.pluralsight.com/library/courses/code-school-assembling-sass)
   - [Code School: Breaking the Ice with Regular Expressions](https://app.pluralsight.com/library/courses/code-school-breaking-the-ice-with-regular-expressions)
   - [Code School: Fundamentals of Design](https://app.pluralsight.com/library/courses/code-school-fundamentals-of-design)
