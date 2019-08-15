@@ -1,17 +1,14 @@
 using namespace std;
 #include <iostream>
-#include <fstream>
 
-void main () {
-    int k, a, b;
-    int c = 1;
-    scanf("%d", &k);
-    while(k--){
-        if(c>1) printf("\n");
-        scanf("%d %d", &a, &b);
-        if (a < b) printf("<");
-        else if (a > b) printf(">");
-        else printf("=");
-        c++; 
+int main () {
+    int n, x, y;
+    cin >> n;
+    while(n--){
+        cin >> x >> y;
+        if (x < y) cout << "<";
+        else if (x > y) cout << ">";
+        else cout << "=";
     }   
+    return 0;
 }
