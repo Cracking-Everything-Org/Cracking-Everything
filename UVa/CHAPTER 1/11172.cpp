@@ -9,6 +9,7 @@ int main () {
         if (x < y) cout << "<";
         else if (x > y) cout << ">";
         else cout << "=";
+        cout << endl;
     }   
     return 0;
 }
