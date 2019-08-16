@@ -1,19 +1,20 @@
 using namespace std;
 #include <iostream>
-#include <cmath>
 
-void main () {
+int main () {
     int lines,a,b,c;
     int i=1;
-    scanf("%d",&lines);
+    cin >> lines;
     while(lines--){
-        scanf("%d",&a);
-        scanf("%d",&b);
-        scanf("%d",&c);
-        int preMax = max(b,c);
-        if(a>b && a>c) printf("Case %d: %d\n",i,max(b,c));
-        else if(b>a && b>c) printf("Case %d: %d\n",i,max(a,c));
-        else if(c>a && c>b) printf("Case %d: %d\n",i,max(a,b));
+        cin >> a >> b >> c;
+        if(a>b && a>c) cout << "Case "<< i <<": " << max(b,c);
+        else if(a>b && a<c) cout << "Case "<< i <<": " << a;
+        else if(b>a && b>c) cout << "Case "<< i <<": " << max(a,c);
+        else if(b>a && b<c) cout << "Case "<< i <<": " << b;
+        else if(c>a && c>b) cout << "Case "<< i <<": " << max(a,b);
+        else cout << "Case "<< i <<": " << c;
+        cout << endl;
         i++;
     }
+    return 0;
 }
