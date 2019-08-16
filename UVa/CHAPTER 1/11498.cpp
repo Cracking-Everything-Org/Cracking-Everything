@@ -1,35 +1,21 @@
 using namespace std;
 #include <iostream>
-#include <fstream>
 
-void main () {
-    int queries, divisaX, divisaY;
-    bool valid = true;
-    while(valid){
-        scanf("%d", &queries);
-        scanf("%d %d", &divisaX, &divisaY);
-        while(queries--){
-            scanf("%d %d", &x, &y);
-            if(divisaX-x == 0 || divisaY-y==0) printf("divisa\n");
-            //W
-            else if(divisaX-x < 0){
-                //SW
-                if(divisaY-y < 0){
-                    printf("SO\n");
-                //NW
-                }else{
-                    printf("NO\n");
-                }
-            //E
-            } else {
-                //SE
-                if(divisaY-y < 0){
-                    printf("SE\n");
-                //NE
-                }else{
-                    printf("NE\n");
-                }
-            }
+int main () {
+    int divisaX, divisaY, actual, x, y;
+    cin >> actual;
+    while(actual != 0){
+        cin >> divisaX >> divisaY;
+        while(actual--){
+            cin >> x >> y;
+            if(divisaX == x || divisaY == y) cout << "divisa";
+            else if(x < divisaX && y < divisaY) cout << "SO";
+            else if(x < divisaX && y > divisaY) cout << "NO";
+            else if(x > divisaX && y < divisaY) cout << "SE";
+            else cout << "NE";
+            cout << endl;
         }
+        cin >> actual;
     }   
+    return 0;
 }
