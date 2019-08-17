@@ -77,10 +77,10 @@
   - [Design Thinking for Leading and Learning](https://www.edx.org/course/design-thinking-for-leading-and-learning-0)
   - [Becoming an Entrepreneur](https://www.edx.org/course/becoming-an-entrepreneur)
   ##### Technologies
-  - [Code School: Accelerating Through Angular](https://app.pluralsight.com/library/courses/code-school-accelerating-through-angular):white_check_mark:
-  - [Code School: Assembling SaSS](https://app.pluralsight.com/library/courses/code-school-assembling-sass):white_check_mark:
-  - [Code School: Breaking the Ice with Regular Expressions](https://app.pluralsight.com/library/courses/code-school-breaking-the-ice-with-regular-expressions):white_check_mark:
-  - [Code School: Fundamentals of Design](https://app.pluralsight.com/library/courses/code-school-fundamentals-of-design):white_check_mark:
+  - :white_check_mark:[Code School: Accelerating Through Angular](https://app.pluralsight.com/library/courses/code-school-accelerating-through-angular)
+  - :white_check_mark:[Code School: Assembling SaSS](https://app.pluralsight.com/library/courses/code-school-assembling-sass)
+  - :white_check_mark:[Code School: Breaking the Ice with Regular Expressions](https://app.pluralsight.com/library/courses/code-school-breaking-the-ice-with-regular-expressions)
+  - :white_check_mark:[Code School: Fundamentals of Design](https://app.pluralsight.com/library/courses/code-school-fundamentals-of-design)
   - [Cloud Computing Concepts, Part 1](https://www.coursera.org/learn/cloud-computing?)
   - [Full Stack Web and Multiplatform Mobile App Development Specialization](https://www.coursera.org/specializations/full-stack-mobile-app-development)
   - [Usable Security](https://www.coursera.org/learn/usable-security?)
