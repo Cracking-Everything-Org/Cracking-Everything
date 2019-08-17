@@ -2,24 +2,12 @@
   ##### Shortcuts  
    - [Cheatsheet](https://github.com/invict1/Cracking-Everything/blob/master/Others/cheatsheet.md)
    - [Template](https://github.com/invict1/Cracking-Everything/blob/master/UVa/competitive.h)
-  ##### Arrays and Strings
-   -
-  ##### Linked Lists
-   -  
   ##### Sorting and Searching
    - [Visualise Algorithms](https://visualgo.net/en)
    - [BucketSort & RadixSort](https://github.com/invict1/Cracking-Everything/blob/master/Others/Bucket%20Sort%20%26%20Radix%20Sort%20.pdf)
    - [External Sorting](https://www.geeksforgeeks.org/external-sorting/)
-  ##### Stacks and Queues
-   -
-  ##### Trees and Graphs
-   -
   ##### Bit Manipulation
    - [Understanding Bitwise Operators](https://code.tutsplus.com/articles/understanding-bitwise-operators--active-11301)  
-  ##### Recursion and Dynamic Programming
-   - 
-  ##### Data Structures
-   -
   ##### Advanced Topics
    - [P, NP, NP-Complete, NP-Hard](https://stackoverflow.com/questions/1857244/what-are-the-differences-between-np-np-complete-and-np-hard)
   ##### Systems Design
@@ -43,15 +31,12 @@
    - [Codeforces](http://codeforces.com/)
    - [AtCoder](https://atcoder.jp/)
    ##### Others
-   - [Typing test](https://www.typingtest.com/)
+   - [Typing Speed](https://www.typingtest.com/)
+   - [Training Camp](https://tc-arg.tk/2019.html#cronograma)
    ##### Contests Calendar
    - [Contests Calendar](https://www.hackerrank.com/calendar)
    - [Contests Calendar 2](https://clist.by/)
    - [GSOC](https://summerofcode.withgoogle.com/about/)
-## Innovation
-   ##### Documents
-   - [Files](https://github.com/invict1/Cracking-Everything/tree/master/Innovation) 
-   ##### Contests
    - [Campus Party](https://a)
    - [Rally de Innovacion](https://a)
    - [24 Horas de Innovacion](https://a)
