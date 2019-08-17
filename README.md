@@ -26,13 +26,13 @@
    - [All Systems Design](https://www.educative.io/collection/page/5668639101419520/5649050225344512/5673385510043648)
 ## Practice Exercises
   ##### CTCI
-   - :white_check_mark:[Arrays & Strings](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Arrays%20-%20Strings)
-   - :white_check_mark:[Linked Lists](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Linked%20Lists)
-   - :white_check_mark:[Sorting & Searching](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Sorting%20-%20Searching)
-   - :white_check_mark:[Stacks & Queues](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Stacks%20-%20Queues)
-   - :white_check_mark:[Trees & Graphs](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Trees%20-%20Graphs)
-   - :white_check_mark:[Bit Manipulation](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Bit%20Manipulation)
-   - :white_check_mark:[Recursion & DP](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Recursion%20-%20DP)
+   - [Arrays & Strings](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Arrays%20-%20Strings)
+   - [Linked Lists](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Linked%20Lists)
+   - [Sorting & Searching](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Sorting%20-%20Searching)
+   - [Stacks & Queues](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Stacks%20-%20Queues)
+   - [Trees & Graphs](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Trees%20-%20Graphs)
+   - [Bit Manipulation](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Bit%20Manipulation)
+   - [Recursion & DP](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Recursion%20-%20DP)
   ##### CP3
    - [UVa Problems](https://github.com/invict1/Cracking-Everything/tree/master/UVa)
   ##### Mock Interviews
