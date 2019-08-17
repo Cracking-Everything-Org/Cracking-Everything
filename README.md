@@ -1,6 +1,6 @@
 ## Resources
   ##### Shortcuts  
-   - [CheatSheet](https://github.com/invict1/Cracking-Everything/blob/master/Others/cheatsheet.md)
+   - [Cheatsheet](https://github.com/invict1/Cracking-Everything/blob/master/Others/cheatsheet.md)
    - [Template](https://github.com/invict1/Cracking-Everything/blob/master/UVa/competitive.h)
   ##### Arrays and Strings
    -
@@ -21,25 +21,18 @@
   ##### Data Structures
    -
   ##### Advanced Topics
-   - [P, NP, NP-Complete, NP-Hard](https://stackoverflow.com/questions/1857244/what-are-the-differences-between-np-np-complete-and-np-hard)  
-  ##### Others
-   - [C++ Cheat Sheet](https://github.com/invict1/Cracking-Everything/blob/master/Others/cheatsheet.md)
+   - [P, NP, NP-Complete, NP-Hard](https://stackoverflow.com/questions/1857244/what-are-the-differences-between-np-np-complete-and-np-hard)
   ##### Systems Design
    - [All Systems Design](https://www.educative.io/collection/page/5668639101419520/5649050225344512/5673385510043648)
 ## Practice Exercises
-   ##### LeetCode
-   - [Easy](https://github.com/invict1/Cracking-Everything/tree/master/LeetCode/Easy) 
-   - [Medium](https://github.com/invict1/Cracking-Everything/tree/master/LeetCode/Medium) 
-   - [Hard](https://github.com/invict1/Cracking-Everything/tree/master/LeetCode/Hard) 
   ##### CTCI
-   - [Arrays & Strings](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Arrays%20-%20Strings)
-   - [Linked Lists](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Linked%20Lists)
-   - [Sorting & Searching](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Sorting%20-%20Searching)
-   - [Stacks & Queues](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Stacks%20-%20Queues)
-   - [Trees & Graphs](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Trees%20-%20Graphs)
-   - [Bit Manipulation](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Bit%20Manipulation)
-   - [Recursion & DP](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Recursion%20-%20DP)
-   - [Advanced](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Advanced)
+   - :white_check_mark:[Arrays & Strings](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Arrays%20-%20Strings)
+   - :white_check_mark:[Linked Lists](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Linked%20Lists)
+   - :white_check_mark:[Sorting & Searching](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Sorting%20-%20Searching)
+   - :white_check_mark:[Stacks & Queues](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Stacks%20-%20Queues)
+   - :white_check_mark:[Trees & Graphs](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Trees%20-%20Graphs)
+   - :white_check_mark:[Bit Manipulation](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Bit%20Manipulation)
+   - :white_check_mark:[Recursion & DP](https://github.com/invict1/Cracking-Everything/tree/master/CTCI/Recursion%20-%20DP)
   ##### CP3
    - [UVa Problems](https://github.com/invict1/Cracking-Everything/tree/master/UVa)
   ##### Mock Interviews
@@ -63,16 +56,17 @@
    - [Rally de Innovacion](https://a)
    - [24 Horas de Innovacion](https://a)
 ## Books
-  - [Cracking the Coding Interview](http://ahmed-badawy.com/blog/wp-content/uploads/2018/10/Cracking-the-Coding-Interview-6th-Edition-189-Programming-Questions-and-Solutions.pdf):white_check_mark:
+  - :white_check_mark:[Cracking the Coding Interview](http://ahmed-badawy.com/blog/wp-content/uploads/2018/10/Cracking-the-Coding-Interview-6th-Edition-189-Programming-Questions-and-Solutions.pdf)
   - [Competitive Programming 3](https://www.pdfdrive.com/competitive-programming-3-e32649251.html)
   - [Tech Interview Handbook](https://yangshun.github.io/tech-interview-handbook/)
+  - [Introduction to Algorithms, Third Edition](https://ms.sapientia.ro/~kasa/Algorithms_3rd.pdf)
 ## Courses
   ##### Programming
-  - [Divide and Conquer, Sorting and Searching, and Randomized Algorithms](https://www.coursera.org/learn/algorithms-divide-conquer):white_check_mark:
-  - [Data Structures](https://www.coursera.org/learn/data-structures):white_check_mark:
-  - [Graph Search, Shortest Paths, and Data Structures](https://www.coursera.org/learn/algorithms-graphs-data-structures):white_check_mark:
-  - [Greedy Algorithms, Minimum Spanning Trees, and Dynamic Programming](https://www.coursera.org/learn/algorithms-greedy):white_check_mark:
-  - [Shortest Paths Revisited, NP-Complete Problems and What To Do About Them](https://www.coursera.org/learn/algorithms-npcomplete):white_check_mark:
+  - :white_check_mark:[Divide and Conquer, Sorting and Searching, and Randomized Algorithms](https://www.coursera.org/learn/algorithms-divide-conquer)
+  - :white_check_mark:[Data Structures](https://www.coursera.org/learn/data-structures)
+  - :white_check_mark:[Graph Search, Shortest Paths, and Data Structures](https://www.coursera.org/learn/algorithms-graphs-data-structures)
+  - :white_check_mark:[Greedy Algorithms, Minimum Spanning Trees, and Dynamic Programming](https://www.coursera.org/learn/algorithms-greedy)
+  - :white_check_mark:[Shortest Paths Revisited, NP-Complete Problems and What To Do About Them](https://www.coursera.org/learn/algorithms-npcomplete)
   - [Advanced Algorithms and Complexity](https://www.coursera.org/learn/advanced-algorithms-and-complexity)
   - [Competitive Programmer's Core Skills](https://www.coursera.org/learn/competitive-programming-core-skills)
   - [Algorithmic Toolbox](https://www.coursera.org/learn/algorithmic-toolbox)
