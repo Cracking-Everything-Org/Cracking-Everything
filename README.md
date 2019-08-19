@@ -58,7 +58,7 @@
   - :white_check_mark:[Breaking the Ice with Regular Expressions](https://app.pluralsight.com/library/courses/code-school-breaking-the-ice-with-regular-expressions)
   - :white_check_mark:[Fundamentals of Design](https://app.pluralsight.com/library/courses/code-school-fundamentals-of-design)
   - :white_check_mark:[Blockchain Basics](https://www.coursera.org/learn/blockchain-basics?) 
-  - [Smart Contracts](https://www.coursera.org/learn/smarter-contracts?)
+  - :white_check_mark:[Smart Contracts](https://www.coursera.org/learn/smarter-contracts?)
   - [Cloud Computing Applications, Part 1: Cloud Systems and Infrastructure](https://www.coursera.org/learn/cloud-applications-part1)
   - [Cloud Computing Applications, Part 2: Big Data and Applications in the Cloud](https://www.coursera.org/learn/cloud-applications-part2?)
   - [Introduction to Big Data](https://www.coursera.org/learn/big-data-introduction)
