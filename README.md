@@ -1,6 +1,7 @@
 ## Resources
   ##### Shortcuts  
    - [Cheatsheet](https://github.com/invict1/Cracking-Everything/blob/master/Others/cheatsheet.md)
+   - [Resume](https://github.com/invict1/Cracking-Everything/blob/master/Others/resume.md)
    - [Template](https://github.com/invict1/Cracking-Everything/blob/master/UVa/competitive.h)
   ##### Sorting and Searching
    - [Visualise Algorithms](https://visualgo.net/en)
