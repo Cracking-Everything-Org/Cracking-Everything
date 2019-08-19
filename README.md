@@ -41,6 +41,7 @@
    - [Campus Party](https://a)
    - [Rally de Innovacion](https://a)
    - [24 Horas de Innovacion](https://a)
+   - [Student Competitions](https://studentcompetitions.com/competitions)
 ## Books
   - :white_check_mark:[Cracking the Coding Interview](http://ahmed-badawy.com/blog/wp-content/uploads/2018/10/Cracking-the-Coding-Interview-6th-Edition-189-Programming-Questions-and-Solutions.pdf)
   - [Competitive Programming 3](https://www.pdfdrive.com/competitive-programming-3-e32649251.html)
