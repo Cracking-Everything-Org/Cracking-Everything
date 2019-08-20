@@ -34,6 +34,7 @@
    ##### Others
    - [Typing Speed](https://www.typingtest.com/)
    - [Training Camp](https://tc-arg.tk/2019.html#cronograma)
+   - [Training Camp](https://sites.google.com/site/trainingcampargentina2014/home/clases-teoricas)
    ##### Contests Calendar
    - [Contests Calendar](https://www.hackerrank.com/calendar)
    - [Contests Calendar 2](https://clist.by/)
