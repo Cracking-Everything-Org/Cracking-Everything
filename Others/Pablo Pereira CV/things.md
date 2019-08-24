@@ -1,6 +1,9 @@
-Pablo Pereira
-(+598)93388819 pablocpm1@gmail.com
-https://github.com/invict1/ - www.linkedin.com/in/pablocpm1
+###### Information
+- Pablo Pereira
+- (+598)93388819 
+- pablocpm1@gmail.com
+- https://github.com/invict1/ 
+- www.linkedin.com/in/pablocpm1
 
 ###### Professional Experience
 
@@ -56,14 +59,14 @@ Tasks performed: - Investigate the different problems in the water pipes in Urug
 
 ###### Programming Languages
 
-C++, Java, , C#
-PHP, SQL, Apex
-HTML5/CSS3, JavaScript
+C++, Java, , C#, 
+PHP, SQL, Apex, 
+HTML5/CSS3, JavaScript, 
 Haskell, Prolog
 
 ###### Software, platforms and frameworks
 
-Oracle SQL Developer, MySQL, Bootstrap, Git
-Visualforce, Lightning 
-AngularJS, jQuery, Sass
+Oracle SQL Developer, MySQL, Bootstrap, Git, 
+Visualforce, Lightning, 
+AngularJS, jQuery, Sass, 
 PowerBI
