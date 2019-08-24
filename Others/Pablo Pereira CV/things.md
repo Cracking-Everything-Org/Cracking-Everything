@@ -59,7 +59,7 @@ Tasks performed: - Investigate the different problems in the water pipes in Urug
 
 ###### Programming Languages
 
-C++, Java, , C#, 
+C++, Java, C#, 
 PHP, SQL, Apex, 
 HTML5/CSS3, JavaScript, 
 Haskell, Prolog, Solidity
