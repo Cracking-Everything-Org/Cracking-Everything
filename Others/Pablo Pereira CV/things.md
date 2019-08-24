@@ -62,7 +62,7 @@ Tasks performed: - Investigate the different problems in the water pipes in Urug
 C++, Java, , C#, 
 PHP, SQL, Apex, 
 HTML5/CSS3, JavaScript, 
-Haskell, Prolog
+Haskell, Prolog, Solidity
 
 ###### Software, platforms and frameworks
 
