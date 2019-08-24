@@ -27,6 +27,7 @@
   ##### Mock Interviews
    - [Interviewing.io](https://interviewing.io/)
    - [Pramp](https://www.pramp.com/#/)
+   - [InterviewBit](https://www.interviewbit.com/mock-interview/)
 ## Competitive Programming
    ##### Platforms
    - [Codeforces](http://codeforces.com/)
