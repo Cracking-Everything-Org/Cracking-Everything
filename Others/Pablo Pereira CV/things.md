@@ -56,12 +56,14 @@ Tasks performed: - Investigate the different problems in the water pipes in Urug
 
 ###### Programming Languages
 
-C++, Java, JavaScript, C#
-PHP, SQL
-HTML CSS3, Sass
+C++, Java, , C#
+PHP, SQL, Apex
+HTML5/CSS3, JavaScript
+Haskell, Prolog
+
+###### Software, platforms and frameworks
 
 Oracle SQL Developer, MySQL, Bootstrap, Git
-AngularJS, jQuery
-Apex, Visualforce, Lightning 
-Powerbi
-Haskell, Prolog
+Visualforce, Lightning 
+AngularJS, jQuery, Sass
+PowerBI
