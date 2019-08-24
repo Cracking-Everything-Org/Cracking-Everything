@@ -17,8 +17,8 @@ Teaching Assistant (Programming I and Programming II)
 
 ###### Education
      
-2018 / 2019 - ISCTE - University Institute of Lisbon, Portugal - Student Exchange 
-2016 / 2020 - Universidad ORT Uruguay, Uruguay - Systems bachelor's degree.
+- 2018 / 2019 - ISCTE - University Institute of Lisbon, Portugal - Student Exchange 
+- 2016 / 2020 - Universidad ORT Uruguay, Uruguay - Systems bachelor's degree.
 
 ###### Awards
 - 2017 - National winner of the "Rally Latinoamericano de Innovacion" - Centro de Innovacion en Ingenieria, ANFEI, CONFEDI
