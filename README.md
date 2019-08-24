@@ -59,7 +59,7 @@
   - :white_check_mark:[Cloud Computing Applications, Part 1: Cloud Systems and Infrastructure](https://www.coursera.org/learn/cloud-applications-part1)
   - :white_check_mark:[Cloud Computing Applications, Part 2: Big Data and Applications in the Cloud](https://www.coursera.org/learn/cloud-applications-part2?)
   - :white_check_mark:[The Data Scientist’s Toolbox](https://www.coursera.org/learn/data-scientists-tools?)
-  - [Usable Security](https://www.coursera.org/learn/usable-security?)
+  - :white_check_mark:[Usable Security](https://www.coursera.org/learn/usable-security?)
   - [Data Visualization](https://www.coursera.org/learn/datavisualization)
   - [Introduction to Big Data](https://www.coursera.org/learn/big-data-introduction)
   - [Big Data Modeling and Management Systems](https://www.coursera.org/learn/big-data-management?)
