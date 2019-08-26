@@ -66,4 +66,3 @@
   - [Structuring Machine Learning Projects](https://www.coursera.org/learn/machine-learning-projects?specialization=deep-learning)
   - [Convolutional Neural Networks](https://www.coursera.org/learn/convolutional-neural-networks?specialization=deep-learning)
   - [Sequence Models](https://www.coursera.org/learn/nlp-sequence-models)
-  .
