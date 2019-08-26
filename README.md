@@ -2,7 +2,7 @@
   ##### Shortcuts  
    - [Cheatsheet](https://github.com/invict1/Cracking-Everything/blob/master/Others/cheatsheet.md)
    - [Resume](https://github.com/invict1/Cracking-Everything/blob/master/Others/resume.md)
-   - [Template](https://github.com/invict1/Cracking-Everything/blob/master/UVa/competitive.h)
+   - [Template](https://github.com/invict1/Cracking-Everything/blob/master/competitive.h)
   ##### Sorting and Searching
    - [Visualise Algorithms](https://visualgo.net/en)
    - [BucketSort & RadixSort](https://github.com/invict1/Cracking-Everything/blob/master/Others/Bucket%20Sort%20%26%20Radix%20Sort%20.pdf)
