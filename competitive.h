@@ -36,7 +36,7 @@ void ex1() {
 			//...
 			if (rf.is_open()) 
 			{
-				if (costoOpt != MAX)
+				if (/*...*/)
 					rf << "Caso " << actual << ": " /*<< ... */ ;
 				else
 					rf << "Caso " << actual << ": " /*<< ... */ ;
