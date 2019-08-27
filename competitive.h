@@ -48,7 +48,7 @@ void ex1() {
 		rf.close();
 	}
 	else
-		cout << "Unable to open file";
+		cout << "ERROR OPEN FILE";
 }
 
 void ex2(){}
