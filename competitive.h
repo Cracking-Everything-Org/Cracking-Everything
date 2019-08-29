@@ -1,10 +1,15 @@
 #include <iostream>
 #include <fstream>
+#include <cstdio>
 #include <string>
+#include <vector>
 #include <queue>
+#include <deque>
 #include <stack>
-#include <set>
 #include <map>
+#include <set>
+#include <unordered_map>
+#include <unordered_set>
 #include <algorithm>
 #include <cmath>
 
@@ -14,7 +19,7 @@ using namespace std;
 #define ROF(i, a, b) for(ll i=ll(a); i>=ll(b); i--)
 #define MAX 1000000000
 #define MIN -1000000000
-#define endl '\n'
+#define endl "\n"
 
 typedef long long ll;
 typedef pair<ll, ll> ii;
@@ -35,7 +40,7 @@ void ex1() {
 			//...
 			if (rf.is_open()) 
 			{
-				if (costoOpt != MAX)
+				if (/*...*/)
 					rf << "Caso " << actual << ": " /*<< ... */ ;
 				else
 					rf << "Caso " << actual << ": " /*<< ... */ ;
@@ -47,7 +52,7 @@ void ex1() {
 		rf.close();
 	}
 	else
-		cout << "Unable to open file";
+		cout << "ERROR OPEN FILE";
 }
 
 void ex2(){}
@@ -57,13 +62,14 @@ void ex5(){}
 void ex6(){}
 
 int main() {
+	//ios::sync_with_stdio(false); //Hace el cin/cout + rapido pero no podemos usar prinf/scanf
+	//cin.tie(NULL); //Desactiva el flush del buffer de cout al realizar un cin
 	// ex1();
 	// ex2();
 	// ex3();
 	// ex4();
 	// ex5();
 	// ex6();
-
 	//system("pause");
 	return 0;
 }

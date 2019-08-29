@@ -49,7 +49,6 @@
   - [Tech Interview Handbook](https://yangshun.github.io/tech-interview-handbook/)
   - [Introduction to Algorithms, Third Edition](https://ms.sapientia.ro/~kasa/Algorithms_3rd.pdf)
 ## Courses
-  - [Data Visualization](https://www.coursera.org/learn/datavisualization)
   - [Introduction to Big Data](https://www.coursera.org/learn/big-data-introduction)
   - [Big Data Modeling and Management Systems](https://www.coursera.org/learn/big-data-management?)
   - [Software Security](https://www.coursera.org/learn/software-security?)
