@@ -45,9 +45,11 @@
    - [24 Horas de Innovacion](https://a)
    - [Student Competitions](https://studentcompetitions.com/competitions)
 ## Books
-  - [Competitive Programming 3](https://www.pdfdrive.com/competitive-programming-3-e32649251.html)
+  - [CTCI](https://a)
+  - [CP3](https://www.pdfdrive.com/competitive-programming-3-e32649251.html)
+  - [CPH](https://cses.fi/book/book.pdf)
+  - [Cormen](https://ms.sapientia.ro/~kasa/Algorithms_3rd.pdf)
   - [Tech Interview Handbook](https://yangshun.github.io/tech-interview-handbook/)
-  - [Introduction to Algorithms, Third Edition](https://ms.sapientia.ro/~kasa/Algorithms_3rd.pdf)
 ## Courses
   - [Introduction to Big Data](https://www.coursera.org/learn/big-data-introduction)
   - [Big Data Modeling and Management Systems](https://www.coursera.org/learn/big-data-management?)
