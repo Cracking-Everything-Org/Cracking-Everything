@@ -61,7 +61,7 @@ int main() {
         } else {
             cout <<  "Case #" << num << ":" << endl;
             cout << "No magic :(" << endl;
-        }
+        }   
         num ++;
     }
 	return 0;
