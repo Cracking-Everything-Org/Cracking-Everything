@@ -29,7 +29,8 @@ HT.find(input);                                                           // LOO
 HT.erase ("France");                                                      // ERASE
 HT.clear();                                                               // CLEAR
 
-first = {{"Star Wars","G. Lucas"},{"Alien","R. Scott"}}
+unordered_map<.,.>
+first = {{"Star Wars","G. Lucas"},{"Alien","R. Scott"}},
 second  = {{"Inception","C. Nolan"},{"Donnie Darko","R. Kelly"}};
 first.swap(second);                                                       // SWAP
 ```
@@ -37,13 +38,35 @@ first.swap(second);                                                       // SWA
 ## `unordered_set` (HASH SET - avg. time complexity: O(1))
 
 ```cpp
-#include <unordered_set>  // Include set (std namespace)
+#include <unordered_set> 
 
-unordered_set<int> s;     // Set of integers
-s.insert(123);            // Add element to set
+unordered_set<.> first;                                // empty
+unordered_set<.> second ( {"red","green","blue"} );    // init list
+unordered_set<.> third ( {"orange","pink","yellow"} ); // init list
+unordered_set<.> fourth ( second );                    // copy
+unordered_set<.> fifth ( cmerge(third,fourth) );       // move
+unordered_set<.> sixth ( fifth.begin(), fifth.end() ); // range
+
+for ( auto it = myset.begin(); it != myset.end(); ++it )
+    std::cout << " " << *it;
+    
+HS.find (input);
+
+HS.insert (mystring);                        // copy insertion
+HS.insert (mystring+"dish");                 // move insertion
+HS.insert (myarray.begin(), myarray.end());  // range insertion
+HS.insert ( {"purple","orange"} );           // initializer list insertion
+
+HS.erase ("France");                                                      // ERASE
+HS.clear();
+
+unordered_set<.>
+     first = {"iron","copper","oil"},
+     second  = {"wood","corn","milk"};
+first.swap(second);
+  
 if (s.find(123) != s.end()) // find returns end iterator if key is not found, else it returns iterator to that key
-    s.erase(123);
-s.size();         // Number of elements in set
+
 ```
 
 ## `map` (associative array - usually implemented as binary search trees - avg. time complexity: O(log n))
