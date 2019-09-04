@@ -1,4 +1,3 @@
-#include <bits/stdc++.h>
 #include <iostream>
 #include <fstream>
 #include <cstdio>
@@ -28,49 +27,39 @@ typedef vector<ll> vi;
 typedef vector<string> vs;
 typedef vector<vi> mat;
 
-void ex1() {
+void ex() {
 	fstream r("../../input.txt");
 	ofstream w("../../output.txt");
-	if (mf.is_open()) 
+	if (r.is_open())
 	{
 		int tc;
 		int actual = 1;
 		r >> tc;
-		while (tc--) 
+		while (tc--)
 		{
 			//...
-			if (w.is_open()) 
+			if (w.is_open())
 			{
 				if (/*...*/)
-					w << "Caso " << actual << ": " /*<< ... */ ;
+					w << "Caso " << actual << ": " /*<< ... */;
 				else
-					w << "Caso " << actual << ": " /*<< ... */ ;
+					w << "Caso " << actual << ": " /*<< ... */;
 				if (tc > 0) w << endl;
 			}
 			actual++;
 		}
-		r.close(); 
+		r.close();
 		w.close();
 	}
 	else
 		cout << "ERROR OPEN FILE";
 }
 
-void ex2(){}
-void ex3(){}
-void ex4(){}
-void ex5(){}
-void ex6(){}
-
 int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(NULL);
-	// ex1();
-	// ex2();
-	// ex3();
-	// ex4();
-	// ex5();
-	// ex6();
-	//system("pause");
+
+	ex();
+
 	return 0;
 }
