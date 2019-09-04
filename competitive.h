@@ -63,8 +63,8 @@ void ex5(){}
 void ex6(){}
 
 int main() {
-	//ios::sync_with_stdio(false); //Hace el cin/cout + rapido pero no podemos usar prinf/scanf
-	//cin.tie(NULL); //Desactiva el flush del buffer de cout al realizar un cin
+	ios::sync_with_stdio(false); //Hace el cin/cout + rapido pero no podemos usar prinf/scanf
+	cin.tie(NULL); //Desactiva el flush del buffer de cout al realizar un cin
 	// ex1();
 	// ex2();
 	// ex3();
