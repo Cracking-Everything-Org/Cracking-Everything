@@ -1,19 +1,37 @@
 ## `unordered_map` (HASH TABLE - avg. time complexity: O(1))
  
 ```cpp
-#include <unordered_map>  // Include map (std namespace)
+#include <unordered_map> 
 
-unordered_map<string, string> HT;
-HT.insert({"asd","asd"});
-for(auto it :HT){ // itero sobre las keys
-    for(auto str :it.second){ // itero sobre las values
+unordered_map<.,.> first;                                                 // INIT empty
+unordered_map<.,.> second ( {{"apple","red"},{"lemon","yellow"}} );       // INIT init list
+unordered_map<.,.> third ( {{"orange","orange"},{"strawberry","red"}} );  // INIT init list
+unordered_map<.,.> fourth (second);                                       // INIT copy
+unordered_map<.,.> fifth (merge(third,fourth));                           // INIT move
+unordered_map<.,.> sixth (fifth.begin(),fifth.end());                     // INIT range
+HT["another"] = 4;                                                        // ADD or REPLACE
+
+(*it).first;                                                              // IT - the key value (of type Key)
+(*it).second;                                                             // IT - the mapped value (of type T)
+(*it);                                                                    // IT - the "element value" (of type pair<const Key,T>)
+
+for(auto it :HT){                                                   // itero sobre las keys
+    for(auto str :it.second){                                       // itero sobre las values
         list.push_back(str);
-it.first; // devuelve la key
+it.first;                                                           // devuelve la key
 
-unordered_map<string, int> a; // Map from string to int
-a["another"] = 4; // Add or replace element a["hello"]
-a.find("hello");    // 3
-a.size();       // 2
+for ( auto it = mymap.begin(); it != mymap.end(); ++it )
+    std::cout << " " << it->first << ":" << it->second;
+
+HT.at("Mars") = 3396;                                                  // ACCESS
+HT.find(input);                                                        // LOOKUP
+
+HT.erase ("France");                                                   // ERASE
+HT.clear();                                                            // CLEAR
+
+first = {{"Star Wars","G. Lucas"},{"Alien","R. Scott"}}
+second  = {{"Inception","C. Nolan"},{"Donnie Darko","R. Kelly"}};
+first.swap(second);                                                       // SWAP
 ```
 
 ## `unordered_set` (HASH SET - avg. time complexity: O(1))
