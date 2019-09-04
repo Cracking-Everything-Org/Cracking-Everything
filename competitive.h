@@ -29,28 +29,28 @@ typedef vector<string> vs;
 typedef vector<vi> mat;
 
 void ex1() {
-	fstream mf("../../testFile.txt");
-	ofstream rf("../../resultFile.txt");
+	fstream r("../../input.txt");
+	ofstream w("../../output.txt");
 	if (mf.is_open()) 
 	{
 		int tc;
 		int actual = 1;
-		mf >> tc;
+		r >> tc;
 		while (tc--) 
 		{
 			//...
-			if (rf.is_open()) 
+			if (w.is_open()) 
 			{
 				if (/*...*/)
-					rf << "Caso " << actual << ": " /*<< ... */ ;
+					w << "Caso " << actual << ": " /*<< ... */ ;
 				else
-					rf << "Caso " << actual << ": " /*<< ... */ ;
-				if (tc > 0) rf << endl;
+					w << "Caso " << actual << ": " /*<< ... */ ;
+				if (tc > 0) w << endl;
 			}
 			actual++;
 		}
-		mf.close(); 
-		rf.close();
+		r.close(); 
+		w.close();
 	}
 	else
 		cout << "ERROR OPEN FILE";
@@ -63,8 +63,8 @@ void ex5(){}
 void ex6(){}
 
 int main() {
-	ios::sync_with_stdio(false); //Hace el cin/cout + rapido pero no podemos usar prinf/scanf
-	cin.tie(NULL); //Desactiva el flush del buffer de cout al realizar un cin
+	ios::sync_with_stdio(false);
+	cin.tie(NULL);
 	// ex1();
 	// ex2();
 	// ex3();
