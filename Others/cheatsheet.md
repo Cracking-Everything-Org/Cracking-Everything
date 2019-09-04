@@ -23,11 +23,11 @@ it.first;                                                           // devuelve 
 for ( auto it = mymap.begin(); it != mymap.end(); ++it )
     std::cout << " " << it->first << ":" << it->second;
 
-HT.at("Mars") = 3396;                                                  // ACCESS
-HT.find(input);                                                        // LOOKUP
+HT.at("Mars") = 3396;                                                     // ACCESS
+HT.find(input);                                                           // LOOKUP
 
-HT.erase ("France");                                                   // ERASE
-HT.clear();                                                            // CLEAR
+HT.erase ("France");                                                      // ERASE
+HT.clear();                                                               // CLEAR
 
 first = {{"Star Wars","G. Lucas"},{"Alien","R. Scott"}}
 second  = {{"Inception","C. Nolan"},{"Donnie Darko","R. Kelly"}};
