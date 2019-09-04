@@ -13,7 +13,7 @@ HT["another"] = 4;                                                        // ADD
 
 (*it).first;                                                              // IT - the key value (of type Key)
 (*it).second;                                                             // IT - the mapped value (of type T)
-(*it);                                                                    // IT - the "element value" (of type pair<const Key,T>)
+(*it);                                                                    // IT - the pair<const Key,T>
 
 for(auto it :HT){                                                   // itero sobre las keys
     for(auto str :it.second){                                       // itero sobre las values
