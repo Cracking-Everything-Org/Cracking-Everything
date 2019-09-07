@@ -57,7 +57,8 @@ first = {"iron","copper","oil"},
 second  = {"wood","corn","milk"};
 first.swap(second);                                                      // SWAP
   
-if (HS.find(123) != HS.end()) // find returns end ITERATOR if key is not found, else it returns iterator to that key
+if (HS.find(123) != HS.end()) 
+// find returns end ITERATOR if key is not found, else it returns iterator to that key
 ```
 
 ## `string` (Variable sized character array)
@@ -323,5 +324,9 @@ auto const param = config["param"];
 auto& s = singleton::instance();
                             // Declares it to a reference of the result
 ```
+
+![DataStructures](General/Data%20Structures.png "Data Structures")
+
+![ComplexityChart](General/Complexity%20Chart.png "Complexity Chart")
 
 ![collection decision tree](https://i.stack.imgur.com/G70oT.png)
