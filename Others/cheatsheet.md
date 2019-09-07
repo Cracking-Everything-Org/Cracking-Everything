@@ -1,64 +1,90 @@
-## `unordered_map` (HASH TABLE - avg. time complexity: O(1))
+## `vector`
 ```cpp
-unordered_map<.,.> first;                                                 // INIT empty
-unordered_map<.,.> second ( {{"apple","red"},{"lemon","yellow"}} );       // INIT init list
-unordered_map<.,.> third ( {{"orange","orange"},{"strawberry","red"}} );  // INIT init list
-unordered_map<.,.> fourth (second);                                       // INIT copy
-unordered_map<.,.> fifth (merge(third,fourth));                           // INIT move
-unordered_map<.,.> sixth (fifth.begin(),fifth.end());                     // INIT range
-HT["another"] = 4;                                                        // ADD or REPLACE
+v.insert(v.begin(), value);             // Insert head
+v.insert(v.begin() + index, value);     // Insert index
+v.push_back(value);                     // Insert tail
 
-for(auto it :HT){                                                         // itero sobre las keys
-    for(auto str :it.second){                                             // itero sobre las values
+int head = v.front();       // Access head
+int value = v.at(index);    // Access index
+int tail = v.back();        // Access tail
+
+for(iterator it = v.begin(); it != v.end(); it++) {     // Iterate
+    cout << *it << std::endl;
+}
+
+v.erase(v.begin());                                                 // Remove head
+v.erase(v.begin() + index);                                         // Remove index
+v.pop_back();                                                       // Remove tail
+v.clear();                                                          // Clear
+```
+
+## `deque`
+```cpp
+d.push_front(value);                    // Insert head
+d.insert(d.begin() + index, value);     // Insert index
+d.push_back(value);                     // Insert tail
+
+d.pop_front();                  // Remove head
+d.erase(d.begin() + index);     // Remove index
+d.pop_back();                   // Remove tail
+```
+
+## `map` `unordered_map`
+```cpp
+string value = m.at("key");                                              // Access by key
+
+for(std::map<int>::iterator it = m.begin(); it != m.end(); it++) {       // Iterate
+    std::cout << *it << std::endl;
+}
+
+for(auto it :HT){                                                        // itero sobre las keys
+    for(auto str :it.second){                                            // itero sobre las values
         list.push_back(str);
-it.first;                                                                 // IT - the key value (of type Key)
-it.second;                                                                // IT - the mapped value (of type T)
-it;                                                                       // IT - the pair<const Key,T>
+it.first;                                                                // IT - the key value (of type Key)
+it.second;                                                               // IT - the mapped value (of type T)
+it;                                                                      // IT - the pair<const Key,T>
 
 for ( auto it = mymap.begin(); it != mymap.end(); ++it )
     std::cout << " " << it->first << ":" << it->second;
 
-HT.at("Mars") = 3396;                                                     // ACCESS
-HT.insert(.,.);
-HT.find(input);                                                           // LOOKUP
-
-HT.erase ("France");                                                      // ERASE
-HT.clear();                                                               // CLEAR
-
-unordered_map<.,.>
-first = {{"Star Wars","G. Lucas"},{"Alien","R. Scott"}},
-second  = {{"Inception","C. Nolan"},{"Donnie Darko","R. Kelly"}};
-first.swap(second);                                                       // SWAP
+bool exists = (m.find("key") != m.end());                                // FIND if an element exists by key
+unsigned int count = m.count("key");                                     // COUNT by key
+first.swap(second);                                                      // SWAP
 ```
 
-## `unordered_set` (HASH SET - avg. time complexity: O(1))
+## `set` `unordered_set`
 ```cpp
-unordered_set<.> first;                                                  // INIT empty
-unordered_set<.> second ( {"red","green","blue"} );                      // INIT init list
-unordered_set<.> third ( {"orange","pink","yellow"} );                   // INIT init list
-unordered_set<.> fourth ( second );                                      // INIT copy
-unordered_set<.> fifth ( cmerge(third,fourth) );                         // INIT move
-unordered_set<.> sixth ( fifth.begin(), fifth.end() );                   // INIT range
-
+for(std::set<int>::iterator it = s.begin(); it != s.end(); it++)         // Iterate
+    std::cout << *it << std::endl;
+    
 for ( auto it = myset.begin(); it != myset.end(); ++it )  
     std::cout << " " << *it;
-    
-HS.find (input);
 
-HS.insert (mystring);                                                    // INSERT copy insertion
-HS.insert (mystring+"dish");                                             // INSERT move insertion
-HS.insert (myarray.begin(), myarray.end());                              // INSERT range insertion
-HS.insert ( {"purple","orange"} );                                       // INSERT initializer list insertion
-
-HS.erase ("France");                                                     // ERASE
-HS.clear();                                                              // CLEAR
-
-first = {"iron","copper","oil"},
-second  = {"wood","corn","milk"};
+bool exists = (s.find(20) != s.end());                                   // FIND if an element exists
+unsigned int count = s.count(20);                                        // COUNT
 first.swap(second);                                                      // SWAP
-  
-if (HS.find(123) != HS.end()) 
-// find returns end ITERATOR if key is not found, else it returns iterator to that key
+```
+
+## `stack`
+```cpp
+s.push(20);                                                              // Push
+s.pop();                                                                 // Pop
+int top = s.top();                                                       // Top
+```
+
+## `queue`
+```cpp
+q.push(value);                                                           // Insert
+int head = q.front();                                                    // Access head
+int tail = q.back();                                                     // Access tail         
+q.pop();                                                                 // Remove
+```
+
+## `priority_queue`
+```cpp
+p.push(value);                                                           // Insert
+int top = p.top();                                                       // Access 'Top' element
+p.pop();                                                                 // Remove
 ```
 
 ## `string` (Variable sized character array)
@@ -78,50 +104,8 @@ to_string(123);           // "123"
 getline(cin, s);          // Read line ending in '\n'
 ```
 
-## `stack` `vector` `queue` (Variable sized array/stack with built in memory allocation)
-
-```cpp
-#include <stack>
-stack<int> stk;           // empty stack
-stk.push(3);              // {3}
-stk.top();                // 3
-stk.pop();                // { }
-
-#include <vector>         // Include vector (std namespace)
-vector<int> a(10);        // a[0]..a[9] are int (default size is 0)
-vector<int> b{1,2,3};        // Create vector with values 1,2,3
-a.size();                 // Number of elements (10)
-swap(a[0],a[1]);
-a.push_back(3);           // Increase size to 11, a[10]=3
-a.back()=4;               // a[10]=4;
-a.pop_back();             // Decrease size by 1
-a.front();                // a[0];
-a[20]=1;                  // Crash: not bounds checked
-a.at(20)=1;               // Like a[20] but throws out_of_range()
-for (int& p : a)
-  p=0;                    // C++11: Set all elements of a to 0
-for (vector<int>::iterator p=a.begin(); p!=a.end(); ++p)
-  *p=0;                   // C++03: Set all elements of a to 0
-vector<int> b(a.begin(), a.end());  // b is copy of a
-vector<T> c(n, x);        // c[0]..c[n-1] init to x
-T d[10]; vector<T> e(d, d+10);      // e is initialized from d
-a.insert(a.end(), b.begin(), b.end())     // addAll from another vector (b) to vector (a)
-
-#include <queue>
-queue<int> q;
-q.push()              // adds to the end of the queue
-q.pop()               // delete the first element
-q.front()             // return the first element
-q.back()              // return the last element
-q.empty()             // return true if que queue has no elements
-q.size()              // return the queue's size
-
-```
-
 ## `algorithm` (A collection of algorithms on sequences with iterators)
-
 ```cpp
-#include <algorithm>      // Include algorithm (std namespace)
 min(x, y); max(x, y);     // Smaller/larger of x, y (any type defining <)
 swap(x, y);               // Exchange values of variables x and y
 sort(a, a+n);             // Sort array a[0]..a[n-1] by <
@@ -131,78 +115,10 @@ sort(strVector.begin(), strVector.end());
 string vectorToStr (sVector.begin(),sVector.end());
 reverse(a.begin(), a.end()); // Reverse vector or deque
 INT_MIN
-abs(a);
-
-#include <cmath>
-fmax(a,b);
-```
-
-## Reading a text file using an ifstream (input file stream)
-
-- 1 Include the necessary headers.
-```cpp
-#include <fstream>
-using namespace std;
-```
-- 2 Declare an input file stream (ifstream) variable. For example,
-```cpp
-ifstream inFile;
-```
-- 3 Open the file stream. Path names in MS Windows use backslashes (\). Because the backslash is also the string escape character, it must be doubled. If the full path is not given, most systems will look in the directory that contains the object program. For example,
-```cpp
-inFile.open("C:\\temp\\datafile.txt");
-```
-- 4 Check that the file was opened. For example, the open fails if the file doesn't exist, or if it can't be read because another program is writing it. A failure can be detected with code like that below using the ! (logical not) operator:
-```cpp
-if (!inFile) {
-    cerr << "Unable to open file datafile.txt";
-    exit(1);   // call system to stop
-}
-```
-- 5 Read from the stream in the same way as cin. For example,
-```cpp
-while (inFile >> x) {
-  sum = sum + x;
-}
-```
-- 6 Close the input stream. Closing is essential for output streams to be sure all information has been written to the disk, but is also good practice for input streams to release system resources and make the file available for other programs that might need to write it.
-```cpp
-inFile.close();
-```
-
-## `iostream.h`, `iostream` (Replaces `stdio.h`; `cin`, `cout`)
-
-```cpp
-#include <iostream>         // Include iostream (std namespace)
-cin >> x >> y;              // Read words x and y (any type) from stdin
-cout << "x=" << 3 << endl;  // Write line to stdout
-cerr << x << y << flush;    // Write to stderr and flush
-c = cin.get();              // c = getchar();
-cin.get(c);                 // Read char
-cin.getline(s, n, '\n');    // Read line into char s[n] to '\n' (default)
-if (cin)                    // Good state (not EOF)?
-                            // To read/write any type T:
-istream& operator>>(istream& i, T& x) {i >> ...; x=...; return i;}
-ostream& operator<<(ostream& o, const T& x) {return o << ...;}
-```
-
-## `fstream.h`, `fstream` (File I/O works like `cin`, `cout` as above)
-
-```cpp
-#include <fstream>          // Include filestream (std namespace)
-ifstream f1("filename");    // Open text file for reading
-if (f1)                     // Test if open and input available
-    f1 >> x;                // Read object from file
-f1.get(s);                  // Read char or line
-f1.getline(s, n);           // Read line into string s[n]
-ofstream f2("filename");    // Open file for writing
-if (f2) f2 << x;            // Write to file
 ```
 
 ## `math.h`, `cmath`, `cstdlib` (floating point math)
-
 ```cpp
-#include <cmath>            // Include cmath (std namespace)
 sin(x); cos(x); tan(x);     // Trig functions, x (double) is in radians
 asin(x); acos(x); atan(x);  // Inverses
 atan2(y, x);                // atan(y/x)
@@ -211,118 +127,8 @@ exp(x); log(x); log10(x);   // e to the x, log base e, log base 10
 pow(x, y); sqrt(x);         // x to the y, square root
 ceil(x); floor(x);          // Round up or down (as a double)
 fabs(x); fmod(x, y);        // Absolute value, x mod y
-
-#include <cstdlib>
-abs(x);
-```
-
-## `assert.h`, `cassert` (Debugging Aid)
-
-```cpp
-#include <cassert>        // Include iostream (std namespace)
-assert(e);                // If e is false, print message and abort
-#define NDEBUG            // (before #include <assert.h>), turn off assert
-```
-
-## `utility` (Pair)
-
-```cpp
-#include <utility>        // Include utility (std namespace)
-pair<string, int> a("hello", 3);  // A 2-element struct
-a.first;                  // "hello"
-a.second;                 // 3
-```
-
-## Expressions
-
-Operators are grouped by precedence, highest first. Unary operators and assignment evaluate right to left. All
-others are left to right. Precedence does not affect order of evaluation, which is undefined. There are no run time
-checks for arrays out of bounds, invalid pointers, etc.
-
-```cpp
-T::X                        // Name X defined in class T
-N::X                        // Name X defined in namespace N
-::X                         // Global name X
-
-t.x                         // Member x of struct or class t
-p-> x                       // Member x of struct or class pointed to by p
-a[i]                        // i'th element of array a
-f(x,y)                      // Call to function f with arguments x and y
-T(x,y)                      // Object of class T initialized with x and y
-x++                         // Add 1 to x, evaluates to original x (postfix)
-x--                         // Subtract 1 from x, evaluates to original x
-typeid(x)                   // Type of x
-typeid(T)                   // Equals typeid(x) if x is a T
-dynamic_cast< T>(x)         // Converts x to a T, checked at run time.
-static_cast< T>(x)          // Converts x to a T, not checked
-reinterpret_cast< T>(x)     // Interpret bits of x as a T
-const_cast< T>(x)           // Converts x to same type T but not const
-
-sizeof x                    // Number of bytes used to represent object x
-sizeof(T)                   // Number of bytes to represent type T
-++x                         // Add 1 to x, evaluates to new value (prefix)
---x                         // Subtract 1 from x, evaluates to new value
-~x                          // Bitwise complement of x
-!x                          // true if x is 0, else false (1 or 0 in C)
--x                          // Unary minus
-+x                          // Unary plus (default)
-&x                          // Address of x
-*p                          // Contents of address p (*&x equals x)
-new T                       // Address of newly allocated T object
-new T(x, y)                 // Address of a T initialized with x, y
-new T[x]                    // Address of allocated n-element array of T
-delete p                    // Destroy and free object at address p
-delete[] p                  // Destroy and free array of objects at p
-(T) x                       // Convert x to T (obsolete, use .._cast<T>(x))
-throw x                     // Throw exception, aborts if not caught
-x , y                       // evaluates x and y, returns y (seldom used)
-```
-
-## Declarations
-
-```cpp
-int x;                      // Declare x to be an integer (value undefined)
-int x=255;                  // Declare and initialize x to 255
-short s; long l;            // Usually 16 or 32 bit integer (int may be either)
-char c='a';                 // Usually 8 bit character
-unsigned char u=255;
-signed char s=-1;           // char might be either
-unsigned long x =
-  0xffffffffL;              // short, int, long are signed
-float f; double d;          // Single or double precision real (never unsigned)
-bool b=true;                // true or false, may also use int (1 or 0)
-int a, b, c;                // Multiple declarations
-int a[10];                  // Array of 10 ints (a[0] through a[9])
-int a[]={0,1,2};            // Initialized array (or a[3]={0,1,2}; )
-int a[2][2]={{1,2},{4,5}};  // Array of array of ints
-char s[]="hello";           // String (6 elements including '\0')
-std::string s = "Hello"     // Creates string object with value "Hello"
-std::string s = R"(Hello
-World)";                    // Creates string object with value "Hello\nWorld"
-int* p;                     // p is a pointer to (address of) int
-char* s="hello";            // s points to unnamed array containing "hello"
-void* p=nullptr;            // Address of untyped memory (nullptr is 0)
-int& r=x;                   // r is a reference to (alias of) int x
-enum weekend {SAT,SUN};     // weekend is a type with values SAT and SUN
-enum weekend day;           // day is a variable of type weekend
-enum weekend{SAT=0,SUN=1};  // Explicit representation as int
-enum {SAT,SUN} day;         // Anonymous enum
-enum class Color {Red,Blue};// Color is a strict type with values Red and Blue
-Color x = Color::Red;       // Assign Color x to red
-typedef String char*;       // String s; means char* s;
-const int c=3;              // Constants must be initialized, cannot assign to
-const int* p=a;             // Contents of p (elements of a) are constant
-int* const p=a;             // p (but not contents) are constant
-const int* const p=a;       // Both p and its contents are constant
-const int& cr=x;            // cr cannot be assigned to change x
-int8_t,uint8_t,int16_t,
-uint16_t,int32_t,uint32_t,
-int64_t,uint64_t            // Fixed length standard types
-auto it = m.begin();        // Declares it to the result of m.begin()
-auto const param = config["param"];
-                            // Declares it to the const result
-auto& s = singleton::instance();
-                            // Declares it to a reference of the result
+abs(a);
+fmax(a,b);
 ```
 
 ![DataStructures](General/Data%20Structures.png "Data Structures")
