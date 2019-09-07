@@ -87,23 +87,6 @@ int top = p.top();                                                       // Acce
 p.pop();                                                                 // Remove
 ```
 
-## `string` (Variable sized character array)
-
-```cpp
-#include <string>         // Include string (std namespace)
-
-string s1, s2="hello";    // Create strings
-s1.size(), s2.size();     // Number of characters: 0, 5
-s1 += s2 + ' ' + "world"; // Concatenation
-s1 == "hello world"       // Comparison, also <, >, !=, etc.
-s1[0];                    // 'h'
-s1.substr(m, n);          // Substring of size n starting at s1[m]
-s1.c_str();               // Convert to const char*
-s1 = to_string(12.05);    // Converts number to string
-to_string(123);           // "123"
-getline(cin, s);          // Read line ending in '\n'
-```
-
 ## `algorithm` (A collection of algorithms on sequences with iterators)
 ```cpp
 min(x, y); max(x, y);     // Smaller/larger of x, y (any type defining <)
@@ -130,9 +113,5 @@ fabs(x); fmod(x, y);        // Absolute value, x mod y
 abs(a);
 fmax(a,b);
 ```
-
-![DataStructures](General/Data%20Structures.png "Data Structures")
-
-![ComplexityChart](General/Complexity%20Chart.png "Complexity Chart")
 
 ![collection decision tree](https://i.stack.imgur.com/G70oT.png)
