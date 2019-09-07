@@ -1,8 +1,5 @@
 ## `unordered_map` (HASH TABLE - avg. time complexity: O(1))
- 
 ```cpp
-#include <unordered_map> 
-
 unordered_map<.,.> first;                                                 // INIT empty
 unordered_map<.,.> second ( {{"apple","red"},{"lemon","yellow"}} );       // INIT init list
 unordered_map<.,.> third ( {{"orange","orange"},{"strawberry","red"}} );  // INIT init list
@@ -11,19 +8,18 @@ unordered_map<.,.> fifth (merge(third,fourth));                           // INI
 unordered_map<.,.> sixth (fifth.begin(),fifth.end());                     // INIT range
 HT["another"] = 4;                                                        // ADD or REPLACE
 
-(*it).first;                                                              // IT - the key value (of type Key)
-(*it).second;                                                             // IT - the mapped value (of type T)
-(*it);                                                                    // IT - the pair<const Key,T>
-
-for(auto it :HT){                                                   // itero sobre las keys
-    for(auto str :it.second){                                       // itero sobre las values
+for(auto it :HT){                                                         // itero sobre las keys
+    for(auto str :it.second){                                             // itero sobre las values
         list.push_back(str);
-it.first;                                                           // devuelve la key
+it.first;                                                                 // IT - the key value (of type Key)
+it.second;                                                                // IT - the mapped value (of type T)
+it;                                                                       // IT - the pair<const Key,T>
 
 for ( auto it = mymap.begin(); it != mymap.end(); ++it )
     std::cout << " " << it->first << ":" << it->second;
 
 HT.at("Mars") = 3396;                                                     // ACCESS
+HT.insert(.,.);
 HT.find(input);                                                           // LOOKUP
 
 HT.erase ("France");                                                      // ERASE
@@ -36,61 +32,32 @@ first.swap(second);                                                       // SWA
 ```
 
 ## `unordered_set` (HASH SET - avg. time complexity: O(1))
-
 ```cpp
-#include <unordered_set> 
+unordered_set<.> first;                                                  // INIT empty
+unordered_set<.> second ( {"red","green","blue"} );                      // INIT init list
+unordered_set<.> third ( {"orange","pink","yellow"} );                   // INIT init list
+unordered_set<.> fourth ( second );                                      // INIT copy
+unordered_set<.> fifth ( cmerge(third,fourth) );                         // INIT move
+unordered_set<.> sixth ( fifth.begin(), fifth.end() );                   // INIT range
 
-unordered_set<.> first;                                // empty
-unordered_set<.> second ( {"red","green","blue"} );    // init list
-unordered_set<.> third ( {"orange","pink","yellow"} ); // init list
-unordered_set<.> fourth ( second );                    // copy
-unordered_set<.> fifth ( cmerge(third,fourth) );       // move
-unordered_set<.> sixth ( fifth.begin(), fifth.end() ); // range
-
-for ( auto it = myset.begin(); it != myset.end(); ++it )
+for ( auto it = myset.begin(); it != myset.end(); ++it )  
     std::cout << " " << *it;
     
 HS.find (input);
 
-HS.insert (mystring);                        // copy insertion
-HS.insert (mystring+"dish");                 // move insertion
-HS.insert (myarray.begin(), myarray.end());  // range insertion
-HS.insert ( {"purple","orange"} );           // initializer list insertion
+HS.insert (mystring);                                                    // INSERT copy insertion
+HS.insert (mystring+"dish");                                             // INSERT move insertion
+HS.insert (myarray.begin(), myarray.end());                              // INSERT range insertion
+HS.insert ( {"purple","orange"} );                                       // INSERT initializer list insertion
 
-HS.erase ("France");                                                      // ERASE
-HS.clear();
+HS.erase ("France");                                                     // ERASE
+HS.clear();                                                              // CLEAR
 
-unordered_set<.>
-     first = {"iron","copper","oil"},
-     second  = {"wood","corn","milk"};
-first.swap(second);
+first = {"iron","copper","oil"},
+second  = {"wood","corn","milk"};
+first.swap(second);                                                      // SWAP
   
-if (s.find(123) != s.end()) // find returns end iterator if key is not found, else it returns iterator to that key
-
-```
-
-## `map` (associative array - usually implemented as binary search trees - avg. time complexity: O(log n))
-
-```cpp
-#include <map>            // Include map (std namespace)
-
-map<string, int> a;       // Map from string to int
-a["hello"] = 3;           // Add or replace element a["hello"]
-for (auto& p:a)
-    cout << p.first << p.second;  // Prints hello, 3
-a.size();                 // 1
-```
-
-## `set` (store unique elements - usually implemented as binary search trees - avg. time complexity: O(log n))
-
-```cpp
-#include <set>            // Include set (std namespace)
-
-set<int> s;               // Set of integers
-s.insert(123);            // Add element to set
-if (s.find(123) != s.end()) // Search for an element
-    s.erase(123);
-cout << s.size();         // Number of elements in set
+if (HS.find(123) != HS.end()) // find returns end ITERATOR if key is not found, else it returns iterator to that key
 ```
 
 ## `string` (Variable sized character array)
