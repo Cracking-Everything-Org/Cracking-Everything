@@ -323,3 +323,5 @@ auto const param = config["param"];
 auto& s = singleton::instance();
                             // Declares it to a reference of the result
 ```
+
+![collection decision tree](https://i.stack.imgur.com/G70oT.png)
