@@ -119,7 +119,6 @@ v.erase(v.begin() + index);                                         // Remove in
 v.pop_back();                                                       // Remove tail
 v.clear();                                                          // Clear
 ```
-
 ## `deque`
 ```cpp
 d.push_front(value);                    // Insert head
@@ -130,7 +129,6 @@ d.pop_front();                  // Remove head
 d.erase(d.begin() + index);     // Remove index
 d.pop_back();                   // Remove tail
 ```
-
 ## `map` `unordered_map`
 ```cpp
 string value = m.at("key");                                              // Access by key
@@ -153,7 +151,6 @@ bool exists = (m.find("key") != m.end());                                // FIND
 unsigned int count = m.count("key");                                     // COUNT by key
 first.swap(second);                                                      // SWAP
 ```
-
 ## `set` `unordered_set`
 ```cpp
 for(std::set<int>::iterator it = s.begin(); it != s.end(); it++)         // Iterate
@@ -166,14 +163,12 @@ bool exists = (s.find(20) != s.end());                                   // FIND
 unsigned int count = s.count(20);                                        // COUNT
 first.swap(second);                                                      // SWAP
 ```
-
 ## `stack`
 ```cpp
 s.push(20);                                                              // Push
 s.pop();                                                                 // Pop
 int top = s.top();                                                       // Top
 ```
-
 ## `queue`
 ```cpp
 q.push(value);                                                           // Insert
@@ -181,14 +176,12 @@ int head = q.front();                                                    // Acce
 int tail = q.back();                                                     // Access tail         
 q.pop();                                                                 // Remove
 ```
-
 ## `priority_queue`
 ```cpp
 p.push(value);                                                           // Insert
 int top = p.top();                                                       // Access 'Top' element
 p.pop();                                                                 // Remove
 ```
-
 ## `algorithm` (A collection of algorithms on sequences with iterators)
 ```cpp
 min(x, y); max(x, y);     // Smaller/larger of x, y (any type defining <)
@@ -201,7 +194,6 @@ string vectorToStr (sVector.begin(),sVector.end());
 reverse(a.begin(), a.end()); // Reverse vector or deque
 INT_MIN
 ```
-
 ## `math.h`, `cmath`, `cstdlib` (floating point math)
 ```cpp
 sin(x); cos(x); tan(x);     // Trig functions, x (double) is in radians
@@ -215,7 +207,6 @@ fabs(x); fmod(x, y);        // Absolute value, x mod y
 abs(a);
 fmax(a,b);
 ```
-
 ## GEOMETRIA - INTERSECCION  
 ```cpp            
 struct Point {
@@ -273,4 +264,306 @@ int orientation(Point p, Point q, Point r) {
 
     return false; // Doesn't fall in any of the above cases
 }         
+```
+## DIJKSTRA 
+```cpp  
+Dijkstra //graph es vector<par> con pares (vecino, peso)
+//vector<int> dist(n,1e9);
+void dijkstra(wgraph &g, int start, vector<int> &dist) {
+    priority_queue<par, vector<par>, greater<par>> q;
+    q.push({0, start});
+    dist[start] = 0;
+    while (not q.empty()) {
+        int priority = q.top().first, u = q.top().second;
+        q.pop();
+        if (priority != dist[u])
+            continue;
+        for (par p : g[u]) {
+            int v = p.first, w = p.second;
+            if (dist[u] + w < dist[v]) {
+                dist[v] = dist[u] + w;
+                q.push({dist[v], v});
+            }
+        }
+    }
+}
+```
+## TOPOSORT  
+```cpp  
+//función auxiliar requerida
+void dfs_ts(graph& g, int u, vector<bool>& vis, vector<int>& ts) {
+    vis[u] = true;
+    for (int v : g[u]) if (not vis[v])
+        dfs_ts(g, v, vis, ts);
+    ts.pb(u);
+}
+//ts parte vacío y termina con el toposort
+void toposort(graph& g, vector<int>& ts) {
+    int n = g.size();
+    vector<bool> vis(n, false);
+    rep(u, n) if (not vis[u])
+        dfs_ts(g, u, vis, ts);
+    reverse(ts.begin(), ts.end());
+}
+```
+## FLOYD WARSHALL  
+```cpp  
+//dist[i][j] contiene inicialmente el peso de la arista (i, j) o 1e9 si no existe esa arista
+//el loop es k -> i -> j !!
+rep(k, nGrafo) rep(i, nGrafo) rep(j, nGrafo)
+    dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j]);
+//variante: transitive closure
+connected[i][j] es true ssi existe la arista (i, j)
+cambiar última línea por: connected[i][j] |= connected[i][k] & connected[k][j]; 
+```
+## BELLMAN FORD  
+```cpp  
+vector<int> dist(nGrafo, 1e9); dist[start] = 0;
+rep(i, nGrafo-1) rep(u, nGrafo) for (par p : g[u]) {
+    int v = p.first, w = p.second;
+    dist[v] = min(dist[v], dist[u] + w);
+}
+//después de ejecutar lo anterior
+bool hayCicloNegativo = false;
+rep(u, nGrafo) for (par p: g[u]) {
+    int v = p.first, w = p.second;
+    if (dist[v] > dist[u] + w)
+        hayCicloNegativo = true;
+}
+```
+## CONVEX HULL  
+```cpp  
+//(funciona si los puntos son colineales) (se asume que los puntos no se repiten)
+//(los casos con menos de 3 puntos deben ser definidos aparte)
+typedef double compt; //componente de un punto, podría ser int
+struct point {
+    compt x, y;
+    point(compt xx, compt yy) {x = xx; y = yy;}
+    bool operator<(point const o) const {return make_pair(x, y) < make_pair(o.x, o.y);}
+};
+//asegúrate de que copiaste bien esta función
+compt cross(point o, point a, point b) {
+    return (a.x - o.x)*(b.y - o.y) - (a.y - o.y)*(b.x - o.x);
+}
+//recibe “ch” vacío para dejar la convex hull en “ch”
+void convex_hull(vector<point> &p, vector<point> &ch) {
+    sort(p.begin(), p.end());
+    vector<point> L, U;
+    int n = p.size();
+    #define tmp(x) {\
+        while (x.size() >= 2 and cross(x[x.size()-2], x.back(), p[i]) <= 0)\
+            x.pop_back(); x.pb(p[i]); }
+    rep(i, n) tmp(L) invrep(i, n) tmp(U)
+    #undef tmp
+    rep(i, L.size()-1) ch.pb(L[i]);
+    rep(i, U.size()-1) ch.pb(U[i]);
+}
+```
+## PRIM  
+```cpp
+struct edge {
+	int u,v; ll w;
+	edge(int u, int v, ll w) : u(u), v(v), w(w) {}
+
+	bool operator< (const edge &o) const{
+		return w < o.w;
+	}
+};
+```
+## UNION FIND  
+```cpp  
+struct UnionFind{
+	vector<int> P,rank;
+
+	UnionFind(int N)
+	{
+		P.resize(N); for(int i = 0; i < N; ++i) P[i] = i;
+		rank.assign(N,0);
+	}
+
+	int findSet(int u)
+	{
+		return u == P[u] ? u : P[u] = findSet(P[u]);
+	}
+
+	bool isSameSet(int u, int v)
+	{
+		return findSet(u) == findSet(v);
+	}
+
+	void joinSets(int u, int v)
+	{
+		if(isSameSet(u,v)) return;
+		u = findSet(u); v = findSet(v);
+
+		if(rank[u] < rank[v]) P[u] = v;
+		else
+		{
+			P[v] = u;
+			if(rank[u] == rank[v]) ++rank[u];
+		}
+	}
+};
+int main(){
+	vector<edge> E;
+	UnionFind U(N);
+	sort(E.begin(),E.end());
+
+	for(edge &e : E){
+		int u = e.u, v = e.v;
+		if(!U.isSameSet(u,v)){
+			U.joinSets(u,v);
+			//USAR ARISTA
+		}
+	}
+}
+```
+## Potencia de 2 mas cercana  
+```cpp  
+//(con x<2 ambas retornan 1)
+int floor_powof2(int x) {
+    int ans = 1;
+    for (; x >= 2; x/=2)
+        ans*=2;
+    return ans;
+}
+int ceil_powof2(int x) {
+    return floor_powof2(x*2-1);
+}
+```
+## Lowest Common Ancestor  (recibe un árbol-grafo)
+```cpp  
+class LCA {
+    vector<vector<int>> P;
+    graph g; int n, m;
+
+    void build(int u, int p=-1, int lv=0) {
+        parent[u] = p;
+        level[u] = lv;
+        for (int v : g[u]) if (v != p)
+            build(v, u, lv+1);
+    }
+
+public:
+    vector<int> parent, level;
+
+    LCA(graph &gg, int root) {
+        g = gg;
+        n = g.size();
+        parent.resize(n);
+        level.resize(n);
+        build(root);
+
+        P.assign(n, vector<int>(m=log2(n*2), -1));
+        rep(i, n) P[i][0] = parent[i];
+        rep(j, m-1) rep(i, n) if (P[i][j] != -1)
+            P[i][j+1] = P[ P[i][j] ][j];
+    }
+
+    int operator()(int u, int v) {
+        if (level[u] < level[v]) swap(u, v);
+        int i=0, x; for (; x=level[u]-level[v]; ++i)
+            if (x & 1<<i) u = P[u][i];
+        if (u == v) return u;
+        for (++i; i>=0; --i)
+            if (P[u][i] != -1 and P[u][i] != P[v][i])
+                u = P[u][i], v = P[v][i];
+        return parent[u];
+    }
+};
+```
+## Union Find  
+```cpp  
+Union Find
+class UnionFind {
+private:
+  vi p, rank, setSize;
+  int numSets;
+public:
+  UnionFind(int N) {
+	setSize.assign(N, 1); numSets = N; rank.assign(N, 0);
+	p.assign(N, 0); for (int i = 0; i < N; i++) p[i] = i; }
+  int findSet(int i) { return (p[i] == i) ? i : (p[i] = findSet(p[i])); }
+  bool isSameSet(int i, int j) { return findSet(i) == findSet(j); }
+  void unionSet(int i, int j) {  
+	if (!isSameSet(i, j)) { numSets--;  
+	int x = findSet(i), y = findSet(j);
+	// rank is used to keep the tree short
+	if (rank[x] > rank[y]) { p[y] = x; setSize[x] += setSize[y]; }
+	else               	{ p[x] = y; setSize[y] += setSize[x];
+                         	if (rank[x] == rank[y]) rank[y]++; } } }
+  int numDisjointSets() { return numSets; }
+  int sizeOfSet(int i) { return setSize[findSet(i)]; }
+};
+```
+## BFS  
+```cpp  
+//BFS O(V+E) = O(V^2)
+//vector<int> dist(n,1e9);
+void bfs(graph &g, int start, vector<int> &dist) {
+    int inf = 1e9;
+    queue<int> q;
+    q.push(start);
+    dist[start] = 0;
+    while (not q.empty()) {
+        int u = q.front();
+        q.pop();
+        for (int v : g[u]) if (dist[v] == inf) {
+            dist[v] = dist[u] + 1;
+            q.push(v);
+        }
+    }
+}
+```
+## Primo  
+```cpp  
+isPrime
+bool isPrime(ll n){
+    if(n <= N) return P[n] == n;
+    if(n%2 == 0) return false;
+	int a[7] = {2, 325, 9375, 28178, 450775, 9780504, 1795265022};
+
+	ll d = n - 1;
+	int s = 0;
+	while (d % 2 == 0) {
+    	s++;
+    	d >>= 1;
+	}
+
+	// It's guaranteed that these values will work for any number smaller than 3*10**18 (3 and 18 zeros) 
+	for(int i = 0; i < 7; i++) {
+   	 ll fp = fastPow(a[i], d, n);
+    	bool comp = (fp != 1);
+    	if(comp) for(int j = 0; j < s; j++) {
+        	if (fp == n - 1) {
+            	comp = false;
+            	break;
+        	}
+
+        	fp = mulmod(fp,fp,n);
+    	}
+    	if(comp) return false;
+	}
+	return true;
+}
+```
+## Factorizar numeros  
+```cpp  
+void factorize(ll n, map<ll,int> &M){
+	if(n <= N){
+    	while(n != 1){
+        	++M[P[n]];
+        	n /= P[n];
+    	}
+    	return;
+	}
+
+	if(isPrime(n)){
+    	++M[n];
+    	return;
+	}
+
+	ll d = brent(n);
+	factorize(d,M); factorize(n/d,M);
+}
 ```
