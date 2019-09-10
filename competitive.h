@@ -26,28 +26,28 @@ typedef vector<string> vs;
 typedef vector<vi> mat;
 
 void readNoSplit() {
-	fstream mf("../../testFile.txt");
-	ofstream rf("../../resultFile.txt");
-	if (mf.is_open()) {
-		int tc;
-		int actual = 1;
-		mf >> tc;
-		while (tc--) {
-			//...
-			if (rf.is_open()){
+    fstream mf("../../testFile.txt");
+    ofstream rf("../../resultFile.txt");
+    if (mf.is_open()) {
+        int tc;
+        int actual = 1;
+        mf >> tc;
+        while (tc--) {
+            //...
+            if (rf.is_open()){
                 if (/*...*/) {
-					rf << "Caso " << actual << ": " /*<< ... */ ;
+                    rf << "Caso " << actual << ": " /*<< ... */ ;
                 } else {
-					rf << "Caso " << actual << ": " /*<< ... */ ;
+                    rf << "Caso " << actual << ": " /*<< ... */ ;
                 }
                 if (tc > 0) rf << endl;
-			}
-			actual++;
-		}
-		mf.close(); 
-		rf.close();
-	}
-	else cout << "ERROR OPEN FILE";
+            }
+            actual++;
+        }
+        mf.close();
+        rf.close();
+    }
+    else cout << "ERROR OPEN FILE";
 }
 
 void readSplit() {
@@ -87,16 +87,16 @@ void ex5(){}
 void ex6(){}
 
 int main() {
-	ios::sync_with_stdio(false); //Hace el cin/cout + rapido pero no podemos usar prinf/scanf
-	cin.tie(NULL); //Desactiva el flush del buffer de cout al realizar un cin
-	// ex1();
-	// ex2();
-	// ex3();
-	// ex4();
-	// ex5();
-	// ex6();
-	//system("pause");
-	return 0;
+    ios::sync_with_stdio(false); //Hace el cin/cout + rapido pero no podemos usar prinf/scanf
+    cin.tie(NULL); //Desactiva el flush del buffer de cout al realizar un cin
+    // ex1();
+    // ex2();
+    // ex3();
+    // ex4();
+    // ex5();
+    // ex6();
+    //system("pause");
+    return 0;
 }
 ```
 
@@ -417,180 +417,180 @@ for(auto it :HT){ // itero sobre las keys
             auto& s = singleton::instance();
             // Declares it to a reference of the result
             ```
-
             
-//------------------ Dijkstra ----------------------
-//Algoritmo greedy, no le importa el más optimo sino el más barato.
-//Camino más corto entre un Origen y todos los demas nodos del arbol(Si es que hay camino)
-const int largo = 1; //largo de la tabla
-vector<vector<int>> matriz(largo, vector<int>(largo));
-
-struct NodoD {
-    int costo;
-    int anterior;
-    bool conocido;
-};
-
-void Inicio(vector<NodoD>& res) {
-    for (int i = 1; i <= res.size(); i++) {
-        res[i].costo = MIN;
-        res[i].anterior = NULL;
-        res[i].conocido = false;
-    }
-}
-
-int verticeNoConocidoMenorCosto(vector<NodoD> resultado) {
-    int vMin = 1;
-    for (int i = 1; i <= largo; i++) {
-        if (!resultado[i].conocido && resultado[i].costo < resultado[vMin].costo) {
-            vMin = i;
-        }
-    }
-    return vMin;
-}
-
-void Dijkstra(int origen, vector<vector<int>> tabla) {
-    vector<NodoD> resultado = vector<NodoD>(largo);
-    Inicio(resultado);
-    resultado[origen].costo = 0;
-    for (int i = 1; i <= tabla.size(); i++) {
-        int menorVertice = verticeNoConocidoMenorCosto(resultado);
-        resultado[menorVertice].conocido = true;
-        for (int j = 1; j <= tabla.size(); j++) {
-            if (tabla[menorVertice][j] != MIN) {
-                if (!resultado[j].conocido && resultado[j].costo > resultado[menorVertice].costo + tabla[menorVertice][j]) {
-                    resultado[j].costo = resultado[menorVertice].costo + matriz[menorVertice][j];
-                    resultado[j].anterior = menorVertice;
+            
+            //------------------ Dijkstra ----------------------
+            //Algoritmo greedy, no le importa el más optimo sino el más barato.
+            //Camino más corto entre un Origen y todos los demas nodos del arbol(Si es que hay camino)
+            const int largo = 1; //largo de la tabla
+            vector<vector<int>> matriz(largo, vector<int>(largo));
+            
+            struct NodoD {
+                int costo;
+                int anterior;
+                bool conocido;
+            };
+            
+            void Inicio(vector<NodoD>& res) {
+                for (int i = 1; i <= res.size(); i++) {
+                    res[i].costo = MIN;
+                    res[i].anterior = NULL;
+                    res[i].conocido = false;
                 }
             }
-        }
-    }
-}
-
-//------------------ FLOYD ----------------------
-//Camino más corto entre cualquier par de vertices ponderado.
-
-void Floyd(vector<vector<int>> tabla, vector<vector<int>> res) {
-    int largo = tabla.size();
-    for (int i = 1; i <= largo; i++) { //Inicializacion
-        for (int j = 1; j <= tabla[i].size(); j++) {
-            res[i][j] = tabla[i][j];
-        }
-    }
-    for (int k = 1; k <= largo; k++) { //Actualizacion
-        for (int i = 1; i <= largo; i++) {
-            for (int j = 1; j <= largo; j++) {
-                res[i][j] = min(res[i][j], res[i][k] + res[k][j]);
+            
+            int verticeNoConocidoMenorCosto(vector<NodoD> resultado) {
+                int vMin = 1;
+                for (int i = 1; i <= largo; i++) {
+                    if (!resultado[i].conocido && resultado[i].costo < resultado[vMin].costo) {
+                        vMin = i;
+                    }
+                }
+                return vMin;
             }
-        }
-    }
-}
-
-//------------------ Warshall ----------------------
-//Indica si hay o no camino entre cualquier par de vertices del grafo, nos permite saber si el grafo es conexo.
-void Floyd(vector<vector<bool>> tabla, vector<vector<bool>> res) {
-    int largo = tabla.size();
-    for (int i = 1; i <= largo; i++) { //Inicializacion
-        for (int j = 1; j <= tabla[i].size(); j++) {
-            res[i][j] = tabla[i][j];
-        }
-    }
-    for (int k = 1; k <= largo; k++) { //Actualizacion
-        for (int i = 1; i <= largo; i++) {
-            for (int j = 1; j <= largo; j++) {
-                if (res[i][j] > res[i][k] + res[k][j]) {
-                    res[i][j] = res[i][k] + res[k][j];
+            
+            void Dijkstra(int origen, vector<vector<int>> tabla) {
+                vector<NodoD> resultado = vector<NodoD>(largo);
+                Inicio(resultado);
+                resultado[origen].costo = 0;
+                for (int i = 1; i <= tabla.size(); i++) {
+                    int menorVertice = verticeNoConocidoMenorCosto(resultado);
+                    resultado[menorVertice].conocido = true;
+                    for (int j = 1; j <= tabla.size(); j++) {
+                        if (tabla[menorVertice][j] != MIN) {
+                            if (!resultado[j].conocido && resultado[j].costo > resultado[menorVertice].costo + tabla[menorVertice][j]) {
+                                resultado[j].costo = resultado[menorVertice].costo + matriz[menorVertice][j];
+                                resultado[j].anterior = menorVertice;
+                            }
+                        }
+                    }
                 }
             }
-        }
-    }
-}
-
-//------------------ Orden Topologico ----------------------
-//Ordenación de vertices para un grafo, en caso de haber ciclos no se puede ordenar.
-const int largo = 2;
-
-
-void Inicio(vector<vector<int>> mat, vector<int> gradoE) {
-    for (int i = 1; i <= mat.size(); i++) {
-        for (int j = 1; j <= mat.size(); j++) {
-            gradoE[i] = mat[i][j];
-        }
-    }
-}
-
-bool OrdenTopologico(vector<vector<int>> mat) {
-    vector<int> gradoE(mat.size(), 0);
-    vector<int> res(mat.size(), 0);
-    vector<bool> conocido(mat.size(), false);
-    Inicio(mat, gradoE);
-    for (int i = 1; i <= largo; i++)
-    {
-        int vertice = ObtenerGradoEntranteCero(); //Devuelve el primer no conocido con gradoE = 0 o sino -1;
-        if (vertice == -1) {
-            return false;
-        }
-        res[i] = vertice;
-        conocido[i] = true;
-        for (int j = 1; j <= largo; j++) {
-            if (!conocido[j] && mat[j][vertice] == 1) {
-                gradoE[j] --;
+            
+            //------------------ FLOYD ----------------------
+            //Camino más corto entre cualquier par de vertices ponderado.
+            
+            void Floyd(vector<vector<int>> tabla, vector<vector<int>> res) {
+                int largo = tabla.size();
+                for (int i = 1; i <= largo; i++) { //Inicializacion
+                    for (int j = 1; j <= tabla[i].size(); j++) {
+                        res[i][j] = tabla[i][j];
+                    }
+                }
+                for (int k = 1; k <= largo; k++) { //Actualizacion
+                    for (int i = 1; i <= largo; i++) {
+                        for (int j = 1; j <= largo; j++) {
+                            res[i][j] = min(res[i][j], res[i][k] + res[k][j]);
+                        }
+                    }
+                }
             }
-        }
-    }
-    return true;
-}
-//------------------ Prim ----------------------
-//Solo sirve para componentes conexas, arbol de cubrimiento minimo.
-
-//------------------ Kruskal ----------------------
-//Bosque de cubrimiento mínimo para grafos no dirigidos.
-
+            
+            //------------------ Warshall ----------------------
+            //Indica si hay o no camino entre cualquier par de vertices del grafo, nos permite saber si el grafo es conexo.
+            void Floyd(vector<vector<bool>> tabla, vector<vector<bool>> res) {
+                int largo = tabla.size();
+                for (int i = 1; i <= largo; i++) { //Inicializacion
+                    for (int j = 1; j <= tabla[i].size(); j++) {
+                        res[i][j] = tabla[i][j];
+                    }
+                }
+                for (int k = 1; k <= largo; k++) { //Actualizacion
+                    for (int i = 1; i <= largo; i++) {
+                        for (int j = 1; j <= largo; j++) {
+                            if (res[i][j] > res[i][k] + res[k][j]) {
+                                res[i][j] = res[i][k] + res[k][j];
+                            }
+                        }
+                    }
+                }
+            }
+            
+            //------------------ Orden Topologico ----------------------
+            //Ordenación de vertices para un grafo, en caso de haber ciclos no se puede ordenar.
+            const int largo = 2;
+            
+            
+            void Inicio(vector<vector<int>> mat, vector<int> gradoE) {
+                for (int i = 1; i <= mat.size(); i++) {
+                    for (int j = 1; j <= mat.size(); j++) {
+                        gradoE[i] = mat[i][j];
+                    }
+                }
+            }
+            
+            bool OrdenTopologico(vector<vector<int>> mat) {
+                vector<int> gradoE(mat.size(), 0);
+                vector<int> res(mat.size(), 0);
+                vector<bool> conocido(mat.size(), false);
+                Inicio(mat, gradoE);
+                for (int i = 1; i <= largo; i++)
+                {
+                    int vertice = ObtenerGradoEntranteCero(); //Devuelve el primer no conocido con gradoE = 0 o sino -1;
+                    if (vertice == -1) {
+                        return false;
+                    }
+                    res[i] = vertice;
+                    conocido[i] = true;
+                    for (int j = 1; j <= largo; j++) {
+                        if (!conocido[j] && mat[j][vertice] == 1) {
+                            gradoE[j] --;
+                        }
+                    }
+                }
+                return true;
+            }
+            //------------------ Prim ----------------------
+            //Solo sirve para componentes conexas, arbol de cubrimiento minimo.
+            
+            //------------------ Kruskal ----------------------
+            //Bosque de cubrimiento mínimo para grafos no dirigidos.
+            
 #define V 5
-int parent[V];
-
-// Find set of vertex i
-int find(int i)
-{
-    while (parent[i] != i)
-        i = parent[i];
-    return i;
-}
-
-// Does union of i and j. It returns
-// false if i and j are already in same
-// set.
-void union1(int i, int j)
-{
-    int a = find(i);
-    int b = find(j);
-    parent[a] = b;
-}
-
-// Finds MST using Kruskal's algorithm
-void kruskalMST(int cost[][V])
-{
-    int mincost = 0; // Cost of min MST.
-    
-    // Initialize sets of disjoint sets.
-    for (int i = 0; i < V; i++)
-        parent[i] = i;
-    
-    // Include minimum weight edges one by one
-    int edge_count = 0;
-    while (edge_count < V - 1) {
-        int min = INT_MAX, a = -1, b = -1;
-        for (int i = 0; i < V; i++) {
-            for (int j = 0; j < V; j++) {
-                if (find(i) != find(j) && cost[i][j] < min) {
-                    min = cost[i][j];
-                    a = i;
-                    b = j;
+            int parent[V];
+            
+            // Find set of vertex i
+            int find(int i)
+        {
+            while (parent[i] != i)
+                i = parent[i];
+            return i;
+        }
+            
+            // Does union of i and j. It returns
+            // false if i and j are already in same
+            // set.
+            void union1(int i, int j)
+        {
+            int a = find(i);
+            int b = find(j);
+            parent[a] = b;
+        }
+            
+            // Finds MST using Kruskal's algorithm
+            void kruskalMST(int cost[][V])
+        {
+            int mincost = 0; // Cost of min MST.
+            
+            // Initialize sets of disjoint sets.
+            for (int i = 0; i < V; i++)
+                parent[i] = i;
+            
+            // Include minimum weight edges one by one
+            int edge_count = 0;
+            while (edge_count < V - 1) {
+                int min = INT_MAX, a = -1, b = -1;
+                for (int i = 0; i < V; i++) {
+                    for (int j = 0; j < V; j++) {
+                        if (find(i) != find(j) && cost[i][j] < min) {
+                            min = cost[i][j];
+                            a = i;
+                            b = j;
+                        }
+                    }
                 }
+                
+                union1(a, b);
+                mincost += min;
             }
         }
-        
-        union1(a, b);
-        mincost += min;
-    }
-}
