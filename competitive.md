@@ -659,6 +659,23 @@ bool IsPointOnLine(Point linePointA, Point linePointB, Point point)
    return false;
 }
 ```
+## GEOMETRIA - DISTANCE 
+```cpp
+void getLine(double x1, double y1, double x2, double y2, double &a, double &b, double &c)
+{
+    // (x- p1X) / (p2X - p1X) = (y - p1Y) / (p2Y - p1Y) 
+    a = y1 - y2; // Note: this was incorrectly "y2 - y1" in the original answer
+    b = x2 - x1;
+    c = x1 * y2 - x2 * y1;
+}
+
+double dist(double pct1X, double pct1Y, double pct2X, double pct2Y, double pct3X, double pct3Y)
+{
+    double a, b, c;
+    getLine(pct2X, pct2Y, pct3X, pct3Y, a, b, c);
+    return abs(a * pct1X + b * pct1Y + c) / sqrt(a * a + b * b);
+}
+```
 ## CONVEX HULL  
 ```cpp  
 //(funciona si los puntos son colineales) (se asume que los puntos no se repiten)
