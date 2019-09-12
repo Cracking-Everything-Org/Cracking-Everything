@@ -382,225 +382,6 @@ void kruskalMST(int cost[][V]){
 }
 ```
 
-## GEOMETRIA - INTERSECCION  
-```cpp            
-struct Point {
-     int x;
-     int y;
-};
-
-// Given three colinear points p, q, r, the function checks if
-// point q lies on line segment 'pr'
-bool onSegment(Point p, Point q, Point r) {
-    if (q.x <= max(p.x, r.x) && q.x >= min(p.x, r.x) &&
-        q.y <= max(p.y, r.y) && q.y >= min(p.y, r.y))
-        return true;
-
-    return false;
-}
-            
-// To find orientation of ordered triplet (p, q, r).
-// The function returns following values
-// 0 --> p, q and r are colinear
-// 1 --> Clockwise
-// 2 --> Counterclockwise
-int orientation(Point p, Point q, Point r) {
-    // for details of below formula.
-    int val = (q.y - p.y) * (r.x - q.x) - (q.x - p.x) * (r.y - q.y);
-    if (val == 0) return 0;  // colinear
-    return (val > 0)? 1: 2; // clock or counterclock wise
-}
-
-    // The main function that returns true if line segment 'p1q1'
-    // and 'p2q2' intersect.
-    bool doIntersect(Point p1, Point q1, Point p2, Point q2) {
-    // Find the four orientations needed for general and
-    // special cases
-    int o1 = orientation(p1, q1, p2);
-    int o2 = orientation(p1, q1, q2);
-    int o3 = orientation(p2, q2, p1);
-    int o4 = orientation(p2, q2, q1);
-
-    // General case
-    if (o1 != o2 && o3 != o4) return true;
-
-    // Special Cases
-    // p1, q1 and p2 are colinear and p2 lies on segment p1q1
-    if (o1 == 0 && onSegment(p1, p2, q1)) return true;
-
-    // p1, q1 and q2 are colinear and q2 lies on segment p1q1
-    if (o2 == 0 && onSegment(p1, q2, q1)) return true;
-
-    // p2, q2 and p1 are colinear and p1 lies on segment p2q2
-    if (o3 == 0 && onSegment(p2, p1, q2)) return true;
-
-    // p2, q2 and q1 are colinear and q1 lies on segment p2q2
-    if (o4 == 0 && onSegment(p2, q1, q2)) return true;
-
-    return false; // Doesn't fall in any of the above cases
-}         
-```
-## DIJKSTRA 
-```cpp  
-Dijkstra //graph es vector<par> con pares (vecino, peso)
-//vector<int> dist(n,1e9);
-void dijkstra(wgraph &g, int start, vector<int> &dist) {
-    priority_queue<par, vector<par>, greater<par>> q;
-    q.push({0, start});
-    dist[start] = 0;
-    while (not q.empty()) {
-        int priority = q.top().first, u = q.top().second;
-        q.pop();
-        if (priority != dist[u])
-            continue;
-        for (par p : g[u]) {
-            int v = p.first, w = p.second;
-            if (dist[u] + w < dist[v]) {
-                dist[v] = dist[u] + w;
-                q.push({dist[v], v});
-            }
-        }
-    }
-}
-```
-## TOPOSORT  
-```cpp  
-//función auxiliar requerida
-void dfs_ts(graph& g, int u, vector<bool>& vis, vector<int>& ts) {
-    vis[u] = true;
-    for (int v : g[u]) if (not vis[v])
-        dfs_ts(g, v, vis, ts);
-    ts.pb(u);
-}
-//ts parte vacío y termina con el toposort
-void toposort(graph& g, vector<int>& ts) {
-    int n = g.size();
-    vector<bool> vis(n, false);
-    rep(u, n) if (not vis[u])
-        dfs_ts(g, u, vis, ts);
-    reverse(ts.begin(), ts.end());
-}
-```
-## FLOYD WARSHALL  
-```cpp  
-//dist[i][j] contiene inicialmente el peso de la arista (i, j) o 1e9 si no existe esa arista
-//el loop es k -> i -> j !!
-rep(k, nGrafo) rep(i, nGrafo) rep(j, nGrafo)
-    dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j]);
-//variante: transitive closure
-connected[i][j] es true ssi existe la arista (i, j)
-cambiar última línea por: connected[i][j] |= connected[i][k] & connected[k][j]; 
-```
-## BELLMAN FORD  
-```cpp  
-vector<int> dist(nGrafo, 1e9); dist[start] = 0;
-rep(i, nGrafo-1) rep(u, nGrafo) for (par p : g[u]) {
-    int v = p.first, w = p.second;
-    dist[v] = min(dist[v], dist[u] + w);
-}
-//después de ejecutar lo anterior
-bool hayCicloNegativo = false;
-rep(u, nGrafo) for (par p: g[u]) {
-    int v = p.first, w = p.second;
-    if (dist[v] > dist[u] + w)
-        hayCicloNegativo = true;
-}
-```
-## CONVEX HULL  
-```cpp  
-//(funciona si los puntos son colineales) (se asume que los puntos no se repiten)
-//(los casos con menos de 3 puntos deben ser definidos aparte)
-typedef double compt; //componente de un punto, podría ser int
-struct point {
-    compt x, y;
-    point(compt xx, compt yy) {x = xx; y = yy;}
-    bool operator<(point const o) const {return make_pair(x, y) < make_pair(o.x, o.y);}
-};
-//asegúrate de que copiaste bien esta función
-compt cross(point o, point a, point b) {
-    return (a.x - o.x)*(b.y - o.y) - (a.y - o.y)*(b.x - o.x);
-}
-//recibe “ch” vacío para dejar la convex hull en “ch”
-void convex_hull(vector<point> &p, vector<point> &ch) {
-    sort(p.begin(), p.end());
-    vector<point> L, U;
-    int n = p.size();
-    #define tmp(x) {\
-        while (x.size() >= 2 and cross(x[x.size()-2], x.back(), p[i]) <= 0)\
-            x.pop_back(); x.pb(p[i]); }
-    rep(i, n) tmp(L) invrep(i, n) tmp(U)
-    #undef tmp
-    rep(i, L.size()-1) ch.pb(L[i]);
-    rep(i, U.size()-1) ch.pb(U[i]);
-}
-```
-## PRIM  
-```cpp
-struct edge {
-	int u,v; ll w;
-	edge(int u, int v, ll w) : u(u), v(v), w(w) {}
-
-	bool operator< (const edge &o) const{
-		return w < o.w;
-	}
-};
-```
-## UNION FIND  
-```cpp  
-struct UnionFind{
-	vector<int> P,rank;
-
-	UnionFind(int N){
-		P.resize(N); for(int i = 0; i < N; ++i) P[i] = i;
-		rank.assign(N,0);
-	}
-
-	int findSet(int u){
-		return u == P[u] ? u : P[u] = findSet(P[u]);
-	}
-
-	bool isSameSet(int u, int v){
-		return findSet(u) == findSet(v);
-	}
-
-	void joinSets(int u, int v){
-		if(isSameSet(u,v)) return;
-		u = findSet(u); v = findSet(v);
-
-		if(rank[u] < rank[v]) P[u] = v;
-		else{
-			P[v] = u;
-			if(rank[u] == rank[v]) ++rank[u];
-		}
-	}
-};
-int main(){
-	vector<edge> E;
-	UnionFind U(N);
-	sort(E.begin(),E.end());
-
-	for(edge &e : E){
-		int u = e.u, v = e.v;
-		if(!U.isSameSet(u,v)){
-			U.joinSets(u,v);
-			//USAR ARISTA
-		}
-	}
-}
-```
-## Potencia de 2 mas cercana  
-```cpp  
-//(con x<2 ambas retornan 1)
-int floor_powof2(int x) {
-    int ans = 1;
-    for (; x >= 2; x/=2)
-        ans*=2;
-    return ans;
-}
-int ceil_powof2(int x) {
-    return floor_powof2(x*2-1);
-}
-```
 ## Lowest Common Ancestor  (recibe un árbol-grafo)
 ```cpp  
 class LCA {
@@ -683,6 +464,240 @@ void bfs(graph &g, int start, vector<int> &dist) {
             q.push(v);
         }
     }
+}
+```
+## DIJKSTRA 
+```cpp  
+Dijkstra //graph es vector<par> con pares (vecino, peso)
+//vector<int> dist(n,1e9);
+void dijkstra(wgraph &g, int start, vector<int> &dist) {
+    priority_queue<par, vector<par>, greater<par>> q;
+    q.push({0, start});
+    dist[start] = 0;
+    while (not q.empty()) {
+        int priority = q.top().first, u = q.top().second;
+        q.pop();
+        if (priority != dist[u])
+            continue;
+        for (par p : g[u]) {
+            int v = p.first, w = p.second;
+            if (dist[u] + w < dist[v]) {
+                dist[v] = dist[u] + w;
+                q.push({dist[v], v});
+            }
+        }
+    }
+}
+```
+## TOPOSORT  
+```cpp  
+//función auxiliar requerida
+void dfs_ts(graph& g, int u, vector<bool>& vis, vector<int>& ts) {
+    vis[u] = true;
+    for (int v : g[u]) if (not vis[v])
+        dfs_ts(g, v, vis, ts);
+    ts.pb(u);
+}
+//ts parte vacío y termina con el toposort
+void toposort(graph& g, vector<int>& ts) {
+    int n = g.size();
+    vector<bool> vis(n, false);
+    rep(u, n) if (not vis[u])
+        dfs_ts(g, u, vis, ts);
+    reverse(ts.begin(), ts.end());
+}
+```
+## FLOYD WARSHALL  
+```cpp  
+//dist[i][j] contiene inicialmente el peso de la arista (i, j) o 1e9 si no existe esa arista
+//el loop es k -> i -> j !!
+rep(k, nGrafo) rep(i, nGrafo) rep(j, nGrafo)
+    dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j]);
+//variante: transitive closure
+connected[i][j] es true ssi existe la arista (i, j)
+cambiar última línea por: connected[i][j] |= connected[i][k] & connected[k][j]; 
+```
+## BELLMAN FORD  
+```cpp  
+vector<int> dist(nGrafo, 1e9); dist[start] = 0;
+rep(i, nGrafo-1) rep(u, nGrafo) for (par p : g[u]) {
+    int v = p.first, w = p.second;
+    dist[v] = min(dist[v], dist[u] + w);
+}
+//después de ejecutar lo anterior
+bool hayCicloNegativo = false;
+rep(u, nGrafo) for (par p: g[u]) {
+    int v = p.first, w = p.second;
+    if (dist[v] > dist[u] + w)
+        hayCicloNegativo = true;
+}
+```
+## PRIM  
+```cpp
+struct edge {
+	int u,v; ll w;
+	edge(int u, int v, ll w) : u(u), v(v), w(w) {}
+
+	bool operator< (const edge &o) const{
+		return w < o.w;
+	}
+};
+```
+## UNION FIND  
+```cpp  
+struct UnionFind{
+	vector<int> P,rank;
+
+	UnionFind(int N){
+		P.resize(N); for(int i = 0; i < N; ++i) P[i] = i;
+		rank.assign(N,0);
+	}
+
+	int findSet(int u){
+		return u == P[u] ? u : P[u] = findSet(P[u]);
+	}
+
+	bool isSameSet(int u, int v){
+		return findSet(u) == findSet(v);
+	}
+
+	void joinSets(int u, int v){
+		if(isSameSet(u,v)) return;
+		u = findSet(u); v = findSet(v);
+
+		if(rank[u] < rank[v]) P[u] = v;
+		else{
+			P[v] = u;
+			if(rank[u] == rank[v]) ++rank[u];
+		}
+	}
+};
+int main(){
+	vector<edge> E;
+	UnionFind U(N);
+	sort(E.begin(),E.end());
+
+	for(edge &e : E){
+		int u = e.u, v = e.v;
+		if(!U.isSameSet(u,v)){
+			U.joinSets(u,v);
+			//USAR ARISTA
+		}
+	}
+}
+```
+## GEOMETRIA - INTERSECCION  2 SEGMENTOS
+```cpp            
+struct Point {
+     int x;
+     int y;
+};
+
+// Given three colinear points p, q, r, the function checks if
+// point q lies on line segment 'pr'
+bool onSegment(Point p, Point q, Point r) {
+    if (q.x <= max(p.x, r.x) && q.x >= min(p.x, r.x) &&
+        q.y <= max(p.y, r.y) && q.y >= min(p.y, r.y))
+        return true;
+
+    return false;
+}
+            
+// To find orientation of ordered triplet (p, q, r).
+// The function returns following values
+// 0 --> p, q and r are colinear
+// 1 --> Clockwise
+// 2 --> Counterclockwise
+int orientation(Point p, Point q, Point r) {
+    // for details of below formula.
+    int val = (q.y - p.y) * (r.x - q.x) - (q.x - p.x) * (r.y - q.y);
+    if (val == 0) return 0;  // colinear
+    return (val > 0)? 1: 2; // clock or counterclock wise
+}
+
+    // The main function that returns true if line segment 'p1q1'
+    // and 'p2q2' intersect.
+    bool doIntersect(Point p1, Point q1, Point p2, Point q2) {
+    // Find the four orientations needed for general and
+    // special cases
+    int o1 = orientation(p1, q1, p2);
+    int o2 = orientation(p1, q1, q2);
+    int o3 = orientation(p2, q2, p1);
+    int o4 = orientation(p2, q2, q1);
+
+    // General case
+    if (o1 != o2 && o3 != o4) return true;
+
+    // Special Cases
+    // p1, q1 and p2 are colinear and p2 lies on segment p1q1
+    if (o1 == 0 && onSegment(p1, p2, q1)) return true;
+
+    // p1, q1 and q2 are colinear and q2 lies on segment p1q1
+    if (o2 == 0 && onSegment(p1, q2, q1)) return true;
+
+    // p2, q2 and p1 are colinear and p1 lies on segment p2q2
+    if (o3 == 0 && onSegment(p2, p1, q2)) return true;
+
+    // p2, q2 and q1 are colinear and q1 lies on segment p2q2
+    if (o4 == 0 && onSegment(p2, q1, q2)) return true;
+
+    return false; // Doesn't fall in any of the above cases
+}         
+```
+## GEOMETRIA - POINT LIES ON SEGMENT
+```cpp
+const float EPSILON = 0.001f;
+bool IsPointOnLine(Point linePointA, Point linePointB, Point point) 
+{
+   float a = (linePointB.y - linePointA.y) / (linePointB.x - linePointB.x);
+   float b = linePointA.y - a * linePointA.x;
+   if ( fabs(point.y - (a*point.x+b)) < EPSILON)
+   {
+       return true;
+   }
+
+   return false;
+}
+```
+## CONVEX HULL  
+```cpp  
+//(funciona si los puntos son colineales) (se asume que los puntos no se repiten)
+//(los casos con menos de 3 puntos deben ser definidos aparte)
+typedef double compt; //componente de un punto, podría ser int
+struct point {
+    compt x, y;
+    point(compt xx, compt yy) {x = xx; y = yy;}
+    bool operator<(point const o) const {return make_pair(x, y) < make_pair(o.x, o.y);}
+};
+//asegúrate de que copiaste bien esta función
+compt cross(point o, point a, point b) {
+    return (a.x - o.x)*(b.y - o.y) - (a.y - o.y)*(b.x - o.x);
+}
+//recibe “ch” vacío para dejar la convex hull en “ch”
+void convex_hull(vector<point> &p, vector<point> &ch) {
+    sort(p.begin(), p.end());
+    vector<point> L, U;
+    int n = p.size();
+    #define tmp(x) {\
+        while (x.size() >= 2 and cross(x[x.size()-2], x.back(), p[i]) <= 0)\
+            x.pop_back(); x.pb(p[i]); }
+    rep(i, n) tmp(L) invrep(i, n) tmp(U)
+    #undef tmp
+    rep(i, L.size()-1) ch.pb(L[i]);
+    rep(i, U.size()-1) ch.pb(U[i]);
+}
+```
+## Potencia de 2 mas cercana  
+```cpp  
+//(con x<2 ambas retornan 1)
+int floor_powof2(int x) {
+    int ans = 1;
+    for (; x >= 2; x/=2)
+        ans*=2;
+    return ans;
+}
+int ceil_powof2(int x) {
+    return floor_powof2(x*2-1);
 }
 ```
 ## Primo  
