@@ -32,11 +32,26 @@ int main() {
 	cin.tie(NULL);
     string str;
     vector<string> vs;
+    unordered_map<string, int> ht;
+    unordered_map<string,string> relation;
     while(cin >> str, str != "#"){
-        vs.push_back(str);
+        string destinationString;
+        destinationString.resize(str.size());
+        transform(str.begin(),
+        str.end(),
+        destinationString.begin(),
+        ::tolower);
+        vs.push_back(destinationString);
+        relation.insert(destinationString,str);
     }
     sort(vs.begin(), vs.end());
+    for(int i=0;i<vs.size();i++){
+        if(ht.find(vs[i]) == ht.end()) ht[vs[i]] = 1;
+        else ht[vs[i]]++;
+    }
+    for(auto it : ht){
+        if(it.second > 1) cout << relation[it.first] << endl;
+    }
     
-
 	return 0;
 }
