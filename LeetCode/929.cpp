@@ -5,7 +5,6 @@ public:
         unordered_set<string> hs;
         for(auto e : emails){
             for(int i=0; i< e.length(); i++){
-                //localname
                 string res;
                 while((e[i]!='+' && e[i]!='@') && i<e.length()) {
                     if(e[i]!='.') res+=e[i];
