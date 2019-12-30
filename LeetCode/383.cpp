@@ -1,21 +1,17 @@
 class Solution {
 public:
     bool canConstruct(string ransomNote, string magazine) {
-        unordered_map<char, int> umap;
-        for (auto c : ransomNote)
-            if (umap.find(c) == umap.end())
-                umap.insert({c, 1});
-            else
-                umap[c]++;
-        for (auto c : magazine){
-            if (umap.find(c) == umap.end())
-                continue;
-            else{
-                umap[c]--;
-                if (umap[c] == 0)
-                    umap.erase(c);
-            }
+        unordered_map<char,int> ht;
+        for(auto c : magazine){
+            if(ht.find(c)!=ht.end()) ht[c]++;
+            else ht[c]=1;
         }
-        return umap.empty();
+        for(auto r : ransomNote){
+            if(ht.find(r)!=ht.end()) {
+                ht[r]--;
+                if(ht[r]==0) ht.erase(r);
+            } else return false;
+        }
+        return true;
     }
 };
