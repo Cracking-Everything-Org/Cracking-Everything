@@ -9,30 +9,22 @@
 class Solution {
 public:
     bool isPalindrome(ListNode* head) {
-        if(!head || !head->next)
-            return true;
-        else {
-            stack<int> s1;
-            ListNode* slow = head;
-            ListNode* fast = slow;
-
-            while(fast && fast->next) {
-                s1.push(slow->val);
-                slow = slow->next;
-                fast = fast->next->next;
-            }
-
-            if(fast)
-                slow = slow->next;
-
-            while(slow) {
-                int current = s1.top();
-                if( s1.empty() || slow->val != current)
-                    return false;
-                s1.pop();
-                slow = slow->next;
-            }
-        return true;
+        if(!head) return true;
+        ListNode* slow = head;
+        ListNode* fast = head;
+        stack<int> stk;
+        while(fast && fast->next){
+            stk.push(slow->val);
+            slow= slow->next;
+            fast= fast->next->next;
         }
+        if(fast) slow = slow->next;
+        while(slow){
+            int toCompare = stk.top();
+            stk.pop();
+            if(slow->val != toCompare) return false;
+            slow = slow->next;
+        }
+        return true;
     }
 };
