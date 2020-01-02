@@ -9,17 +9,25 @@
  */
 class Solution {
 public:
-    bool checkSubtree(TreeNode* s, TreeNode* t) {
-        if(!s && !t) return true;
+    bool isSubtree(TreeNode* s, TreeNode* t) {
         if(!s || !t) return false;
-        return (s->val == t->val)
-            && checkSubtree(s->left,t->left)
-            && checkSubtree(s->right,t->right);
+        if(s->val == t->val){
+            return isSubtreeAux(s, t)
+                || isSubtree(s->right, t)
+                || isSubtree(s->left, t);
+        }
+        else{
+            return isSubtree(s->right, t)
+                || isSubtree(s->left, t);
+        }
     }
 
-    bool isSubtree(TreeNode* s, TreeNode* t) {
-        if(!s) return false;
-        if(t->val == s->val) return checkSubtree(s,t);
-        return isSubtree(s->left,t) || isSubtree(s->right,t);
+    bool isSubtreeAux(TreeNode* s, TreeNode* t){
+        if(!s && !t) return true;
+        if(!s || !t) return false;
+        if(s->val != t->val) return false;
+        return isSubtreeAux(s->left, t->left)
+            && isSubtreeAux(s->right, t->right);
     }
+
 };
