@@ -9,15 +9,16 @@
  */
 class Solution {
 public:
-    bool isMirrored(TreeNode* t1, TreeNode* t2) {
-        if(!t1 && !t2) return true;
-        if(!t1 || !t2) return false;
-        return t1->val == t2->val
-            && isMirrored(t1->left,t2->right)
-            && isMirrored(t1->right, t2->left);
+    bool isSymmetric(TreeNode* root) {
+        if(!root) return true;
+        return isSym(root->left, root->right);
     }
 
-    bool isSymmetric(TreeNode* root) {
-        return isMirrored(root, root);
+    bool isSym(TreeNode* r1, TreeNode* r2){
+        if(!r1 && !r2) return true;
+        if(!r1 || !r2) return false;
+        if(r1->val != r2->val) return false;
+        return isSym(r1->left, r2->right)
+            && isSym(r1->right, r2->left);
     }
 };
