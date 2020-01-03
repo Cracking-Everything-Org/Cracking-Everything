@@ -9,19 +9,25 @@
  */
 class Solution {
 public:
-
-    void binaryAux(vector<string> &results, TreeNode* root, string actual){
-        if(!root->left && !root->right){
-            results.push_back(actual);
-        }
-        if(root->left) binaryAux(results, root->left, actual + "->" + to_string(root->left->val));
-        if(root->right) binaryAux(results, root->right, actual + "->" +  to_string(root->right->val));
-    }
-
     vector<string> binaryTreePaths(TreeNode* root) {
         vector<string> results;
-        if(!root) return results;
-        binaryAux(results, root, to_string(root->val));
+        string current;
+        paths(root, results, current);
         return results;
+    }
+
+    void paths(TreeNode* root, vector<string>& results, string& current){
+        if(!root) return ;
+        current += to_string(root->val);
+        if(!root->left && !root->right){
+            results.push_back(current);
+            return ;
+        } else {
+            current += "->";
+        }
+        string copy1 = current;
+        string copy2 = current;
+        paths(root->left, results, copy1);
+        paths(root->right, results, copy2);
     }
 };
