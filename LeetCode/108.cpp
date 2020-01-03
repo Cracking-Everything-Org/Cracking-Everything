@@ -9,16 +9,17 @@
  */
 class Solution {
 public:
-    TreeNode* sortedArrayToBST(vector<int>& nums) {
-        return convert(nums, 0, nums.size()-1);
+    TreeNode* inser(int l, int r, vector<int>& v) {
+        if (l > r) return NULL;
+		else if (l == r) return new TreeNode(v[l]);
+		int mid = l + (r - l) / 2;
+		TreeNode* root = new TreeNode(v[mid]);
+		root->left = inser(l, mid - 1, v);
+		root->right = inser(mid + 1, r, v);
+		return root;
     }
 
-    TreeNode* convert(vector<int>& nums, int low, int high) {
-        if(low>high) return NULL;
-        int mid = (low+high)/2;
-        TreeNode* t = new TreeNode(nums[mid]);
-        t->left = convert(nums, low, mid-1);
-        t->right = convert(nums, mid+1, high);
-        return t;
+    TreeNode* sortedArrayToBST(vector<int>& nums) {
+        return inser(0, nums.size()-1, nums);
     }
 };
