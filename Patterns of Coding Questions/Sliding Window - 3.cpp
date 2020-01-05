@@ -30,3 +30,9 @@ int findMinSubArray(int S, const vector<int>& arr) {
     }
     return subarraySize == numeric_limits<int>::max() ? 0 : subarraySize;
   }
+
+  Time Complexity #
+  The time complexity of the above algorithm will be O(N).
+
+  Space Complexity #
+  The algorithm runs in constant space O(1).
