@@ -7,7 +7,7 @@ public:
                 if (stk.empty()) return false;
                 if (stk.top() != '[' ) return false;
                 stk.pop();
-            } else if (s[i] == ')'){
+            } else if (s[i] == ')') {
                 if (stk.empty()) return false;
                 if (stk.top()!= '(') return false;
                 stk.pop();
