@@ -1,9 +1,9 @@
 using namespace std;
-#include <iostream> 
+#include <iostream>
 
 typedef int DataType;
 
-struct Node 
+struct Node
 {
     Node* next = nullptr;
     DataType data;
@@ -13,7 +13,7 @@ struct Node
     }
 };
 
-Node* partition(Node* node, int x){
+Node* partition(Node* node, int x) {
     Node* head = node;
     Node* tail = node;
     while(node!=NULL){
