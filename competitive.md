@@ -34,7 +34,7 @@ void readNoSplit() {
         mf >> tc;
         while (tc--) {
             //...
-            if (rf.is_open()){
+            if (rf.is_open()) {
                 if (/*...*/) {
                     rf << "Caso " << actual << ": " /*<< ... */ ;
                 } else {
@@ -155,7 +155,7 @@ first.swap(second);                                                      // SWAP
 ```cpp
 for(std::set<int>::iterator it = s.begin(); it != s.end(); it++)         // Iterate
     std::cout << *it << std::endl;
-    
+
 for ( auto it = myset.begin(); it != myset.end(); ++it )  
     std::cout << " " << *it;
 
@@ -335,34 +335,34 @@ bool OrdenTopologico(vector<vector<int>> mat) {
 //------------------ Kruskal ----------------------
 //Bosque de cubrimiento mínimo para grafos no dirigidos.
 
-#define V 5 
+#define V 5
 int parent[V];
 
-// Find set of vertex i 
+// Find set of vertex i
 int find(int i){
 	while (parent[i] != i)
 		i = parent[i];
 	return i;
 }
 
-// Does union of i and j. It returns 
-// false if i and j are already in same 
-// set. 
+// Does union of i and j. It returns
+// false if i and j are already in same
+// set.
 void union1(int i, int j){
 	int a = find(i);
 	int b = find(j);
 	parent[a] = b;
 }
 
-// Finds MST using Kruskal's algorithm 
+// Finds MST using Kruskal's algorithm
 void kruskalMST(int cost[][V]){
-	int mincost = 0; // Cost of min MST. 
+	int mincost = 0; // Cost of min MST.
 
-	// Initialize sets of disjoint sets. 
+	// Initialize sets of disjoint sets.
 	for (int i = 0; i < V; i++)
 		parent[i] = i;
 
-	// Include minimum weight edges one by one 
+	// Include minimum weight edges one by one
 	int edge_count = 0;
 	while (edge_count < V - 1) {
 		int min = INT_MAX, a = -1, b = -1;
@@ -466,7 +466,7 @@ void bfs(graph &g, int start, vector<int> &dist) {
     }
 }
 ```
-## DIJKSTRA 
+## DIJKSTRA
 ```cpp  
 Dijkstra //graph es vector<par> con pares (vecino, peso)
 //vector<int> dist(n,1e9);
@@ -515,7 +515,7 @@ rep(k, nGrafo) rep(i, nGrafo) rep(j, nGrafo)
     dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j]);
 //variante: transitive closure
 connected[i][j] es true ssi existe la arista (i, j)
-cambiar última línea por: connected[i][j] |= connected[i][k] & connected[k][j]; 
+cambiar última línea por: connected[i][j] |= connected[i][k] & connected[k][j];
 ```
 ## BELLMAN FORD  
 ```cpp  
@@ -602,7 +602,7 @@ bool onSegment(Point p, Point q, Point r) {
 
     return false;
 }
-            
+
 // To find orientation of ordered triplet (p, q, r).
 // The function returns following values
 // 0 --> p, q and r are colinear
@@ -647,7 +647,7 @@ int orientation(Point p, Point q, Point r) {
 ## GEOMETRIA - POINT LIES ON SEGMENT
 ```cpp
 const float EPSILON = 0.001f;
-bool IsPointOnLine(Point linePointA, Point linePointB, Point point) 
+bool IsPointOnLine(Point linePointA, Point linePointB, Point point)
 {
    float a = (linePointB.y - linePointA.y) / (linePointB.x - linePointB.x);
    float b = linePointA.y - a * linePointA.x;
@@ -659,11 +659,11 @@ bool IsPointOnLine(Point linePointA, Point linePointB, Point point)
    return false;
 }
 ```
-## GEOMETRIA - DISTANCE 
+## GEOMETRIA - DISTANCE
 ```cpp
 void getLine(double x1, double y1, double x2, double y2, double &a, double &b, double &c)
 {
-    // (x- p1X) / (p2X - p1X) = (y - p1Y) / (p2Y - p1Y) 
+    // (x- p1X) / (p2X - p1X) = (y - p1Y) / (p2Y - p1Y)
     a = y1 - y2; // Note: this was incorrectly "y2 - y1" in the original answer
     b = x2 - x1;
     c = x1 * y2 - x2 * y1;
@@ -732,7 +732,7 @@ bool isPrime(ll n){
     	d >>= 1;
 	}
 
-	// It's guaranteed that these values will work for any number smaller than 3*10**18 (3 and 18 zeros) 
+	// It's guaranteed that these values will work for any number smaller than 3*10**18 (3 and 18 zeros)
 	for(int i = 0; i < 7; i++) {
    	 ll fp = fastPow(a[i], d, n);
     	bool comp = (fp != 1);
