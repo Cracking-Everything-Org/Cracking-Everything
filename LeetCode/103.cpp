@@ -24,7 +24,7 @@ public:
                 if(currentNode->left) queue.push(currentNode->left);
                 if(currentNode->right) queue.push(currentNode->right);
 
-                if(fromLeft){
+                if(fromLeft) {
                     currentLevel[i] = currentNode->val;
                 } else {
                     currentLevel[size - 1 - i] = currentNode->val;
