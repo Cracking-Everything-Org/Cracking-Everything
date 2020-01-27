@@ -1,7 +1,7 @@
 using namespace std;
 #include <cmath>
 
-bool isBalanced(TreeNode* root){
+bool isBalanced(TreeNode* root) {
     return (checkHeight(root) != INT_MIN);
 }
 
