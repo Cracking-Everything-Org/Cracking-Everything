@@ -1,6 +1,6 @@
 class Solution {
 public:
-    void combineHT(unordered_map<char, int>& htFinal,unordered_map<char, int>& htTurn){
+    void combineHT(unordered_map<char, int>& htFinal,unordered_map<char, int>& htTurn) {
         if(htFinal.size()==0) {
             htFinal = htTurn;
             return ;
