@@ -10,7 +10,7 @@ public:
                 } else stk.push(S[i]);
             } else stk.push(S[i]);
         }
-        while(!stk.empty()){
+        while(!stk.empty()) {
             result.push_back(stk.top());
             stk.pop();
         }
