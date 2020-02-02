@@ -1,6 +1,6 @@
 class Solution {
 public:
-    bool goodString(unordered_map<char, int> iterationHT, unordered_map<char, int> ht){
+    bool goodString(unordered_map<char, int> iterationHT, unordered_map<char, int> ht) {
         for(auto it: iterationHT){
             if(ht.find(it.first)== ht.end()) return false;
             if(ht[it.first] < it.second) return false;
