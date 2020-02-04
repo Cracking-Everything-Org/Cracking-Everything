@@ -5,7 +5,7 @@ public:
         unordered_map<int, int> hash;
 
         for (int i:nums1) {
-            if(hash.find(i) != hash.end()){
+            if(hash.find(i) != hash.end()) {
                 hash[i]++;
             }else{
                 hash[i] = 1;
