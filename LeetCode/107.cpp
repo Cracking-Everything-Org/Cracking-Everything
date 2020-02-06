@@ -14,7 +14,7 @@ public:
         if(!root) return results;
         queue<TreeNode*> Q;
         Q.push(root);
-        while(!Q.empty()){
+        while(!Q.empty()) {
             vector<int> currentLevel;
             int size = Q.size();
             for(int i=0; i<size; i++){
