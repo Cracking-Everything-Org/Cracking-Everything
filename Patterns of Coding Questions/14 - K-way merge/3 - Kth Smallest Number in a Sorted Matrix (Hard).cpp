@@ -13,7 +13,7 @@ Explanation: The 5th smallest number in the matrix is 7.
 
 
 int findKthSmallest(vector<vector<int>> &matrix, int k) {
-  int n = matrix.size();
+  int n = matrix.size();12
   priority_queue<pair<int, pair<int, int>>, vector<pair<int, pair<int, int>>>, numCompare>
       minHeap;
 
