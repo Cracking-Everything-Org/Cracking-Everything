@@ -2,7 +2,7 @@ class Solution {
 public:
     map<int,int> ht;
 
-    int getSumSquare(int n){
+    int getSumSquare(int n) {
         int count=0;
         string number = to_string(n);
 
@@ -27,4 +27,4 @@ public:
         }
         return true;
     }
-};	
+};
