@@ -22,7 +22,7 @@
 
 
  */
-class Solution{
+class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
         if(!head || !head->next) {
