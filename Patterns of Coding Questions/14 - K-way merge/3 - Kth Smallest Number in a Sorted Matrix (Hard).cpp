@@ -2,7 +2,7 @@ Given an N * NN∗N matrix where each row and column is sorted in ascending orde
 
 Example 1:
 
-Input: Matrix=[
+Input: Matrix = [
     [2, 6, 8],
     [3, 7, 10],
     [5, 8, 11]
