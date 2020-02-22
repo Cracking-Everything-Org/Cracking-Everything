@@ -11,7 +11,7 @@ public:
     ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
         ListNode* dummy = new ListNode(0),
         ListNode* cur = dummy;
-        while(l1 && l2) {
+        while (l1 && l2) {
             if(l1->val < l2->val) {
                 cur->next = l1;
                 cur = l1;
