@@ -36,7 +36,7 @@ pair<int, int> findSmallestRange(const vector<vector<int>> &lists) {
       rangeStart = node.first;
       rangeEnd = currentMaxNumber;
     }
-    node.second.second++;
+    node.second.second ++;
     if (lists[node.second.first].size() > node.second.second) {
       node.first = lists[node.second.first][node.second.second];
       minHeap.push(node);  // insert the next element in the heap
