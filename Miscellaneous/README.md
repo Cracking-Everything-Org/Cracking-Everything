@@ -59,7 +59,7 @@
   - [Competitive Programmer's Core Skills](https://www.coursera.org/learn/competitive-programming-core-skills)
   - [Algorithmic Toolbox](https://www.coursera.org/learn/algorithmic-toolbox)
   - [How to Win Coding Competitions: Secrets of Champions](https://www.edx.org/course/how-to-win-coding-competitions-secrets-of-champions-4)
-
+  
   ###### Others Courses
   - [Neural Networks and Deep Learning](https://www.coursera.org/learn/neural-networks-deep-learning?)
   - [Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization](https://www.coursera.org/learn/deep-neural-network?)
