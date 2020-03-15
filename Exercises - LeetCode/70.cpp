@@ -1,17 +1,15 @@
 class Solution {
 public:
     int climbStairs(int n) {
-        unordered_map<int, int> memo;
-        return climbStairs(n, memo);
+        unordered_map<int,int> dp;
+        return climb(0, n, dp);
     }
 
-    int climbStairs(int n, unordered_map<int,int>& memo){
-        if(n<0) return 0;
-        if(n==0) return 1;
-        if(memo.find(n)!=memo.end()) return memo[n];
-        else {
-            memo[n] = climbStairs(n-1, memo) + climbStairs(n-2, memo);
-        }
-        return memo[n];
+    int climb(int pos, int n, unordered_map<int,int>& dp) {
+        if(dp[pos] > 0) return dp[pos];
+        if(pos > n) return 0;
+        if(pos == n) return 1;
+        dp[pos] = climb(pos+1, n, dp) + climb(pos+2, n , dp);
+        return dp[pos];
     }
 };
