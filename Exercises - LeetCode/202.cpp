@@ -1,30 +1,24 @@
 class Solution {
 public:
-    map<int,int> ht;
-
-    int getSumSquare(int n) {
-        int count=0;
-        string number = to_string(n);
-
-        for(char a:number)
-            count+=ht[a-'0'];
-
-        return count;
-    }
 
     bool isHappy(int n) {
-        for(int i=0; i<10; i++){
-            ht[i]=i*i;
+        int slower = n;
+        int faster = getNext(getNext(n));
+        while (faster != 1 && slower != faster) {
+            slower = getNext(slower);
+            faster = getNext(getNext(faster));
         }
-
-        int slow = n;
-        int fast = n;
-
-         while(slow!=1 && fast!=1){
-            slow = getSumSquare(slow);
-            fast = getSumSquare(getSumSquare(fast));
-            if(slow == fast && slow!=1 && fast!=1) return false;
-        }
-        return true;
+        return faster == 1;
     }
+
+    int getNext(int n) {
+        int totalSum = 0;
+        while (n > 0) {
+            int d = n % 10;
+            n = n / 10;
+            totalSum += d * d;
+        }
+        return totalSum;
+    }
+
 };
