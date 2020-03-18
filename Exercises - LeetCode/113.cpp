@@ -10,22 +10,19 @@
 class Solution {
 public:
     vector<vector<int>> pathSum(TreeNode* root, int sum) {
-        vector<vector<int>> result;
+        vector<vector<int>> paths;
         vector<int> current;
-        path(root, sum, current, result);
-        return result;
+        findPaths(root, sum, current, paths);
+        return paths;
     }
 
-    void path(TreeNode* root, int sum, vector<int> current, vector<vector<int>>& result){
-        if(!root) return;
+    void findPaths(TreeNode* root, int sum, vector<int> current, vector<vector<int>>& paths) {
+        if (!root) return ;
         current.push_back(root->val);
-        if(!root->left && !root->right && sum == root->val){
-            result.push_back(current);
-            return;
+        if (sum == root->val && !root->left && !root->right) {
+            paths.push_back(current);
         }
-        vector<int> leftvector(current);
-        vector<int> rightvector(current);
-        path(root->left, sum - root->val, current, result);
-        path(root->right, sum - root->val, current, result);
+        findPaths(root->left, sum - root->val, current, paths);
+        findPaths(root->right, sum - root->val, current, paths);
     }
 };
