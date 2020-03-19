@@ -1,40 +1,53 @@
 class MyQueue {
 public:
-    stack<int> stack1, stack2;
+    stack<int> pushStack;
+    stack<int> popStack;
+    int size = 0;
 
     /** Initialize your data structure here. */
     MyQueue() {
-
     }
 
     /** Push element x to the back of queue. */
     void push(int x) {
-        while(!stack1.empty()) {
-            stack2.push(stack1.top());
-            stack1.pop();
-        }
-        stack1.push(x);
-        while(!stack2.empty()){
-            stack1.push(stack2.top());
-            stack2.pop();
-        }
+        pushStack.push(x);
+        size++;
     }
 
     /** Removes the element from in front of queue and returns that element. */
     int pop() {
-        int element = peek();
-        stack1.pop();
-        return element;
+        int topElement;
+        if (!popStack.empty()) {
+            topElement = popStack.top();
+            popStack.pop();
+        } else {
+            while (!pushStack.empty()) {
+                popStack.push(pushStack.top());
+                pushStack.pop();
+            }
+            topElement = popStack.top();
+            popStack.pop();
+        }
+        size--;
+        return topElement;
     }
 
     /** Get the front element. */
     int peek() {
-        return stack1.top();
+        if (!popStack.empty()) {
+            return popStack.top();
+        } else {
+            while (!pushStack.empty()) {
+                popStack.push(pushStack.top());
+                pushStack.pop();
+            }
+            return popStack.top();
+        }
     }
 
     /** Returns whether the queue is empty. */
     bool empty() {
-        return stack1.empty();
+        return size == 0;
     }
 };
 
