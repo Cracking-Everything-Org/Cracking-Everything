@@ -9,7 +9,7 @@ public:
     }
 
     void dfs(string digits, string current, int index, const vector<string>& mapping, vector<string>& output){
-        if(index == digits.length()){
+        if(index == digits.length()) {
             output.push_back(current);
             return;
         }
