@@ -16,7 +16,7 @@ public:
         return results;
     }
 
-    void paths(TreeNode* root, vector<string>& results, string& current){
+    void paths(TreeNode* root, vector<string>& results, string& current) {
         if(!root) return ;
         current += to_string(root->val);
         if(!root->left && !root->right){
