@@ -5,7 +5,7 @@ public:
         for(auto it : arr1)
             m[it]++;
         vector<int> res;
-        for(auto it : arr2){
+        for (auto it : arr2) {
             while(m[it]){
                 res.push_back(it);
                 m[it]--;
