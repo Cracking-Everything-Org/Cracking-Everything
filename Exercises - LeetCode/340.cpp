@@ -1,29 +1,28 @@
 class Solution {
 public:
     int lengthOfLongestSubstringKDistinct(string s, int k) {
+        int maxLength = 0;
+        int currentLength = 0;
+        int startWindow = 0;
 
-        unordered_map<char,int> frequencyMap;
-        int longestLen = 0;
+        unordered_map<char, int> ht;
+        for (int endWindow = 0; endWindow < s.length(); endWindow++) {
+            currentLength++;
+            ht[s[endWindow]]++;
 
-        int startPointer = 0;
-
-
-        for (int endPointer = 0; endPointer < s.length(); endPointer++) {
-            frequencyMap[s[endPointer]]++;
-
-            if (frequencyMap.size() <= k) {
-                longestLen = max(longestLen, endPointer - startPointer + 1);
-            }
-
-            while (frequencyMap.size() > k) {
-                frequencyMap[s[startPointer]]--;
-                if (frequencyMap[s[startPointer]] == 0) {
-                    frequencyMap.erase(s[startPointer]);
+            while (ht.size() > k) {
+                ht[s[startWindow]]--;
+                if (ht[s[startWindow]] == 0) {
+                    ht.erase(s[startWindow]);
                 }
-                startPointer++;
+                startWindow++;
+                currentLength--;
+
             }
 
+            maxLength =  max(maxLength, currentLength);
         }
-        return longestLen;
+
+        return maxLength;
     }
 };
