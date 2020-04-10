@@ -2,16 +2,16 @@ class Solution {
 public:
     int rangeSumBST(TreeNode* root, int L, int R) {
         int sum = 0;
-        sumBST(root, L, R, sum);
+        calcRangeSum(root, sum, L, R);
         return sum;
     }
 
-    void sumBST(TreeNode* root, int L, int R, int &sum) {
-        if(!root) return;
-        if(root->val >= L && root->val <= R){
+    void calcRangeSum(TreeNode* root, int &sum, int L, int R) {
+        if (!root) return;
+        if (root->val >= L && root->val <= R) {
             sum += root->val;
         }
-        sumBST(root->left, L, R, sum);
-        sumBST(root->right, L, R, sum);
+        calcRangeSum(root->left, sum, L, R);
+        calcRangeSum(root->right, sum, L, R);
     }
 };
