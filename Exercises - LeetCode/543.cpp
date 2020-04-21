@@ -9,17 +9,18 @@
  */
 class Solution {
 public:
-    int diameter(TreeNode *root, int &d){
+    int diameterOfBinaryTree(TreeNode* root) {
         if(!root) return 0;
-        int l = diameter(root->left, d);
-        int r = diameter(root->right, d);
-        d = max(d, l + r + 1);
-        return max(l, r) + 1;
+        int maxDia = 1;
+        diameter(root, maxDia);
+        return maxDia - 1;
     }
 
-    int diameterOfBinaryTree(TreeNode* root) {
-        int d = 1;
-        diameter(root, d);
-        return d - 1;
+    int diameter(TreeNode* root, int& maxDia) {
+        if(!root) return 0;
+        int leftDiameter = diameter(root->left, maxDia);
+        int rightDiameter = diameter(root->right, maxDia);
+        maxDia = max(maxDia, leftDiameter + rightDiameter + 1);
+        return max(leftDiameter, rightDiameter) + 1;
     }
 };
