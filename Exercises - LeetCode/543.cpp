@@ -17,7 +17,7 @@ public:
     }
 
     int diameter(TreeNode* root, int& maxDia) {
-        if(!root) return 0;
+        if (!root) return 0;
         int leftDiameter = diameter(root->left, maxDia);
         int rightDiameter = diameter(root->right, maxDia);
         maxDia = max(maxDia, leftDiameter + rightDiameter + 1);
