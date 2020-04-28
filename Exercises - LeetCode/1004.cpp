@@ -9,8 +9,8 @@ public:
             currentLength++;
             if (A[endWindow] == 0) {
                 zerosFound++;
-                while(zerosFound > K) {
-                    if(A[startWindow] == 0) {
+                while (zerosFound > K) {
+                    if (A[startWindow] == 0) {
                         zerosFound--;
                     }
                     startWindow++;
