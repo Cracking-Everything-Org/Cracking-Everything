@@ -16,7 +16,7 @@ public:
 
             while (frequencyMap.size() > 2) {
                 frequencyMap[tree[startPointer]]--;
-                if(frequencyMap[tree[startPointer]] == 0) {
+                if (frequencyMap[tree[startPointer]] == 0) {
                     frequencyMap.erase(tree[startPointer]);
                 }
                 startPointer++;
