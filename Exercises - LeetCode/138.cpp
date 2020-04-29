@@ -19,6 +19,7 @@ public:
     Node* copyRandomList(Node* head) {
 
         // guardo en un mapa el nodo y su copia, luego hago otra pasada y seteo el next y el random
+        
         unordered_map<Node*, Node*> ht;
         Node* dummy = new Node(-1);
         dummy->next = head;
