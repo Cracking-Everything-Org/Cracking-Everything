@@ -23,7 +23,7 @@ public:
         return resultList;
     }
                                                 // x , y, val
-    void traverse(TreeNode* root, int x, int y, map<int, map<int, vector<int>>>& nodes) {
+    void traverse (TreeNode* root, int x, int y, map<int, map<int, vector<int>>>& nodes) {
         if (root) {
             nodes[x][y].push_back(root -> val);
             traverse(root -> left, x - 1, y + 1, nodes);
