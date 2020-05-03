@@ -16,6 +16,7 @@ public:
                 // add process to stack, convert strings to ints
                 processing.push(make_pair(stoi(id), stoi(ts)));
             } else {
+              
                 // c++17 structured binding
                 auto [process_id, start_time] = processing.top();
                 processing.pop();
