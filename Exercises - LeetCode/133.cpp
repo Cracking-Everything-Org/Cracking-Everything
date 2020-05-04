@@ -23,7 +23,7 @@ public:
 */
 class Solution {
 public:
-    Node* cloneGraph(Node* node) {
+    Node* cloneGraph(Node* node){
         if (!node) return NULL;
         unordered_map<Node*, Node*> hm;
         queue<Node*> q;
