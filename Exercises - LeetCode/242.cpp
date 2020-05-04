@@ -12,7 +12,7 @@ public:
         }
 
         for (int i=0; i<t.size(); i++) {
-            if (ht.find(t[i]) == ht.end()){
+            if (ht.find(t[i]) == ht.end()) {
                 return false;
             } else {
                 ht[t[i]]--;
