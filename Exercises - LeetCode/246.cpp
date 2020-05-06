@@ -1,6 +1,6 @@
 class Solution {
 public:
-    bool isStrobogrammatic(string num) {
+    bool isStrobogrammatic(string num){
         unordered_map<int, int> ht;
         ht[0] = 0;
         ht[1] = 1;
