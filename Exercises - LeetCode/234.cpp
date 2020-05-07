@@ -13,12 +13,12 @@ public:
         ListNode* slow = head;
         ListNode* fast = head;
         stack<int> stk;
-        while(fast && fast->next){
+        while (fast && fast->next) {
             stk.push(slow->val);
             slow= slow->next;
             fast= fast->next->next;
         }
-        if(fast) slow = slow->next;
+        if (fast) slow = slow->next;
         while(slow){
             int toCompare = stk.top();
             stk.pop();
