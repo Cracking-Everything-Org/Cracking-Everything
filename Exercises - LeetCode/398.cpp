@@ -21,7 +21,7 @@ public:
 
     int pick(int target) {
         int result = 0, counter = 1;
-        for(int i = 0; i < nums.size(); i++){
+        for(int i = 0; i < nums.size(); i++) {
             if(nums[i] == target) {
                 if(rand() % counter == 0) { // si counter 2, esto me devuelve 0 o 1, (sumulando el 1/2)
                     result = i;
