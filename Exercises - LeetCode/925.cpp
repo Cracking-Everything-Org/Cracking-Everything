@@ -1,29 +1,27 @@
 class Solution {
 public:
     bool isLongPressedName(string name, string typed) {
-        int indexName = 0;
-        int indexTyped = 0;
-        while(indexName < name.length() && indexTyped < typed.length()){
-            char nameI = name[indexName];
-            char typedI = typed[indexTyped];
-            int typedCount=0;
-            int nameCount =0;
-            if(typed[indexTyped] > name[indexName]) return false;
-            if(typed[indexTyped] < name[indexName]) return false;
-            char toSkip = typed[indexTyped];
-            while(typed[indexTyped] == toSkip
-                  && indexTyped < typed.length()){
-                indexTyped++;
-                typedCount++;
+        if (typed.length() < name.length()) return false;
+        int typedPtr = 0;
+        int namePtr = 0;
+        while (typedPtr < typed.length() && namePtr < name.length()) {
+            if (name[namePtr] == typed[typedPtr]) {
+                char c = name[namePtr];
+                int typedC = 0;
+                int nameC = 0;
+                while (typed[typedPtr] == c) {
+                    typedPtr++;
+                    typedC++;
+                }
+                while (name[namePtr] == c) {
+                    namePtr++;
+                    nameC++;
+                }
+                if (nameC > typedC) return false;
+            } else {
+                return false;
             }
-            while(name[indexName] == toSkip
-                  && indexName < name.length()){
-                indexName++;
-                nameCount++;
-            }
-            if(nameCount > typedCount) return false;
         }
-        if(indexTyped < typed.length() || indexName < name.length()) return false;
-        return true;
+        return typedPtr == typed.length() && namePtr == name.length();
     }
 };
