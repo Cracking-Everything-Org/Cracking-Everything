@@ -4,10 +4,10 @@ public:
         int low = 1;
         int high = num;
         int mid;
-        while(low < high){
+        while (low < high) {
             mid = low+(high-low)/2;
-            if(pow(mid,2) == num) return true;
-            else if(pow(mid,2) > num) {
+            if (pow(mid,2) == num) return true;
+            else if (pow(mid,2) > num) {
                 high = mid;
             } else {
                 low = mid+1;
