@@ -12,7 +12,7 @@ public:
         for (int start = s.length()-1; start >= 0; start--) {
             for (int end = start + 1; end < s.length(); end++) {
                 if (s[start] == s[end]) {
-                    if (end - start == 1 || memo[start + 1][end - 1]){
+                    if (end - start == 1 || memo[start + 1][end - 1]) {
                         memo[start][end] = true;
                         counter++;
                     }
