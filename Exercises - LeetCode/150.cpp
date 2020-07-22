@@ -4,20 +4,20 @@ public:
         int firstOperand;
         int secondOperand;
         stack<int> stk;
-        for(int i=0;i<tokens.size();i++){
-            if(tokens[i]=="+"){
+        for (int i=0;i<tokens.size();i++) {
+            if (tokens[i]=="+") {
                 secondOperand = stk.top();
                 stk.pop();
                 firstOperand = stk.top();
                 stk.pop();
                 stk.push(firstOperand + secondOperand);
-            } else if(tokens[i]=="-"){
+            } else if (tokens[i]=="-") {
                 secondOperand = stk.top();
                 stk.pop();
                 firstOperand = stk.top();
                 stk.pop();
                 stk.push(firstOperand - secondOperand);
-            } else if(tokens[i]=="*"){
+            } else if(tokens[i]=="*") {
                 secondOperand = stk.top();
                 stk.pop();
                 firstOperand = stk.top();
