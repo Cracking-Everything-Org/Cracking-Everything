@@ -1,12 +1,17 @@
 class Solution {
 public:
     bool detectCapitalUse(string word) {
-        if (word.length()<2) return true;
-        if (islower(word[0]) && isupper(word[1])) return false;
-        bool shouldBeCaps = isupper(word[1]);
-        for (int i=2; i<word.length(); i++) {
-            if (shouldBeCaps && islower(word[i])) return false;
-            if (!shouldBeCaps && isupper(word[i])) return false;
+        int n = word.length();
+        if (n == 1) return true;
+        bool firstIsCapital = word[0] >= 'A' && word[0] <= 'Z';
+        bool secondIsCapital = word[1] >= 'A' && word[1] <= 'Z';
+        if (!firstIsCapital && secondIsCapital) return false;
+        for (int i = 2; i < n; i++) {
+            if (secondIsCapital) {
+               if (word[i] < 'A' || word[i] > 'Z') return false;
+            } else {
+                if (word[i] >= 'A' && word[i] <= 'Z') return false;
+            }
         }
         return true;
     }
