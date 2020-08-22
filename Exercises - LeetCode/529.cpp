@@ -10,7 +10,7 @@ public:
 
         queue<vector<int>> q;
         q.push(click);
-        while(!q.empty()) {
+        while (!q.empty()) {
             vector<int> current = q.front();
             q.pop();
             if (board[current[0]][current[1]] == 'M') {
@@ -22,7 +22,7 @@ public:
                     for (auto pos : positions) {
                         int row = current[0] + pos[0];
                         int col = current[1] + pos[1];
-                        if(row >= 0 && row <= m && col >= 0 && col <= n && board[row][col] == 'E') {
+                        if (row >= 0 && row <= m && col >= 0 && col <= n && board[row][col] == 'E') {
                             vector<int> toPush = {row, col};
                             q.push(toPush);
                         }
@@ -44,7 +44,7 @@ public:
         for (auto pos : positions) {
            int row = current[0] + pos[0];
            int col = current[1] + pos[1];
-           if(row >= 0 && row <= m && col >= 0 && col <= n && board[row][col] == 'M') {
+           if (row >= 0 && row <= m && col >= 0 && col <= n && board[row][col] == 'M') {
                mines++;
            }
         }
