@@ -12,17 +12,20 @@ public:
     vector<vector<int>> pathSum(TreeNode* root, int sum) {
         vector<vector<int>> paths;
         vector<int> current;
-        findPaths(root, sum, current, paths);
+        searchPaths(paths, current, root, sum);
         return paths;
     }
 
-    void findPaths(TreeNode* root, int sum, vector<int> current, vector<vector<int>>& paths) {
-        if (!root) return ;
+    void searchPaths(vector<vector<int>>& paths, vector<int> current, TreeNode* root, int sum) {
+        if (!root) return;
+
         current.push_back(root->val);
-        if (sum == root->val && !root->left && !root->right) {
+
+        if (!root->left && !root->right && root->val == sum) {
             paths.push_back(current);
         }
-        findPaths(root->left, sum - root->val, current, paths);
-        findPaths(root->right, sum - root->val, current, paths);
+
+        searchPaths(paths, current, root->left, sum - root->val);
+        searchPaths(paths, current, root->right, sum - root->val);
     }
 };
