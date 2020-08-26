@@ -33,3 +33,51 @@ public:
         return res;
     }
 };
+
+/*
+class Solution {
+public:
+    vector<double> medianSlidingWindow(vector<int>& nums, int k) {
+        vector<double> medians;
+        priority_queue<int> maxHeap;
+        priority_queue<int, vector<int>, greater<int>> minHeap;
+
+        int startWindow = 0;
+        for (int endWindow = 0; endWindow < nums.size(); endWindow++) {
+            if (maxHeap.empty() || maxHeap.top() > nums[endWindow]) {
+                maxHeap.push(nums[endWindow]);
+            } else {
+                minHeap.push(nums[endWindow]);
+            }
+            if (maxHeap.size() + minHeap.size() >= k) {
+                calculateMedian(minHeap, maxHeap, medians);
+                // necesito extender priority_queue y redefinir el metodo de remover
+                removeElement(nums[startWindow], minHeap, maxHeap);
+                balance(minHeap, maxHeap);
+                startWindow++;
+            }
+        }
+        return medians;
+    }
+
+    void calculateMedian(priority_queue<int, vector<int>, greater<int>>& minHeap, priority_queue<int>& maxHeap, vector<double>& medians) {
+        double median = 0;
+        if (maxHeap.size() == minHeap.size()) {
+            median = ((double)maxHeap.top() + (double)minHeap.top()) / 2;
+        } else {
+            median = maxHeap.top();
+        }
+        medians.push_back(median);
+    }
+
+    void balance(priority_queue<int, vector<int>, greater<int>>& minHeap, priority_queue<int>& maxHeap) {
+        if (maxHeap.size() > minHeap.size() + 1) {
+            minHeap.push(maxHeap.top());
+            maxHeap.pop();
+        } else if (maxHeap.size() < minHeap.size()) {
+            maxHeap.push(minHeap.top());
+            minHeap.pop();
+        }
+    }
+};
+*/
