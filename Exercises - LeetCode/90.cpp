@@ -2,24 +2,24 @@ class Solution {
 public:
     vector<vector<int>> subsetsWithDup(vector<int>& nums) {
         sort(nums.begin(), nums.end());
-        vector<vector<int>> ans;
-        ans.push_back(vector<int>());
-        int startPointer = 0;
-        int endPointer = 0;
-        for (int num = 0; num < nums.size(); num++) {
-            startPointer = 0;
-            if (num > 0  && nums[num] == nums[num-1]) {
-                startPointer = endPointer + 1;
+        vector<vector<int>> subsets;
+        subsets.push_back(vector<int>());
+
+        int startIndex = 0, endIndex = 0;
+        for (int i = 0; i < nums.size(); i++) {
+            startIndex = 0;
+
+            if (i > 0 && nums[i] == nums[i - 1]) {
+                startIndex = endIndex + 1;
             }
+            endIndex = subsets.size() - 1;
 
-            endPointer = ans.size()-1;
-
-            for (int i = startPointer; i <= endPointer; i++) {
-                vector<int> current(ans[i]);
-                current.push_back(nums[num]);
-                ans.push_back(current);
+            for (int j = startIndex; j <= endIndex; j++) {
+                vector<int> copy(subsets[j]);
+                copy.push_back(nums[i]);
+                subsets.push_back(copy);
             }
         }
-        return ans;
+        return subsets;
     }
 };
