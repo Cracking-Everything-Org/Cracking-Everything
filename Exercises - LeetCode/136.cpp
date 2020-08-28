@@ -1,11 +1,11 @@
 class Solution {
 public:
     int singleNumber(vector<int>& nums) {
-        unordered_set<int> hs;
-        for(int i=0; i<nums.size(); i++){
-            if(hs.find(nums[i]) == hs.end()) hs.insert(nums[i]);
-            else hs.erase(nums[i]);
+        int x1 = 0;
+        int n = nums.size();
+        for (int i = 0; i < n; i++) {
+            x1 = x1 ^ nums[i];
         }
-        return *hs.begin();
+        return x1;
     }
 };
