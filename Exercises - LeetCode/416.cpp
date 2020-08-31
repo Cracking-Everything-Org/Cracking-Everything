@@ -1,34 +1,37 @@
 class Solution {
 public:
     bool canPartition(vector<int>& nums) {
-        int sum = 0;
+        int total = 0;
         for (int i = 0; i < nums.size(); i++) {
-            sum += nums[i];
+            total += nums[i];
         }
-        if (sum % 2 != 0) return false;
-        sum /= 2;
+        if (total % 2 != 0) return false;
 
-        vector<vector<int>> dp(nums.size(), vector<int>(sum + 1, -1));
-        return canPart(nums, 0, sum, dp);
+        int target = total / 2;
+
+        unordered_map<int, bool> memo;
+        return canPart(memo, nums, nums.size() - 1, target);
     }
 
-    bool canPart(vector<int>& nums, int position, int sum, vector<vector<int>>& dp) {
-        if (sum == 0) return true;
-        if (position == nums.size()) return false;
-
-        if (dp[position][sum] == -1) {
-            //include
-            if (nums[position] <= sum) {
-                if (canPart(nums, position + 1, sum - nums[position], dp)) {
-                    dp[position][sum] = 1;
-                    return true;
-                }
-            }
-            //exclude
-            dp[position][sum] = canPart(nums, position + 1, sum, dp) ? 1 : 0;
+    bool canPart(unordered_map<int, bool>& memo, vector<int>& nums, int index, int subSetSum) {
+        if (subSetSum == 0) {
+            return true;
+        }
+        if (subSetSum < 0 || index == 0) {
+            return false;
         }
 
-        return dp[position][sum];
+        if (memo.find(subSetSum) != memo.end()) {
+            return memo[subSetSum];
+        }
+
+        bool including = false;
+        if (subSetSum - nums[index] >= 0) {
+            including = canPart(memo, nums, index - 1, subSetSum - nums[index]);
+        }
+        bool excluding = canPart(memo, nums, index - 1, subSetSum);
+        memo[subSetSum] = including || excluding;
+        return including || excluding;
     }
 
 };
