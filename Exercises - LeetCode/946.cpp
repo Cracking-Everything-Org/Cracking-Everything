@@ -1,39 +1,33 @@
 class Solution {
 public:
     bool validateStackSequences(vector<int>& pushed, vector<int>& popped) {
-        if (pushed.size() != popped.size()) {
-            return false;
-        }
-
         stack<int> stk;
-        int firstPointer = 0;
-        int secondPointer = 0;
-
-        while (firstPointer < pushed.size() && secondPointer < popped.size()) {
-
-            if (pushed[firstPointer] == popped[secondPointer]) {
-                firstPointer++;
-                secondPointer++;
+        int pushedIndex = 0;
+        int poppedIndex = 0;
+        while (poppedIndex < popped.size() && pushedIndex < pushed.size()) {
+            if (pushed[pushedIndex] == popped[poppedIndex]) {
+                pushedIndex++;
+                poppedIndex++;
             } else {
-                if (!stk.empty() && stk.top() == popped[secondPointer]) {
+                if (!stk.empty() && popped[poppedIndex] == stk.top()) {
                     stk.pop();
-                    secondPointer++;
+                    poppedIndex++;
                 } else {
-                    stk.push(pushed[firstPointer]);
-                    firstPointer++;
+                    stk.push(pushed[pushedIndex]);
+                    pushedIndex++;
                 }
             }
         }
 
-        while (secondPointer < popped.size() && !stk.empty()) {
-            if (popped[secondPointer] != stk.top()) {
+        while (!stk.empty() && poppedIndex < popped.size()) {
+            if (stk.top() != popped[poppedIndex]) {
                 return false;
-            } else {
-                secondPointer++;
-                stk.pop();
             }
+            stk.pop();
+            poppedIndex++;
         }
 
         return stk.empty();
+
     }
 };
