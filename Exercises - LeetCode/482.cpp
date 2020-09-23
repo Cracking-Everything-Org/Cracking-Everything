@@ -1,20 +1,29 @@
 class Solution {
 public:
     string licenseKeyFormatting(string S, int K) {
-        string result;
-        int count = K;
-        for(int index = S.length()-1; index >= 0; index--){
-            if(S[index]!='-'){
-                result+= toupper(S[index]);
-                count--;
-                if(count==0 && index>0) {
-                    result+="-";
-                    count = K;
+        string license = "";
+        int remaining = 0;
+        for (int i = S.length() - 1; i >= 0; i--) {
+            if (remaining >= K) {
+                license += '-';
+                remaining = 0;
+            }
+            if (S[i] != '-') {
+                if ((S[i] >= 'A' && S[i] <= 'Z') || (S[i] >= 'a' && S[i] <= 'z')) {
+                    license += toupper(S[i]);
+                } else {
+                    license += S[i];
                 }
+                remaining++;
             }
         }
-        if(result.back()=='-') result.pop_back();
-        reverse(result.begin(),result.end());
-        return result;
+        reverse(license.begin(), license.end());
+        int start = 0;
+        while (start < license.size()) {
+            if (license[start] == '-') {
+                start++;
+            } else break;
+        }
+        return license.substr(start);
     }
 };
