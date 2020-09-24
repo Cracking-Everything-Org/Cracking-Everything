@@ -7,3 +7,24 @@ public:
         return (char)sumS;
     }
 };
+
+class Solution {
+public:
+    char findTheDifference(string s, string t) {
+        unordered_map<char, int> frequency;
+        for (char c : s) {
+            if (frequency.find(c) == frequency.end()) {
+                frequency[c] = 0;
+            }
+            frequency[c]++;
+        }
+        for (char c : t) {
+            if (frequency.find(c) == frequency.end() || frequency[c] == 0) {
+                return c;
+            } else {
+                frequency[c]--;
+            }
+        }
+        return '-';
+    }
+};
