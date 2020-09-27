@@ -1,7 +1,7 @@
 class Solution {
 public:
     void combineHT(unordered_map<char, int>& htFinal,unordered_map<char, int>& htTurn) {
-        if (htFinal.size()==0) {
+        if (htFinal.size() == 0) {
             htFinal = htTurn;
             return ;
         }
@@ -13,7 +13,7 @@ public:
                 toErase.push_back(it.first);
             }
         }
-        for(auto ch: toErase) htFinal.erase(ch);
+        for (auto ch: toErase) htFinal.erase(ch);
     }
 
     vector<string> commonChars(vector<string>& A) {
