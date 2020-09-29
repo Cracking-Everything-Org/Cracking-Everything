@@ -1,28 +1,32 @@
 /*
-1. Given a string, write a function to print out all its anagrams.
+1. Given a string s and a dictionary containing a list of words, write a function to break the string completely
+into valid words. Print all such possible sentences. The same word in the dictionary may be reused multiple times.
 
-Input = "god",
-Output = "god", "gdo", "dog", "dgo", "ogd", "odg"
+Input = "catsanddog"
+dictionary = ["cat", "cats", "and", "sand", "dog"]
+Output = "cat", "sand, "dog"
+        "cats", "and", "dog"
 */
 
-vector<string> anagrams(string givenString) {
-  vector<string> ans;
-  vector<bool> used;
-  getAnagrams(ans, givenString, "", used);
+vector<string> wordBreak(string given, unordered_set<string> dictionary) {
+  vector<> ans;
+  wb(ans, given, dictionary, "", 0);
   return ans;
 }
 
-void getAnagrams(vector<string> ans, string givenString, string partialString, vector<bool> used) {
-  if (partialString.length() == givenString.length()) {
-    ans.push_back(partialString);
-  }
-  for (int i = 0; i < givenString.length(); i++) {
-    if (used[i]) {
-      continue;
+void wb(string input, unordered_set<string> dictionary, vector<string> partial) {
+  if (input.length() == 0) {
+    for (auto s : partial) {
+      cout << s << " ";
     }
-    used[i] = true;
-    getAnagrams(ans, givenString, partialString += givenString[i], used);
-    used[i] = false;
-    getAnagrams(ans, givenString, partialString, used);
+    cout << endl;
+  }
+  for (int i = 0; i < input.length(); i++) {
+    string word = input.substr(0, i + 1);
+    if (dictionary.count(word)) {
+      partial.push_back(current);
+      wb(input.substr(i + 1), dictionary, partial);
+      partial.pop_back(current);
+    }
   }
 }
