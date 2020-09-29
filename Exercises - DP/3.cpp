@@ -13,14 +13,14 @@ vector<string> anagrams(string givenString) {
   return ans;
 }
 
-void getAnagrams(vector<string> ans, string givenString, string partialString, vector<bool> used, int index) {
+void getAnagrams(vector<string> ans, string given, string partial, vector<bool> used, int index) {
   if (index == givenString.length()) {
     ans.push_back(partialString);
   }
   for (int i = 0; i < givenString.length(); i++) {
-    if (!used[i] && !(i > 0 && givenString[i] == givenString[i - 1] && !used[i - 1])) {
+    if (!used[i] && !(i > 0 && given[i] == given[i - 1] && !used[i - 1])) {
       used[i] = true;
-      getAnagrams(ans, givenString, partialString += givenString[i], used, index + 1);
+      getAnagrams(ans, given, partial += given[i], used, index + 1);
       used[i] = false;
     }
   }
