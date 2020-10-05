@@ -12,7 +12,6 @@ public:
         if (amount == 0) {
             return 0;
         }
-
         if (memo[amount] != 0) {
             return memo[amount];
         }
