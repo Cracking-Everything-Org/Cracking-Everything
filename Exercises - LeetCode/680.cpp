@@ -10,8 +10,7 @@ public:
         while (lo < hi) {
             if (s[lo] == s[hi]) {
                 lo++; hi--;
-            }
-            else {
+            } else {
                 return validPalindrome(s, lo + 1, hi, count + 1) ||
                         validPalindrome(s, lo, hi - 1, count + 1);
             }
