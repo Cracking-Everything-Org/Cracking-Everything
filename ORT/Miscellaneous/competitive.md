@@ -10,8 +10,8 @@ typedef long long ll;
 
 int main() {
 	fastio;
-	int T;",
-	cin >> T;",
+	int T;
+	cin >> T;
 	while(T-- > 0) {
 		
 	}
