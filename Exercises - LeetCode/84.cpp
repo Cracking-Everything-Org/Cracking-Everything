@@ -8,7 +8,7 @@ public:
         int top;
         int currentArea = 0;
         while (i < n) {
-            if (stk.empty() || heights[i] > heights[stk.top()]){
+            if (stk.empty() || heights[i] > heights[stk.top()]) {
                 stk.push(i++);
             } else {
                 top = stk.top();

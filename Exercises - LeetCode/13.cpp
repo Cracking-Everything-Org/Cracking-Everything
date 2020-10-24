@@ -10,8 +10,8 @@ public:
         nums['D'] = 500;
         nums['M'] = 1000;
         int result = 0;
-        for(int i = 0; i < s.length(); i++) {
-            if(i + 1 < s.length() && nums[s[i+1]] > nums[s[i]])
+        for (int i = 0; i < s.length(); i++) {
+            if (i + 1 < s.length() && nums[s[i+1]] > nums[s[i]])
                 result -=  nums[s[i]];
             else
                 result += nums[s[i]];

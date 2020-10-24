@@ -4,8 +4,8 @@ public:
         //trim
         int firstNotSpace = 0;
         int lastNotSpace = s.length()-1;
-        while(s[firstNotSpace] == ' ' && firstNotSpace < lastNotSpace) firstNotSpace++;
-        while(s[lastNotSpace] == ' ' && lastNotSpace > firstNotSpace) lastNotSpace--;
+        while (s[firstNotSpace] == ' ' && firstNotSpace < lastNotSpace) firstNotSpace++;
+        while (s[lastNotSpace] == ' ' && lastNotSpace > firstNotSpace) lastNotSpace--;
 
         bool eSeen = false;
         bool numSeen = false;
