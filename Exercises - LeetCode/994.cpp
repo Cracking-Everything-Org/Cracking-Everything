@@ -15,7 +15,7 @@ public:
 
         while (!q.empty()) {
             int size = q.size();
-            for (int i=0; i<size; i++) {
+            for (int i = 0; i < size; i++) {
                 pair<int,int> c = q.front();
                 q.pop();
                 grid[c.first][c.second] = 2;
