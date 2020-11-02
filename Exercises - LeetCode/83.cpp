@@ -10,9 +10,9 @@ class Solution {
 public:
     ListNode* deleteDuplicates(ListNode* head) {
         ListNode* curr = head;
-        if(!curr || !curr->next) return curr;
-        while(curr && curr->next){
-            if(curr->val == curr->next->val) {
+        if (!curr || !curr->next) return curr;
+        while (curr && curr->next) {
+            if (curr->val == curr->next->val) {
                 ListNode* toDelete = curr->next;
                 curr->next = curr->next->next;
                 delete toDelete;
