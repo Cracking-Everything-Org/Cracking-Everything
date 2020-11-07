@@ -3,20 +3,18 @@ class Logger {
 
 public:
     /** Initialize your data structure here. */
-    Logger() {
-
-    }
+    Logger() { }
 
     /** Returns true if the message should be printed in the given timestamp, otherwise returns false.
         If this method returns false, the message will not be printed.
         The timestamp is in seconds granularity. */
     bool shouldPrintMessage(int timestamp, string message) {
-        if(umap.count(message) == 0) {
+        if (umap.count(message) == 0) {
             umap[message] = timestamp;
             return true;
         }
 
-        if(umap[message] + 10 <= timestamp) {
+        if (umap[message] + 10 <= timestamp) {
             umap[message] = timestamp;
             return true;
         }
