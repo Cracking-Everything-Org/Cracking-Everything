@@ -1,15 +1,17 @@
-using namespace std;
-#include <iostream>
+#include <bits/stdc++.h>
+
 
 int main () {
-    int n, x, y;
-    cin >> n;
-    while(n--){
-        cin >> x >> y;
-        if (x < y) cout << "<";
-        else if (x > y) cout << ">";
-        else cout << "=";
-        cout << endl;
-    }   
+    int T, a, b;
+    scanf("%d", &T);
+    while (T--) {
+        scanf("%d %d", &a, &b);
+        if (a < b) {
+            printf("<\n");
+        } else if (a > b) {
+            printf(">\n");
+        } else printf("=\n");
+    } 
+    
     return 0;
 }
