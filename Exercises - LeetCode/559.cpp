@@ -20,9 +20,9 @@ public:
 class Solution {
 public:
     int maxDepth(Node* root) {
-        if(!root) return 0;
+        if (!root) return 0;
         int maxH = 0;
-        for(int i=0; i< root->children.size(); i++){
+        for (int i = 0; i < root->children.size(); i++){
             maxH = max(maxH, maxDepth(root->children[i]));
         }
         return 1 + maxH;
