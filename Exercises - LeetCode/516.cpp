@@ -1,7 +1,7 @@
 class Solution {
 public:
     int longestPalindromeSubseq(string s) {
-        if(!s.length()) return 0;
+        if (!s.length()) return 0;
         vector<vector<int>> memo(s.length(), vector<int>(s.length(), -1));
         return findLPS(s, memo, 0, s.length()-1);
     }
