@@ -5,10 +5,16 @@ public:
         int j = num2.size() - 1;
         int carry = 0;
         string res = "";
-        while(i>=0 || j>=0 || carry){
+        while (i >= 0 || j >= 0 || carry) {
             long sum = 0;
-            if(i >= 0){sum += (num1[i] - '0');i--;}
-            if(j >= 0){sum += (num2[j] - '0');j--;}
+            if (i >= 0) {
+                sum += (num1[i] - '0');
+                i--;
+            }
+            if (j >= 0) {
+                sum += (num2[j] - '0');
+                j--;
+            }
             sum += carry;
             carry = sum / 10;
             sum = sum % 10;
