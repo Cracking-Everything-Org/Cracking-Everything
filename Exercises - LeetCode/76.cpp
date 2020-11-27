@@ -15,7 +15,7 @@ public:
             }
         }
         i = 0;
-        while(i != s.length()) {
+        while (i != s.length()) {
             match[s.substr(i,1)]++;
             if (match[s.substr(i,1)] <= map3[s.substr(i,1)]) a++;
             while (a == t.length()) {
