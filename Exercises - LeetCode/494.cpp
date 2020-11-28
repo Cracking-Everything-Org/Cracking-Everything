@@ -9,7 +9,7 @@ public:
 
     int findWays(vector<vector<int>>& memo, vector<int>& nums, int index, int current, int S) {
         // necesito este caso base para que no se me vaya al carajo
-		if (current < -1000 || current > 1000) return 0;
+	if (current < -1000 || current > 1000) return 0;
         if (index == nums.size()) {
             if (current == S) {
                 return 1;
