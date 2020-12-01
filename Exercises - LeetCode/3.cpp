@@ -9,7 +9,7 @@ public:
         for (windowEnd = 0; windowEnd < s.length(); windowEnd++) {
             ht[s[windowEnd]] ++;
             currLength ++;
-            while(ht[s[windowEnd]]>1) {
+            while (ht[s[windowEnd]]>1) {
                 ht[s[windowStart]]--;
                 windowStart++;
                 currLength--;
