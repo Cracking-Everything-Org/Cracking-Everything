@@ -21,7 +21,7 @@ public:
                 ht[S[c] - 'a']--;
             }
         }
-        for (int i=0; i < T.length(); i++) {
+        for (int i = 0; i < T.length(); i++) {
             if (hs.find(T[i]) == hs.end()) {
                 ans += T[i];
             }
