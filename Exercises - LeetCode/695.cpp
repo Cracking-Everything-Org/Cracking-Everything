@@ -16,8 +16,7 @@ public:
     void dfs(vector<vector<int>>& grid, int row, int col, int& currentArea, int& maxArea) {
         if (row < 0 || row > grid.size() - 1 || col < 0 || col > grid[0].size() - 1 || grid[row][col] == 0) {
             return;
-        }
-        else {
+        } else {
             currentArea++;
             grid[row][col] = 0;
             dfs(grid, row + 1, col, currentArea, maxArea);
