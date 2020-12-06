@@ -19,4 +19,11 @@ public:
     }
 };
 
-// también pensé en ordenarlo y retornar el elemento del medio
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        //no me acuerdo de bit manipulation XD
+        sort(nums.begin(), nums.end());
+        return nums[nums.size() / 2];
+    }
+};
