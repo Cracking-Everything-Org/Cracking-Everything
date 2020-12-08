@@ -2,7 +2,6 @@ class Solution {
 public:
     vector<int> nextGreaterElement(vector<int>& nums1, vector<int>& nums2) {
         vector<int> ans;
-
         for (int i = 0; i < nums1.size(); i++) {
             bool found = false;
             int j = 0;
@@ -25,7 +24,6 @@ public:
                 ans.push_back(-1);
             }
         }
-
         return ans;
     }
 };
