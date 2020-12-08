@@ -22,7 +22,7 @@ public:
                 start = end;
             }
         }
-    s.erase(s.begin() + idx, s.end());
-    return s;
+        s.erase(s.begin() + idx, s.end());
+        return s;
     }
 };
