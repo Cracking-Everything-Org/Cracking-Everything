@@ -5,8 +5,9 @@ public:
         vector<vector<int>> positions = {
             {-1,-1},{-1,0},{-1,1},{0,-1},{0,1},{1,-1},{1,0},{1,1}
         };
-        int m = board.size()-1;
-        int n = board[0].size()-1;
+        
+        int m = board.size() - 1;
+        int n = board[0].size() - 1;
 
         queue<vector<int>> q;
         q.push(click);
@@ -37,8 +38,8 @@ public:
     }
 
     int countMines(vector<int> current, vector<vector<char>> board, vector<vector<int>> positions) {
-        int m = board.size()-1;
-        int n = board[0].size()-1;
+        int m = board.size() - 1;
+        int n = board[0].size() - 1;
 
         int mines = 0;
         for (auto pos : positions) {
