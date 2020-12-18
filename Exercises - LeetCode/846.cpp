@@ -8,10 +8,8 @@ public:
             int n = pq.top();
             vector<int> temp;
             for (int i = n; i < n + W; i++) {
-                if (pq.top() == i)
-                    pq.pop();
-                else
-                    return false;
+                if (pq.top() == i) pq.pop();
+                else return false;
                 // handle duplicates
                  while (pq.size() and pq.top() == i) {
                     pq.pop();
