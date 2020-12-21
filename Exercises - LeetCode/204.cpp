@@ -13,7 +13,7 @@ public:
 
         int count = 0;
         for (int i = 2; i < primes.size(); i++)
-            if(!primes[i]) count++;
+            if (!primes[i]) count++;
         return count;
     }
 };
