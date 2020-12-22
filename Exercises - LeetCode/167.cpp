@@ -23,10 +23,10 @@ public:
         int high = nums.size() - 1;
         int mid;
         while (low < mid) {
-            mid = low + ((high - low)/2);
+            mid = low + ((high - low) / 2);
             if (target <= nums[mid]) {
-                if (target > nums[mid-1]) return mid;
-                else high = mid-1;
+                if (target > nums[mid - 1]) return mid;
+                else high = mid - 1;
             } else {
                 low = mid;
             }
