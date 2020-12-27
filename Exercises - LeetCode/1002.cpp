@@ -21,7 +21,7 @@ public:
         vector<string> result;
         for (auto str : A) {
             unordered_map<char,int> htTurn;
-            for (int i = 0; i< str.length(); i++) {
+            for (int i = 0; i < str.length(); i++) {
                 if (htTurn.find(str[i]) != htTurn.end()) {
                     htTurn[str[i]]++;
                 } else {
@@ -30,7 +30,7 @@ public:
             }
             combineHT(htFinal, htTurn);
         }
-        for (auto& it: htFinal) {
+        for (auto& it : htFinal) {
             while (it.second > 0) {
                 char num = it.first;
                 result.push_back(to_string(num));
