@@ -25,6 +25,4 @@ public:
     // elements equal to x in A or B
     return min(rotations_a, rotations_b);
   }
-
-
 };
