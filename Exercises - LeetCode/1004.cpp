@@ -17,7 +17,7 @@ public:
                     currentLength--;
                 }
             }
-            longestLength = max(longestLength,max(currentLength, endWindow - startWindow + 1));
+            longestLength = max(longestLength, max(currentLength, endWindow - startWindow + 1));
         }
         return longestLength;
     }
