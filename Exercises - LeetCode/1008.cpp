@@ -16,13 +16,9 @@ public:
     TreeNode* buildBST(vector<int>& preorder, int start, int end) {
         TreeNode* root = new TreeNode(preorder[start]);
         int index = start + 1;
-        while (index < end && preorder[index] < preorder[start]) {
-            index++;
-        }
-        if (index > start + 1)
-            root->left = buildBST(preorder, start + 1, index);
-        if (index < end)
-            root->right = buildBST(preorder, index, end);
+        while (index < end && preorder[index] < preorder[start]) index++;
+        if (index > start + 1) root->left = buildBST(preorder, start + 1, index);
+        if (index < end) root->right = buildBST(preorder, index, end);
         return root;
     }
 };
