@@ -25,13 +25,10 @@ public:
 
     void sumPaths(TreeNode* root, int& total, string current) {
         if (!root) return;
-
         current.push_back(root->val);
-
         if (!root->left && !root->right) {
             total += stoi(current, nullptr, 2);
         }
-
         sumPaths(root->left, total, current);
         sumPaths(root->right, total, current);
     }
