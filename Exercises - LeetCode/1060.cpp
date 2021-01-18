@@ -3,7 +3,6 @@ public:
     int missingElement(vector<int>& nums, int k) {
         // encontrar cantidad de perdidos entre index y primero
         // nums[i] - nums[0] - i
-
         int left = 0;
         int right = nums.size() - 1; // hay un bug, debe ser int right = nums.size();
 
