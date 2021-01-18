@@ -25,6 +25,5 @@ public:
         }
 
         return numsSubsequences;
-
     }
 };
