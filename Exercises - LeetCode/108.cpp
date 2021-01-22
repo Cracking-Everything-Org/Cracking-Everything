@@ -7,6 +7,7 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
+
 class Solution {
 public:
     TreeNode* inser(int l, int r, vector<int>& v) {
@@ -20,6 +21,6 @@ public:
     }
 
     TreeNode* sortedArrayToBST(vector<int>& nums) {
-        return inser(0, nums.size()-1, nums);
+        return inser(0, nums.size() - 1, nums);
     }
 };
