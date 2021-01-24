@@ -12,11 +12,13 @@ public:
         ListNode* fast = head;
         ListNode* slow = head;
         ListNode* prev = nullptr;
+        
         while (fast && fast->next) {
             prev = slow;
             fast = fast->next->next;
             slow = slow->next;
         }
+        
         TreeNode* root = new TreeNode(slow->val);
         if (prev == nullptr) return root;
         prev->next = nullptr;
