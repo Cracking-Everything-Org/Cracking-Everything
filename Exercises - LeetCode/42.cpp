@@ -24,3 +24,27 @@ public:
         return totalWater;
     }
 };
+
+class Solution {
+public:
+    int trap(vector<int>& height) {
+        int result = 0;
+        if (height.size() == 0) return result;
+        vector<int> fromLeft(height.size(), 0);
+        fromLeft[0] = height[0];
+        for (int i = 1; i < height.size(); i++) {
+            fromLeft[i] = max(fromLeft[i - 1], height[i]);
+        }
+        
+        vector<int> fromRight(height.size(), 0);
+        fromRight[height.size() - 1] = height[height.size() - 1];
+        for (int i = height.size() - 2; i >= 0; i--) {
+            fromRight[i] = max(fromRight[i + 1], height[i]);
+        }
+        
+        for (int i = 0; i < height.size(); i++) {
+            result += min(fromLeft[i], fromRight[i]) - height[i];
+        }
+        return result;
+    }
+};
