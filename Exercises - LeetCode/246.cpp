@@ -21,3 +21,25 @@ public:
         return true;
     }
 };
+
+#include<iostream>
+
+class Solution {
+public:
+    bool isStrobogrammatic(string num) {
+        int left = 0;
+        int right = num.size() - 1;
+        unordered_map<char, char> hm;
+        hm['0'] = '0';
+        hm['1'] = '1';
+        hm['6'] = '9';
+        hm['9'] = '6';
+        hm['8'] = '8';
+        while (left <= right) {
+            if (hm[num[left]] != num[right]) return false;
+            left++; 
+            right--;
+        }
+        return true;
+    }
+};
