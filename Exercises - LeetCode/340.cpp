@@ -26,3 +26,24 @@ public:
         return maxLength;
     }
 };
+
+class Solution {
+public:
+    int lengthOfLongestSubstringKDistinct(string s, int k) {
+        int longestLength = 0;
+        unordered_map<char, int> hm;
+        int start = 0;
+        for (int end = 0; end < s.length(); end++) {
+            hm[s[end]]++;
+            while (hm.size() > k) {
+                hm[s[start]]--;
+                if (hm[s[start]] == 0) {
+                    hm.erase(s[start]);
+                }
+                start++;
+            }
+            longestLength = longestLength > end - start + 1 ? longestLength : end - start + 1;
+        }
+        return longestLength;
+    }
+};
