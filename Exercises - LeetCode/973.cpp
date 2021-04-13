@@ -23,3 +23,28 @@ public:
         }
     };
 };
+
+class Solution {
+public:
+    vector<vector<int>> kClosest(vector<vector<int>>& points, int k) {
+        vector<vector<int>> result;
+        priority_queue<vector<int>, vector<vector<int>>, compare> maxHeap;
+        for (int i = 0; i < points.size(); i++) {
+            maxHeap.push(points[i]);
+            if (maxHeap.size() > k) {
+                maxHeap.pop();
+            }
+        }
+        while (!maxHeap.empty()) {
+            result.push_back(maxHeap.top());
+            maxHeap.pop();
+        }
+        return result;
+    }
+    
+    struct compare {
+        bool operator()(vector<int>& a, vector<int>& b) {
+            return (a[0]*a[0] + a[1]*a[1]) < (b[0]*b[0] + b[1]*b[1]);
+        }
+    };
+};

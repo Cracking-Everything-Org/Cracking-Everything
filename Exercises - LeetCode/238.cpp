@@ -50,3 +50,29 @@ public:
         return prods;
     }
 };
+
+class Solution {
+public:
+    vector<int> productExceptSelf(vector<int>& nums) {
+        vector<int> result(nums.size(), 0);
+        if (!nums.size()) return result;
+        
+        vector<int> fromLeft(nums.size(), 0);
+        fromLeft[0] = 1;
+        for (int i = 1; i < nums.size(); i++) {
+            fromLeft[i] = fromLeft[i - 1] * nums[i - 1];
+        }
+        
+        vector<int> fromRight(nums.size(), 0);
+        fromRight[nums.size() - 1] = 1;
+        for (int i = nums.size() - 2; i >= 0; i--) {
+            fromRight[i] = fromRight[i + 1] * nums[i + 1];
+        }
+        
+        for (int i = 0; i < nums.size(); i++) {
+            result[i] = fromLeft[i] * fromRight[i];
+        }
+        
+        return result;
+    }
+};
