@@ -21,3 +21,26 @@ public:
         return true;
     }
 };
+
+
+class Solution {
+public:
+    bool isAlienSorted(vector<string>& words, string order) {
+        unordered_map<char, int> pos;
+        for (int i = 0; i < order.size(); i++) {
+            pos[order[i]] = i;
+        }
+        for (int i = 0; i < words.size() - 1; i++) {
+            if (!compare(words[i], words[i+1], pos)) return false;
+        }
+        return true;
+    }
+    
+    bool compare(string firstWord, string secondWord, unordered_map<char, int> pos) {
+        int i = 0;
+        while (i < firstWord.size() && firstWord[i] == secondWord[i]) i++;
+        if (firstWord.size() == i) return true;
+        else if (secondWord.size() == i) return false;
+        return (pos[firstWord[i]] < pos[secondWord[i]]);
+    }
+};
