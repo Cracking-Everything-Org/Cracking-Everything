@@ -54,3 +54,48 @@ public:
     }
 
 };
+
+
+
+
+class Solution {
+public:
+    vector<int> distanceK(TreeNode* root, TreeNode* target, int K) {
+        vector<int> nodes;
+        unordered_set<TreeNode*> visited;
+        unordered_map<TreeNode*, TreeNode*> hm;
+        buildMap(root, NULL, hm);
+        
+        int level = 1;
+        queue<TreeNode*> q;
+        q.push(target);
+        while (!q.empty()) {
+            int size = q.size();
+            for (int i = 0; i < size; i++) {
+                TreeNode* current = q.front();
+                if (current) {
+                    if (visited.find(current) == visited.end()) {
+                        q.pop();
+                        if (level == K) {
+                            nodes.push_back(current->val);
+                        }
+                        if (current->left) q.push(current->left);
+                        if (current->right) q.push(current->right);
+                        q.push(hm[current]);
+                    }
+                    visited.insert(current);
+                }
+            }
+            level++;
+        }
+        return nodes;
+    }
+    
+    void buildMap(TreeNode* root, TreeNode* parent, unordered_map<TreeNode*, TreeNode*>& hm) {
+        if (root) {
+            hm[root] = parent;
+            buildMap(root->left, root, hm);
+            buildMap(root->right, root, hm);
+        }
+    }
+};

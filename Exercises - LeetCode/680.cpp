@@ -19,3 +19,29 @@ public:
         return true;
     }
 };
+
+
+class Solution {
+public:
+    bool validPalindrome(string s) {
+        bool foundDifference = false;
+        return checkPalindrome(s, 0, s.length() - 1, foundDifference);
+    }
+    
+    bool checkPalindrome(string s, int left, int right, bool& foundDifference) {
+        while (left < right) {
+            if (s[left] == s[right]) {
+                left++;
+                right--;
+            } else {
+                if (foundDifference) {
+                    return false;
+                }
+                foundDifference = true;
+                return checkPalindrome(s, left + 1, right, foundDifference) 
+                    || checkPalindrome(s, left, right - 1, foundDifference);
+            }
+        }
+        return true;
+    }
+};
