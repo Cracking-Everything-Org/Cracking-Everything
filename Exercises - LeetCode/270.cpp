@@ -24,3 +24,23 @@ public:
         if (root->val > target) closestVal(root->left, target, closest);
     }
 };
+
+
+class Solution {
+public:
+    int closestValue(TreeNode* root, double target) {
+        int closest = INT_MAX;
+        findClosest(root, target, closest);
+        return closest;
+    }
+    
+    void findClosest(TreeNode* root, double target, int& closest) {
+        if (root) {
+            if (abs(root->val - target) < abs(closest - target)) {
+                closest = root->val;
+            }
+            findClosest(root->left, target, closest);
+            findClosest(root->right, target, closest);
+        }
+    }
+};
