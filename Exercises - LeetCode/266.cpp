@@ -21,3 +21,23 @@ public:
         return true;
     }
 };
+
+class Solution {
+public:
+    bool canPermutePalindrome(string s) {
+        bool foundOdd = false;
+        unordered_map<char, int> frequency;
+        for (int i = 0; i < s.length(); i++) {
+            frequency[s[i]]++;
+        }
+        for (auto entry : frequency) {
+            if (entry.second % 2 == 1) {
+                if (foundOdd) {
+                    return false;
+                }
+                foundOdd = true;
+            }
+        }
+        return true;
+    }
+};
