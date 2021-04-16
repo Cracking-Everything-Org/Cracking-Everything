@@ -1,20 +1,15 @@
 class Solution {
 public:
     int leastInterval(vector<char>& tasks, int n) {
+        int intervals = 0;
         unordered_map<char,int> ht;
         for (char t : tasks) {
-            if (ht.find(t) != ht.end()) {
-                ht[t]++;
-            } else ht[t] = 1;
+            ht[t]++;
         }
-
         priority_queue<int> maxHeap;
-
         for (auto entry : ht) {
             maxHeap.push(entry.second);
         }
-
-        int intervals = 0;
 
         while (!maxHeap.empty()) {
             vector<int> current;
