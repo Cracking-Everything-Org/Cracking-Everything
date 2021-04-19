@@ -1,18 +1,19 @@
 class Solution {
 public:
     string addBinary(string a, string b) {
-        bitset<128> x{a};
-        bitset<128> y{b};
-        while (y.any()) {
-            bitset<128> temp = x^y;
-            y = (x&y) << 1;
-            x = temp;
+        string result;
+        int i = a.length() - 1;
+        int j = b.length() - 1;
+        int carry = 0;
+        while (i >= 0 || j >= 0) {
+            int sum = carry;
+            if (i >= 0) sum += a[i--] - '0';
+            if (j >= 0) sum += b[j--] - '0';
+            carry = sum > 1 ? 1 : 0;
+            result += to_string(sum % 2);
         }
-        string s = x.to_string();
-
-        s = s.erase(0, s.find_first_not_of('0'));
-        if (!s.size()) return "0";
-        return s;
-
+        if (carry) result += "1";
+        reverse(result.begin(), result.end());
+        return result;
     }
 };
