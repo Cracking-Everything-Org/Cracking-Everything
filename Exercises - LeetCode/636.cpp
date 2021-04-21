@@ -1,36 +1,38 @@
 class Solution {
 public:
     vector<int> exclusiveTime(int n, vector<string>& logs) {
-        vector<int> exec_time(n, 0);
-		// we're using a pair [process_id, start_time]
+        vector<int> exclusiveTimes(n, 0);
+		// we're using a pair [processId, startTime]
         stack<pair<int, int>> processing;
 
-        for (const auto& log : logs) {
-            // tokenize the string
-            std::stringstream sstream(log);
-            string id; getline(sstream, id, ':');
-            string op; getline(sstream, op, ':');
-            string ts; getline(sstream, ts, ':');
+        for (const auto& log : logs) {                               // ITERAMOS
+            stringstream sstream(log);                         // LEEMOS EL STRING      "{function_id}:{"start" | "end"}:{timestamp}"
+            string id; 
+            getline(sstream, id, ':');
+            string operation; 
+            getline(sstream, operation, ':');
+            string timestamp; 
+            getline(sstream, timestamp, ':');
 
-            if (op == "start") {
+            if (operation == "start") {                                // SI ES START
                 // add process to stack, convert strings to ints
-                processing.push(make_pair(stoi(id), stoi(ts)));
-            } else {
+                processing.push(make_pair(stoi(id), stoi(timestamp)));
+            } else {                                                   // SI ES END
                 // c++17 structured binding
-                auto [process_id, start_time] = processing.top();
+                auto [processId, startTime] = processing.top();
                 processing.pop();
 
                 // get the process time and set it
-                int offset = stoi(ts) - start_time + 1;
-                exec_time[process_id] += offset;
+                int offset = stoi(timestamp) - startTime + 1;
+                exclusiveTimes[processId] += offset;
 
-                // if stack is not empty, a process was on hold
-                // we need to remove the time elapsed since before we resume
+                // si el stack no esta vacio significa que habia un proceso esperando
+                // le restamos el offset
                 if (!empty(processing)) {
-                    exec_time[processing.top().first] -= offset;
+                    exclusiveTimes[processing.top().first] -= offset;
                 }
             }
         }
-        return exec_time;
+        return exclusiveTimes;
     }
 };
