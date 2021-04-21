@@ -4,26 +4,24 @@ class Node {
 public:
     int val;
     vector<Node*> neighbors;
-
     Node() {
         val = 0;
         neighbors = vector<Node*>();
     }
-
     Node(int _val) {
         val = _val;
         neighbors = vector<Node*>();
     }
-
     Node(int _val, vector<Node*> _neighbors) {
         val = _val;
         neighbors = _neighbors;
     }
 };
 */
+
 class Solution {
 public:
-    Node* cloneGraph(Node* node){
+    Node* cloneGraph(Node* node) {
         if (!node) return NULL;
         unordered_map<Node*, Node*> hm;
         queue<Node*> q;
@@ -32,15 +30,14 @@ public:
         while (!q.empty()) {
             Node* current = q.front();
             q.pop();
-            for (auto n : current->neighbors) {
-                if (hm.find(n) == hm.end()) {
-                    hm[n] = new Node(n->val);
-                    q.push(n);
+            for (auto neighbor : current->neighbors) {
+                if (hm.find(neighbor) == hm.end()) {
+                    hm[neighbor] = new Node(neighbor->val);
+                    q.push(neighbor);
                 }
-                hm[current]->neighbors.push_back(hm[n]);
+                hm[current]->neighbors.push_back(hm[neighbor]);
             }
         }
-
         return hm[node];
     }
 };
