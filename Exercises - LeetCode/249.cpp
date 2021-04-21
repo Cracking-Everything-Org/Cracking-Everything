@@ -1,28 +1,31 @@
 class Solution {
 public:
     vector<vector<string>> groupStrings(vector<string>& strings) {
-        // HAGO UN MAPA Y GUARDO EL STRING SEGUN EL HASH DEL SHIFTEO
-        unordered_map<string, vector<string> > groupedStrings;
-        for (string  s : strings)
-            groupedStrings[encodeShift(s)].push_back(s);
-        vector<vector<string> > groups;
-        for (auto entry : groupedStrings) {
-            vector<string> group = entry.second;
-            sort(group.begin(), group.end());
-            groups.push_back(group);
+        vector<vector<string>> groups;
+        unordered_map<string, vector<string>> hm;
+        
+        for (auto str : strings) {
+            hm[encode(str)].push_back(str);
         }
+        
+        for (auto entry : hm) {
+            vector<string> current = entry.second;
+            sort(current.begin(), current.end());
+            groups.push_back(current);
+        }
+        
         return groups;
     }
-
-    string encodeShift(string& s) {
-        string t;
-        int n = s.length();
+    
+    string encode(string str) {
+        string hash = "";
+        int n = str.length();
         for (int i = 1; i < n; i++) {
-            int diff = s[i] - s[i - 1];
-            // caso ab, ba , al hacer a - b me da negativo, por eso le sumo 26
+            int diff = str[i] - str[i - 1];
             if (diff < 0) diff += 26;
-            t += 'a' + diff + ',';
+            hash += 'a' + diff;
         }
-        return t;
+        
+        return hash;
     }
 };

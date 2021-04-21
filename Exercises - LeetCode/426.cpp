@@ -1,35 +1,25 @@
 class Solution {
 public:
+    Node* first = NULL;
+    Node* prev = NULL; 
+
     Node* treeToDoublyList(Node* root) {
-        stack<Node*> stk;
+        if (!root) return root; 
+        inOrder(root);
+        prev->right = first;
+        first->left = prev;
+        return first;
+    }
 
-        if (!root)
-            return NULL;
-
-        while(root) { // puusheo la diagonal izquierda
-            stk.push(root);
-            root = root->left;
-        }
-
-        Node* head = stk.top(); // reference to the left most node
-
-        Node* node;
-        while(!stk.empty()) {
-            node = stk.top();
-            stk.pop();
-
-            while(node->right) {
-                stk.push(node->right);
-                node->right = node->right->left;
-            }
-
-            if (!stk.empty()) {
-                node->right = stk.top();
-                stk.top()->left = node;
-            }
-        }
-        node->right = head;
-        head->left = node;
-        return head;
+    void inOrder(Node* root){
+        if (root == NULL) return; 
+        inOrder(root->left);
+        if (first == NULL) first = root;        
+        if (prev != NULL){
+            prev->right= root;
+            root->left = prev;
+        } 
+        prev = root; 
+        inOrder(root->right);
     }
 };
