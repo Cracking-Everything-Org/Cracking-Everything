@@ -1,12 +1,3 @@
-/**
- * Definition for a binary tree node.
- * struct TreeNode {
- *     int val;
- *     TreeNode *left;
- *     TreeNode *right;
- *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
- * };
- */
 class Solution {
 public:
     int maxPathSum(TreeNode* root) {
@@ -15,7 +6,7 @@ public:
         traverse(root, maxSum);
         return maxSum;
     }
-
+    
     int traverse(TreeNode* root, int& maxSum) {
         if (!root) return 0;
         int leftPath = max(traverse(root->left, maxSum), 0);
@@ -23,7 +14,7 @@ public:
         //global
         maxSum = max(maxSum, leftPath + rightPath + root->val);
         //lobal
-        return root->val + max (leftPath, rightPath);
+        return root->val + max(leftPath, rightPath);
     }
     // O(n), no visitamos cada nodo mas que 2 veces
     // O(H)
