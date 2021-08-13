@@ -1,29 +1,38 @@
 class Solution {
+    vector<int> x = {-1, 0, 0, 1};
+    vector<int> y = {0, 1, -1, 0};
+    
 public:
     int maxAreaOfIsland(vector<vector<int>>& grid) {
         int maxArea = 0;
+        if (!grid.size() || !grid[0].size()) return maxArea;
+        
         for (int row = 0; row < grid.size(); row++) {
             for (int col = 0; col < grid[0].size(); col++) {
                 if (grid[row][col] == 1) {
-                    int currentArea = 0;
-                    dfs(grid, row, col, currentArea, maxArea);
+                    int current = 0;
+                    dfs(row, col, grid, current, maxArea);
                 }
             }
         }
+        
         return maxArea;
     }
-
-    void dfs(vector<vector<int>>& grid, int row, int col, int& currentArea, int& maxArea) {
-        if (row < 0 || row > grid.size() - 1 || col < 0 || col > grid[0].size() - 1 || grid[row][col] == 0) {
+    
+    void dfs(int row, int col, vector<vector<int>>& grid, int& current, int& maxArea) {
+        if (row < 0 || row >= grid.size() || col < 0 || col >= grid[0].size() || grid[row][col] == 0) {
             return;
-        } else {
-            currentArea++;
+        }
+        
+        if (grid[row][col] == 1) {
+            current++;
             grid[row][col] = 0;
-            dfs(grid, row + 1, col, currentArea, maxArea);
-            dfs(grid, row - 1, col, currentArea, maxArea);
-            dfs(grid, row, col + 1, currentArea, maxArea);
-            dfs(grid, row, col - 1, currentArea, maxArea);
-            maxArea = currentArea > maxArea ? currentArea : maxArea;
+        }
+        
+        maxArea = max(maxArea, current);
+        
+        for (int i = 0; i < 4; i++) {
+            dfs(row + y[i], col + x[i], grid, current, maxArea);
         }
     }
 };
