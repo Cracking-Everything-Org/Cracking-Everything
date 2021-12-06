@@ -2,18 +2,27 @@ using namespace std;
 
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
-class RemoveDuplicates {
+class SortedArraySquares {
  public:
-  static int remove(vector<int>& arr) {
-    int nextNonDup = 1;
-    for (int i = 1; i < arr.size(); i++) {
-      if (arr[i] != arr[nextNonDup - 1]) {
-        arr[nextNonDup] = arr[i];
-        nextNonDup++;
+  static vector<int> makeSquares(const vector<int>& arr) {
+    int n = arr.size();
+    vector<int> squares(n);
+    int left = 0;
+    int right = arr.size() - 1;
+    int current = arr.size() - 1;
+
+    while (left < right) {
+      if (pow(arr[left], 2) >= pow(arr[right], 2)) {
+        squares[current] = pow(arr[left], 2);
+        left++;
+      } else {
+        squares[current] = pow(arr[right], 2);
+        right--;
       }
+      current--;
     }
-    return nextNonDup;
+    return squares;
   }
 };
-
