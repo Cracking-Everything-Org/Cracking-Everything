@@ -22,6 +22,30 @@ Aumenta complejidad del sistema
 
 Más información: https://www.cloudflare.com/learning/cdn/what-is-a-cdn/
 
+
+### Cache / Redis (Global Cache)
+**Ventajas:**
+- Reduce/Save network calls
+- Avoid repeated computations 
+- Reduce DB load (aka throughput)
+- mejora la performance de lectura (aka latency)
+
+Desvantajas:
+- Añade complejidad
+- Consume recursos
+
+**Tipos:**
+- *Write Through* (primero hitea al cache y luego lo pasa a la BD), Se usa cuando trabajo con critical data (financial, etc).
+- *Write Behind* 
+- Hybrido + Puedo utilizar un sistema de Bulk y así lograr reducir las llamadas para escribir a la BD
+- *Cache Aside*
+- *Read through*
+
+**Policy:**
+- Podemos utilizar LRU (más popular), LFU u otra política para decidir que información mantener en el Cache.
+
+
+
 ### Message Queue
 Lo utilizo para mantener un orden en las Request y atender siempre a la que llega primero (FIFO).
 
@@ -80,26 +104,6 @@ Utilizo el Horizontal Partitioning cuando tengo varios atributos por los que des
 ### Master-Slave architecture
  Para evitar el Single Point of Failure se utiliza la arquitectura Master-Slave, en donde si falla el Master se utiliza el "backup" del Slave. 
 
-### Cache / Redis (Global Cache)
-**Ventajas:**
-- Reduce/Save network calls
-- Avoid repeated computations 
-- Reduce DB load (aka throughput)
-- mejora la performance de lectura
-
-Desvantajas:
-- Añade complejidad
-- Consume recursos
-
-**Tipos:**
-- *Write Through* (primero hitea al cache y luego lo pasa a la BD), Se usa cuando trabajo con critical data (financial, etc).
-- *Write Behind* 
-- Hybrido + Puedo utilizar un sistema de Bulk y así lograr reducir las llamadas para escribir a la BD
-- *Cache Aside*
-- *Read through*
-
-**Policy:**
-- Podemos utilizar LRU (más popular), LFU u otra política para decidir que información mantener en el Cache.
 
 ### Photos / Image Service
 - **File** vs **Blob** (Binary Long Object)
