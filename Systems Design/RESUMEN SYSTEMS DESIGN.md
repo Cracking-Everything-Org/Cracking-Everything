@@ -4,10 +4,30 @@
 Lo utilizo cuando tengo multiples micro-servicios, así sabe directamente a cual redireccionar la request  y en caso de falla no tengo un Single Point of Failure.
 
 ### Load Balancer
+Es una maquina que actua como reverse proxy
+Para cada request elige uno de los servidores segun su estrategia (round robin)
+Hace que el sistema sea mas escalable y resiliente
 Lo uso cuando necesito enviar las Request de forma uniforme a los distintos servidores, luego de realizar un horizontal scaling.
+
+### CDN (Content Delivery Network)
+- Ventajas
+Permite tener las imagenes staticas cerca de los usuarios
+Reduce costos
+Reduce latencia
+
+- Desventajas
+Aumenta complejidad del sistema
+
+**CDN**: A content delivery network, or content distribution network (CDN), is a geographically distributed network of proxy servers and their data centers. The goal is to provide high availability and performance by distributing the service spatially relative to end users.
+
+https://www.cloudflare.com/learning/cdn/what-is-a-cdn/
+
+
 
 ### Message Queue
 Lo utilizo para mantener un orden en las Request y atender siempre a la que llega primero (FIFO).
+
+
 
 ### Session service
 Puedo manejar el tema del login, así no se verifica y se ejecuta el código relacionado a la autenticación por todos lados.
@@ -68,12 +88,19 @@ Utilizo el Horizontal Partitioning cuando tengo varios atributos por los que des
 **Ventajas:**
 - Reduce/Save network calls
 - Avoid repeated computations 
-- Reduce DB load
+- Reduce DB load (aka throughput)
+- mejora la performance de lectura
+
+Desvantajas:
+- Añade complejidad
+- Consume recursos
 
 **Tipos:**
-- *Write through* (primero hitea al cache y luego lo pasa a la BD), Se usa cuando trabajo con critical data (financial, etc).
-- *Write back* 
+- *Write Through* (primero hitea al cache y luego lo pasa a la BD), Se usa cuando trabajo con critical data (financial, etc).
+- *Write Behind* 
 - Hybrido + Puedo utilizar un sistema de Bulk y así lograr reducir las llamadas para escribir a la BD
+- *Cache Aside*
+- *Read through*
 
 **Policy:**
 - Podemos utilizar LRU (más popular) u otra política para decidir que información mantener en el Cache.
@@ -100,7 +127,7 @@ Por lo tanto, casi siempre rinde más guardar las imagenes como Files utilizando
 - 2) Faster
 - 3) Control Delivery Network
 
-**CDN**: A content delivery network, or content distribution network (CDN), is a geographically distributed network of proxy servers and their data centers. The goal is to provide high availability and performance by distributing the service spatially relative to end users.
+
 
 ### Single Point of Failure
 1) Client 
