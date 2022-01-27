@@ -10,6 +10,8 @@ Hace que el sistema sea mas escalable y resiliente
 Lo uso cuando necesito enviar las Request de forma uniforme a los distintos servidores, luego de realizar un horizontal scaling.
 
 ### CDN (Content Delivery Network)
+**Definición:** A content delivery network, or content distribution network (CDN), is a geographically distributed network of proxy servers and their data centers. The goal is to provide high availability and performance by distributing the service spatially relative to end users.
+
 - Ventajas
 Permite tener las imagenes staticas cerca de los usuarios
 Reduce costos
@@ -18,16 +20,10 @@ Reduce latencia
 - Desventajas
 Aumenta complejidad del sistema
 
-**CDN**: A content delivery network, or content distribution network (CDN), is a geographically distributed network of proxy servers and their data centers. The goal is to provide high availability and performance by distributing the service spatially relative to end users.
-
-https://www.cloudflare.com/learning/cdn/what-is-a-cdn/
-
-
+Más información: https://www.cloudflare.com/learning/cdn/what-is-a-cdn/
 
 ### Message Queue
 Lo utilizo para mantener un orden en las Request y atender siempre a la que llega primero (FIFO).
-
-
 
 ### Session service
 Puedo manejar el tema del login, así no se verifica y se ejecuta el código relacionado a la autenticación por todos lados.
@@ -103,9 +99,7 @@ Desvantajas:
 - *Read through*
 
 **Policy:**
-- Podemos utilizar LRU (más popular) u otra política para decidir que información mantener en el Cache.
-
-### Precomputation
+- Podemos utilizar LRU (más popular), LFU u otra política para decidir que información mantener en el Cache.
 
 ### Photos / Image Service
 - **File** vs **Blob** (Binary Long Object)
@@ -127,8 +121,6 @@ Por lo tanto, casi siempre rinde más guardar las imagenes como Files utilizando
 - 2) Faster
 - 3) Control Delivery Network
 
-
-
 ### Single Point of Failure
 1) Client 
 2) DNS (ips para saber a cual gateway conectarse)
@@ -145,3 +137,7 @@ Por lo tanto, casi siempre rinde más guardar las imagenes como Files utilizando
 
 ### MONOLITH vs MICROSERVICES
 En sistemas grandes siempre es mejor utilizar microsistemas.
+
+Que es una arquitectura de microsistemas?
+
+Que es una arquitectura monolith?
