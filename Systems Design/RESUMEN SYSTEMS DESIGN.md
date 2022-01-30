@@ -1,5 +1,16 @@
 # Systems-Design
 
+- Systems Design -
+https://www.youtube.com/watch?v=bUHFg8CZFws
+Groking the systems design interview
+
+https://www.youtube.com/playlist?list=PLMCXHnjXnTnvo6alSjVkgxV-VH6EPyvoX
+https://www.youtube.com/playlist?list=PLkQkbY7JNJuC99VDJcpQdww-4aT3QhdJv
+https://www.youtube.com/playlist?list=PLkQkbY7JNJuAhePp7E_WSpfFqjQp6RniV
+https://www.youtube.com/playlist?list=PLkQkbY7JNJuBoTemzQfjym0sqbOHt5fnV
+https://www.youtube.com/playlist?list=PLA8lYuzFlBqAy6dkZHj5VxUAaqr4vwrka
+https://www.youtube.com/playlist?list=PLhgw50vUymycJPN6ZbGTpVKAJ0cL4OEH3
+
 ### Gateway
 Lo utilizo cuando tengo multiples micro-servicios, así sabe directamente a cual redireccionar la request  y en caso de falla no tengo un Single Point of Failure.
 
