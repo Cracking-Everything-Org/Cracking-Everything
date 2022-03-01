@@ -4,60 +4,56 @@
 // you can write to stdout for debugging purposes, e.g.
 // cout << "this is a debug message" << endl;
 
-#include <algorithm>
-#include <unordered_map>
-#include <unordered_set>
 #include <vector>
 #include <queue>
-#include <iostream>
 
 int solution(int N, vector<int> &A, vector<int> &B, vector<int> &H) {
-    int distance = 0;
-
-    unordered_map<int, vector<int>> graph;
-
-    for (int i = 0; i < N; i++) {
-        graph[i] = vector<int>();
-    }
-
-    for (unsigned int i = 0; i < A.size(); i++) {
-        graph[A[i]].push_back(B[i]);
-        graph[B[i]].push_back(A[i]);
-    }
-    
-    unordered_set<int> visited;
+    vector<int> dis(N, N);
+    vector<vector<int>> adj(N);
     queue<int> q;
-    int visitedCities = 0;
-    
-    for (auto hospital : H) {
-        q.push(hospital);
-        graph[hospital].push_back(hospital);
-        visitedCities++;
-        visited.insert(hospital);
+
+    int M = B.size();
+    int L = H.size();
+
+    for (int i = 0; i < M; ++i) {
+        int x = A[i];
+        int y = B[i];
+        adj[x].push_back(y);
+        adj[y].push_back(x);
     }
 
-    for (auto entry : graph) {
-        if (entry.second.size() == 0) return -1;
+    vector<bool> vis(N, false);
+
+    for (int i = 0; i < L; ++i) {
+        dis[H[i]] = 0;
+        vis[H[i]] = 1;
+        q.push(H[i]);
     }
 
     while (!q.empty()) {
-        distance++;
         int size = q.size();
-        for (int i = 0; i < size; i++) {
-            int current = q.front();
+        for (int i = 0; i < size; ++i) {
+            int x = q.front();
             q.pop();
-            if (visited.find(current) == visited.end()) {
-                visited.insert(current);
-                visitedCities++;
-            }
-
-            for (auto city : graph[current]) {
-                if (visited.find(city) == visited.end()) {
-                    q.push(city);
+            for (int j = 0; j < (int)(adj[x].size()); ++j) {
+                int y = adj[x][j];
+                if (!vis[y]) {
+                    vis[y] = true;
+                    dis[y] = 1 + dis[x];
+                    q.push(y);
                 }
             }
         }
     }
+    int ans = 0;
+    for (int i = 0; i < N; ++i) {
+        ans = max(ans, dis[i]);
+    }
 
-    return visitedCities == N ? distance - 1 : -1;
+    for (int i = 0; i < N; i++) {
+        if (!vis[i]) {
+            return -1;
+        }
+    }
+    return ans;
 }
